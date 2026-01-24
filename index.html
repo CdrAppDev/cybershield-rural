@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Rural - Product Deep Dive</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { color: #e94560; text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { text-decoration: underline; }
+        header { padding: 40px 0; border-bottom: 2px solid #e94560; margin-bottom: 40px; }
+        .solution-number {
+            display: inline-block; width: 50px; height: 50px; background: #e94560;
+            border-radius: 50%; text-align: center; line-height: 50px; font-weight: 700;
+            font-size: 1.5rem; margin-bottom: 15px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .tagline { font-size: 1.2rem; color: #e94560; }
+        section { margin-bottom: 50px; }
+        h2 {
+            font-size: 1.3rem; color: #e94560; text-transform: uppercase;
+            letter-spacing: 2px; margin-bottom: 20px; padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        h3 { font-size: 1.1rem; color: #fff; margin: 25px 0 15px 0; }
+        p { color: #c0c0c0; margin-bottom: 15px; }
+        .highlight-box {
+            background: rgba(233, 69, 96, 0.1); border-left: 3px solid #e94560;
+            padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p { margin: 0; color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th {
+            background: rgba(233, 69, 96, 0.2); padding: 12px 15px; text-align: left;
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        td {
+            padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: #c0c0c0; font-size: 0.95rem;
+        }
+        .architecture-diagram {
+            background: rgba(0,0,0,0.3); padding: 25px; border-radius: 8px;
+            font-family: 'Courier New', monospace; font-size: 0.85rem;
+            overflow-x: auto; white-space: pre; line-height: 1.4; color: #a0a0a0;
+        }
+        ul { margin: 15px 0 15px 20px; color: #c0c0c0; }
+        li { margin-bottom: 8px; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline-item {
+            position: relative; padding-bottom: 25px;
+            border-left: 2px solid rgba(233, 69, 96, 0.3); padding-left: 25px;
+        }
+        .timeline-item:last-child { border-left: 2px solid transparent; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -8px; top: 0;
+            width: 14px; height: 14px; background: #e94560; border-radius: 50%;
+        }
+        .timeline-label { font-weight: 700; color: #e94560; font-size: 0.9rem; }
+        .timeline-content { color: #c0c0c0; margin-top: 5px; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .tech-card {
+            background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .tech-card-label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+        .tech-card-value { font-size: 1rem; color: #fff; margin-top: 5px; }
+        .tech-card-note { font-size: 0.85rem; color: #888; margin-top: 5px; }
+        .metric-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
+        .metric {
+            background: rgba(233, 69, 96, 0.1); padding: 20px; border-radius: 8px;
+            text-align: center; flex: 1; min-width: 150px;
+        }
+        .metric-value { font-size: 1.8rem; font-weight: 700; color: #e94560; }
+        .metric-label { font-size: 0.8rem; color: #888; text-transform: uppercase; margin-top: 5px; }
+        footer {
+            margin-top: 60px; padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center; color: #666; font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="rural_health_solutions.html" class="back-link">← Back to Solutions Overview</a>
+
+        <header>
+            <div class="solution-number">1</div>
+            <h1>CyberShield Rural</h1>
+            <p class="tagline">Managed Cybersecurity for Critical Access Hospitals</p>
+        </header>
+
+        <section>
+            <h2>What It Is</h2>
+            <p>A <strong>managed security service</strong> (not just software) for hospitals with &lt;100 beds. The product is implementation + ongoing management—not another tool that sits unused.</p>
+
+            <div class="highlight-box">
+                <p><strong>Key Insight:</strong> Microsoft offers 75% discounts on security tools, but only ~20% of rural hospitals adopt them. The gap isn't tools—it's expertise to implement and manage them. CyberShield fills that gap.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Problem</h2>
+            <ul>
+                <li>Healthcare ransomware attacks up 278% (2018-2023)</li>
+                <li>Average breach costs $7.42M—most rural hospitals can't survive one</li>
+                <li>Rural hospitals have 0-1 IT staff, no dedicated security expertise</li>
+                <li>Enterprise security solutions cost $50K+ and require teams to operate</li>
+                <li>Free government programs exist but require implementation knowledge hospitals don't have</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>User Personas</h2>
+            <table>
+                <tr>
+                    <th>Persona</th>
+                    <th>Role</th>
+                    <th>Primary Concern</th>
+                    <th>Interaction</th>
+                </tr>
+                <tr>
+                    <td><strong>CEO / CFO</strong></td>
+                    <td>Buyer / Decision Maker</td>
+                    <td>"Are we protected? What's our liability?"</td>
+                    <td>Monthly reports, board updates</td>
+                </tr>
+                <tr>
+                    <td><strong>IT Director</strong></td>
+                    <td>Technical Contact</td>
+                    <td>"Don't add to my workload"</td>
+                    <td>Alert escalations, quarterly reviews</td>
+                </tr>
+                <tr>
+                    <td><strong>Compliance Officer</strong></td>
+                    <td>HIPAA Owner</td>
+                    <td>"Can we pass an audit?"</td>
+                    <td>Compliance dashboard, risk assessments</td>
+                </tr>
+                <tr>
+                    <td><strong>Staff (All)</strong></td>
+                    <td>Training Recipients</td>
+                    <td>"Don't make this complicated"</td>
+                    <td>Security training, phishing simulations</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Product Components</h2>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>What It Does</th>
+                    <th>Build vs Buy</th>
+                </tr>
+                <tr>
+                    <td><strong>SOC-as-a-Service</strong></td>
+                    <td>24/7 threat monitoring, incident detection, response coordination</td>
+                    <td>Partner with MSSP or hire analysts</td>
+                </tr>
+                <tr>
+                    <td><strong>Endpoint Protection</strong></td>
+                    <td>Antivirus, EDR on all workstations and servers</td>
+                    <td>Resell (Microsoft Defender, CrowdStrike)</td>
+                </tr>
+                <tr>
+                    <td><strong>Email Security</strong></td>
+                    <td>Phishing protection, spam filtering, attachment scanning</td>
+                    <td>Configure M365 security or resell Proofpoint</td>
+                </tr>
+                <tr>
+                    <td><strong>Vulnerability Scanning</strong></td>
+                    <td>Regular network scans, patch prioritization</td>
+                    <td>Resell (Tenable, Qualys, or open-source)</td>
+                </tr>
+                <tr>
+                    <td><strong>HIPAA Compliance Dashboard</strong></td>
+                    <td>Risk assessments, policy tracking, audit-ready reports</td>
+                    <td>Build (core differentiator)</td>
+                </tr>
+                <tr>
+                    <td><strong>Security Training</strong></td>
+                    <td>Phishing simulations, awareness modules, completion tracking</td>
+                    <td>Resell (KnowBe4, Proofpoint)</td>
+                </tr>
+                <tr>
+                    <td><strong>Incident Response</strong></td>
+                    <td>On-call response, ransomware playbooks, recovery support</td>
+                    <td>Build process + partner for surge</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <div class="architecture-diagram">
+┌─────────────────────────────────────────────────────────────────────┐
+│                        HOSPITAL SITE                                 │
+│  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐           │
+│  │ Endpoints │ │ EHR/EMR   │ │ Medical   │ │ Network   │           │
+│  │ (50-200)  │ │ Server    │ │ Devices   │ │ Equipment │           │
+│  └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘           │
+│        └─────────────┴─────────────┴─────────────┘                  │
+│                              │                                       │
+│                    ┌─────────▼─────────┐                            │
+│                    │  EDGE APPLIANCE   │  ◄── Ships pre-configured  │
+│                    │  - Log collection │                            │
+│                    │  - Asset discovery│                            │
+│                    │  - Local caching  │                            │
+│                    └─────────┬─────────┘                            │
+└──────────────────────────────┼──────────────────────────────────────┘
+                               │
+                          Encrypted VPN
+                               │
+┌──────────────────────────────▼──────────────────────────────────────┐
+│                    CYBERSHIELD CLOUD PLATFORM                        │
+│                                                                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
+│  │     SIEM     │  │   Threat     │  │  Compliance  │              │
+│  │    Engine    │  │   Intel DB   │  │   Engine     │              │
+│  │  (Wazuh/     │  │              │  │  (Custom)    │              │
+│  │   Elastic)   │  │              │  │              │              │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘              │
+│         └─────────────────┼─────────────────┘                       │
+│                           │                                          │
+│              ┌────────────▼────────────┐                            │
+│              │     ALERT MANAGER       │                            │
+│              │   - Prioritization      │                            │
+│              │   - Auto-remediation    │                            │
+│              │   - Escalation rules    │                            │
+│              └────────────┬────────────┘                            │
+│                           │                                          │
+│  ┌────────────────────────▼────────────────────────┐                │
+│  │              24/7 SOC TEAM                       │                │
+│  │   Tier 1: Alert triage, false positive filter   │                │
+│  │   Tier 2: Investigation, threat hunting         │                │
+│  │   Tier 3: Incident response, forensics          │                │
+│  └──────────────────────────────────────────────────┘                │
+│                                                                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
+│  │  Customer    │  │  Reporting   │  │   Training   │              │
+│  │  Dashboard   │  │   Engine     │  │   Platform   │              │
+│  │  (React)     │  │              │  │  (Embedded)  │              │
+│  └──────────────┘  └──────────────┘  └──────────────┘              │
+└─────────────────────────────────────────────────────────────────────┘
+            </div>
+        </section>
+
+        <section>
+            <h2>Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-label">SIEM / Log Management</div>
+                    <div class="tech-card-value">Wazuh or Elastic SIEM</div>
+                    <div class="tech-card-note">Open source, scalable, healthcare-proven</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Endpoint Protection</div>
+                    <div class="tech-card-value">Microsoft Defender for Business</div>
+                    <div class="tech-card-note">Leverage existing M365 licenses at hospitals</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Email Security</div>
+                    <div class="tech-card-value">M365 Defender or Proofpoint</div>
+                    <div class="tech-card-note">Most rural hospitals already on M365</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Edge Appliance</div>
+                    <div class="tech-card-value">Intel NUC + Custom Linux Image</div>
+                    <div class="tech-card-note">Pre-configured, ships ready to plug in</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Customer Dashboard</div>
+                    <div class="tech-card-value">React + Node.js + PostgreSQL</div>
+                    <div class="tech-card-note">Build custom—core differentiator</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Training Platform</div>
+                    <div class="tech-card-value">KnowBe4 (White-label)</div>
+                    <div class="tech-card-note">Best-in-class, embed via API</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Onboarding Flow</h2>
+            <p>Target: Monitoring live within 2 weeks of contract signing</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-label">Day 0: Contract Signed</div>
+                    <div class="timeline-content">Kickoff call scheduled, technical questionnaire sent (network size, current tools, M365 status)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">Days 1-3: Remote Assessment</div>
+                    <div class="timeline-content">Screenshare or temporary VPN to assess network topology, existing security tools, and vulnerabilities. Generate baseline security score.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">Days 4-5: Appliance Ships</div>
+                    <div class="timeline-content">Pre-configured edge appliance shipped with hospital-specific settings. Tracking provided.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">Days 6-8: Installation</div>
+                    <div class="timeline-content">Hospital IT (or remote hands) plugs in appliance. CyberShield configures remotely—no on-site visit required.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">Days 9-14: Agent Deployment</div>
+                    <div class="timeline-content">Endpoint protection deployed to workstations/servers. Email security configured. Initial monitoring rules tuned.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">Day 14: Go-Live</div>
+                    <div class="timeline-content">24/7 monitoring active. Dashboard access granted to stakeholders. Alert escalation procedures confirmed.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">Day 30: First Review</div>
+                    <div class="timeline-content">First monthly report delivered. Staff security training scheduled. Compliance baseline documented.</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Sales Cycle</h2>
+            <table>
+                <tr>
+                    <th>Stage</th>
+                    <th>Duration</th>
+                    <th>Activities</th>
+                    <th>Key Stakeholder</th>
+                </tr>
+                <tr>
+                    <td><strong>Awareness</strong></td>
+                    <td>Ongoing</td>
+                    <td>Conference presence, NRHA partnerships, state hospital association relationships</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Discovery Call</strong></td>
+                    <td>Week 1</td>
+                    <td>30-min call: current security posture, recent incidents, compliance concerns</td>
+                    <td>CEO or IT Director</td>
+                </tr>
+                <tr>
+                    <td><strong>Free Assessment</strong></td>
+                    <td>Weeks 2-3</td>
+                    <td>No-cost security assessment, vulnerability scan, findings presentation</td>
+                    <td>IT Director + CFO</td>
+                </tr>
+                <tr>
+                    <td><strong>Proposal</strong></td>
+                    <td>Week 4</td>
+                    <td>Custom proposal with pricing, scope, RHTP funding alignment</td>
+                    <td>CFO + CEO</td>
+                </tr>
+                <tr>
+                    <td><strong>Board Approval</strong></td>
+                    <td>Weeks 5-8</td>
+                    <td>May require board presentation (we provide slides). RHTP budget alignment.</td>
+                    <td>Board / CEO</td>
+                </tr>
+                <tr>
+                    <td><strong>Contract</strong></td>
+                    <td>Weeks 8-12</td>
+                    <td>Legal review, BAA signing, MSA execution</td>
+                    <td>CFO + Legal</td>
+                </tr>
+            </table>
+
+            <div class="metric-row">
+                <div class="metric">
+                    <div class="metric-value">3-4</div>
+                    <div class="metric-label">Months to Close</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">2-3</div>
+                    <div class="metric-label">Decision Makers</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">1</div>
+                    <div class="metric-label">Free Assessment</div>
+                </div>
+            </div>
+
+            <h3>Why 3-4 Months (Faster Than Typical Healthcare)</h3>
+            <ul>
+                <li>IT/security decisions don't require clinical validation</li>
+                <li>CFO can often approve within budget authority</li>
+                <li>Urgency is high—recent ransomware headlines create pressure</li>
+                <li>No integration with clinical workflows required</li>
+                <li>RHTP funding creates budget availability</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pricing Model</h2>
+            <table>
+                <tr>
+                    <th>Hospital Size</th>
+                    <th>Monthly Fee</th>
+                    <th>Includes</th>
+                </tr>
+                <tr>
+                    <td>&lt;25 beds (CAH)</td>
+                    <td>$2,500/mo</td>
+                    <td>Up to 75 endpoints, 24/7 monitoring, quarterly assessments</td>
+                </tr>
+                <tr>
+                    <td>25-50 beds</td>
+                    <td>$3,500/mo</td>
+                    <td>Up to 150 endpoints, 24/7 monitoring, monthly assessments</td>
+                </tr>
+                <tr>
+                    <td>50-100 beds</td>
+                    <td>$5,000/mo</td>
+                    <td>Up to 300 endpoints, 24/7 monitoring, monthly assessments, dedicated CSM</td>
+                </tr>
+            </table>
+
+            <h3>Contract Terms</h3>
+            <ul>
+                <li><strong>Term:</strong> 3-year contracts (aligned with RHTP grant cycles)</li>
+                <li><strong>Payment:</strong> Monthly or annual (10% discount for annual prepay)</li>
+                <li><strong>Setup Fee:</strong> $2,500 one-time (waived for 3-year commits)</li>
+                <li><strong>Incident Response:</strong> First 20 hours included; $200/hr after</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Key Metrics to Track</h2>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Target (Year 1)</th>
+                    <th>Why It Matters</th>
+                </tr>
+                <tr>
+                    <td>Hospitals Under Management</td>
+                    <td>15-25</td>
+                    <td>Core revenue driver</td>
+                </tr>
+                <tr>
+                    <td>Monthly Recurring Revenue</td>
+                    <td>$50-75K</td>
+                    <td>Business sustainability</td>
+                </tr>
+                <tr>
+                    <td>Mean Time to Detect (MTTD)</td>
+                    <td>&lt;1 hour</td>
+                    <td>Service quality indicator</td>
+                </tr>
+                <tr>
+                    <td>Mean Time to Respond (MTTR)</td>
+                    <td>&lt;4 hours</td>
+                    <td>Service quality indicator</td>
+                </tr>
+                <tr>
+                    <td>Customer Churn Rate</td>
+                    <td>&lt;5% annual</td>
+                    <td>Stickiness of service</td>
+                </tr>
+                <tr>
+                    <td>NPS Score</td>
+                    <td>&gt;50</td>
+                    <td>Referral potential</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>What You Need to Build (MVP)</h2>
+            <h3>Phase 1: Minimum Viable Service (Months 1-3)</h3>
+            <ul>
+                <li>Partner agreements with endpoint/email security vendors</li>
+                <li>SOC partnership or initial 2-person security team</li>
+                <li>Basic customer dashboard (security score, alerts, reports)</li>
+                <li>Edge appliance configuration and provisioning process</li>
+                <li>Onboarding runbook and documentation</li>
+                <li>HIPAA compliance report templates</li>
+            </ul>
+
+            <h3>Phase 2: Scale (Months 4-9)</h3>
+            <ul>
+                <li>Automated onboarding workflows</li>
+                <li>Enhanced dashboard with compliance tracking</li>
+                <li>Multi-tenant management console</li>
+                <li>Integrated training platform</li>
+                <li>SOC team expansion or deeper MSSP partnership</li>
+            </ul>
+
+            <h3>Phase 3: Differentiation (Months 10-18)</h3>
+            <ul>
+                <li>Healthcare-specific threat intelligence</li>
+                <li>Medical device security monitoring</li>
+                <li>EHR-specific security integrations</li>
+                <li>Automated HIPAA audit preparation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Risks & Mitigations</h2>
+            <table>
+                <tr>
+                    <th>Risk</th>
+                    <th>Likelihood</th>
+                    <th>Mitigation</th>
+                </tr>
+                <tr>
+                    <td>Major breach at customer site</td>
+                    <td>Medium</td>
+                    <td>Cyber liability insurance, documented SLAs, IR retainer with specialist firm</td>
+                </tr>
+                <tr>
+                    <td>SOC team scaling challenges</td>
+                    <td>Medium</td>
+                    <td>MSSP partnership for overflow, automation to reduce analyst load</td>
+                </tr>
+                <tr>
+                    <td>Enterprise competitors enter market</td>
+                    <td>Low</td>
+                    <td>Rural-specific positioning, relationship depth, RHTP expertise</td>
+                </tr>
+                <tr>
+                    <td>RHTP funding delays</td>
+                    <td>Low</td>
+                    <td>Multi-year contracts, diversify to non-RHTP rural hospitals</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            <a href="rural_health_solutions.html" class="back-link">← Back to Solutions Overview</a>
+            <p style="margin-top: 20px;">CyberShield Rural - Product Deep Dive · January 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
