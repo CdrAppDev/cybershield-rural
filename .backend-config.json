@@ -1,0 +1,19 @@
+{
+  "project_name": "cybershield-rural",
+  "supabase": {
+    "email": "chris.roberts.mail+cybershield-rural@gmail.com",
+    "project_ref": "fikxarpgomzqkbxfhkeq",
+    "url": "https://fikxarpgomzqkbxfhkeq.supabase.co",
+    "dashboard": "https://supabase.com/dashboard/project/fikxarpgomzqkbxfhkeq"
+  },
+  "vercel": {
+    "team": "chris-projects-2b749b6c",
+    "dashboard": "https://vercel.com/chris-projects-2b749b6c/cybershield-rural"
+  },
+  "github": {
+    "username": "cdrappdev",
+    "repo": "cybershield-rural",
+    "url": "https://github.com/CdrAppDev/cybershield-rural"
+  },
+  "created_at": "2026-01-25T23:00:00Z"
+}
