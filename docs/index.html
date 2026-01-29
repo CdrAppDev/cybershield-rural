@@ -728,17 +728,78 @@
     }
     .gate-options {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 0.5rem;
     }
     .gate-option {
-      padding: 0.4rem 0.8rem;
+      padding: 0.6rem 1rem;
       border: 1px solid var(--border);
       border-radius: 6px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
       background: var(--bg-secondary);
+      line-height: 1.5;
     }
+    .gate-option strong { color: var(--text-primary); }
+    .gate-consequence { color: var(--text-muted); font-size: 0.8rem; }
+
+    /* EVIDENCE BRIEFING */
+    .evidence-briefing {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .evidence-briefing h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+    .evidence-briefing h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+    .briefing-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .briefing-stat { text-align: center; }
+    .briefing-stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      display: block;
+    }
+    .briefing-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .briefing-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .briefing-list { list-style: none; padding: 0; margin: 0; }
+    .briefing-list li {
+      padding: 0.5rem 0 0.5rem 1rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      border-left: 3px solid transparent;
+    }
+    .briefing-list.strong li { border-left-color: var(--green); }
+    .briefing-list.weak li { border-left-color: var(--amber); }
+    h4.briefing-strong { color: var(--green); }
+    h4.briefing-weak { color: var(--amber); }
 
     /* ====================================================================
        BAR CHART (CSS-only)
@@ -837,6 +898,61 @@
     .scale-note strong { color: var(--accent-light); }
 
     /* ====================================================================
+       SOURCES
+       ==================================================================== */
+    .sources-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .source-category {
+      margin-bottom: 1rem;
+    }
+    .source-category h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .source-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .source-list li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-list li:last-child {
+      border-bottom: none;
+    }
+    .source-list a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      transition: color 0.2s;
+    }
+    .source-list a:hover {
+      color: var(--accent-light);
+    }
+    .source-org {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .source-date {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ====================================================================
        FOOTER
        ==================================================================== */
     footer {
@@ -866,6 +982,7 @@
       .validation-stats { gap: 1rem; }
       .stat-row { flex-direction: column; }
       .evidence-stats { flex-direction: column; }
+      .briefing-columns { grid-template-columns: 1fr; }
       section { padding: 4rem 1.25rem; }
       .data-table { font-size: 0.8rem; }
       .data-table thead th,
@@ -889,6 +1006,7 @@
     <li><a href="#strategy">Strategy</a></li>
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#gate">Gate Review</a></li>
+    <li><a href="#sources">Sources</a></li>
   </ul>
 </nav>
 
@@ -1728,14 +1846,69 @@
   <div class="container">
     <div class="section-num">08 / Gate Review</div>
     <h2>Human decisions needed</h2>
-    <p class="section-lead">AI researched. AI validated. Humans decide. Four strategic decisions for gate review.</p>
+    <p class="section-lead">AI researched. AI validated. Humans decide. Review the evidence briefing, then make four strategic decisions.</p>
 
+    <!-- Evidence Briefing -->
+    <div class="evidence-briefing">
+      <h3>Evidence Briefing</h3>
+
+      <div class="briefing-section">
+        <h4>What the Evidence Shows</h4>
+        <div class="briefing-stats">
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">35</span>
+            <span class="briefing-stat-label">Funders Analyzed</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">12</span>
+            <span class="briefing-stat-label">Viable Funders</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">169</span>
+            <span class="briefing-stat-label">Citations</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">41</span>
+            <span class="briefing-stat-label">Unique Sources</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">30/31</span>
+            <span class="briefing-stat-label">Checks Passed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="briefing-columns">
+        <div class="briefing-column">
+          <h4 class="briefing-strong">What's Strong</h4>
+          <ul class="briefing-list strong">
+            <li>Multiple funding tracks available (federal grants, state programs, VC, accelerators) &mdash; no single-source dependency</li>
+            <li>Two strong anchor funders: CMS RHT Program ($50B, Category F cybersecurity language) and ARPA-H UPGRADE ($50M+ for healthcare cybersecurity automation)</li>
+            <li>Market tailwind: healthcare cybersecurity spending up 52% YoY, HIPAA Security Rule NPRM creates $9B compliance mandate</li>
+            <li>SC-specific advantages: SCRA $15M fund, 3Phase SBIR support, MUSC Zucker Institute &mdash; geographic clustering creates a support ecosystem</li>
+            <li>Three zero-equity accelerator paths (MassChallenge, MACH37, Health Wildcatters) available pre-MVP for validation and network</li>
+          </ul>
+        </div>
+        <div class="briefing-column">
+          <h4 class="briefing-weak">What's Weak or Unresolved</h4>
+          <ul class="briefing-list weak">
+            <li>7 of 12 viable funders are VCs with unknown application timelines &mdash; outreach timing is a guess until conversations start</li>
+            <li>Primary anchor (CMS RHT) has unpublished Category F criteria &mdash; alignment is inferred from program language, not confirmed requirements</li>
+            <li>SCRA requires a working product beyond proof-of-concept and has &lt;40% acceptance rate &mdash; not accessible until Phase 10-11</li>
+            <li>No working product, no team, no traction yet &mdash; all funder conversations are hypothetical until later phases address these gaps</li>
+            <li>ARPA-H facing $150M+ funding cuts (Politico, Aug 2025) &mdash; UPGRADE program viability uncertain</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Validation Summary -->
     <div class="validation-card">
       <div class="validation-status">
         <div class="validation-icon">&#10003;</div>
         <div class="validation-text">
           <h3>Ready for Gate Review</h3>
-          <p>31 automated checks completed. 1 warning (7 VCs with unknown timelines&mdash;expected).</p>
+          <p>31 automated checks completed. 30 passed, 1 warning (7 VCs with unknown timelines&mdash;expected for pre-engagement stage).</p>
         </div>
       </div>
       <div class="validation-stats">
@@ -1754,6 +1927,7 @@
       </div>
     </div>
 
+    <!-- Decision Cards -->
     <div class="gate-cards">
 
       <div class="gate-card">
@@ -1761,11 +1935,20 @@
           <div class="gate-num">1</div>
           <div class="gate-question">Proceed to Phase 02?</div>
         </div>
-        <p class="gate-context">The capital thesis identifies 12 viable paths with two strong anchors. Does the funding landscape justify continuing to build CyberShield Rural?</p>
+        <p class="gate-context">The capital thesis identifies 12 viable funding paths across 4 categories with two strong anchors (CMS RHT, ARPA-H). The healthcare cybersecurity market is growing at 18.5% CAGR with a regulatory mandate (HIPAA NPRM) creating urgency. All funders require a validated problem and most require a working product &mdash; both are addressed in later phases.</p>
         <div class="gate-options">
-          <div class="gate-option">Proceed &mdash; Move to Phase 02 (Problem Thesis)</div>
-          <div class="gate-option">Revise &mdash; Need changes before proceeding</div>
-          <div class="gate-option">Kill &mdash; Landscape doesn't support this venture</div>
+          <div class="gate-option">
+            <strong>Proceed</strong>
+            <span class="gate-consequence">&rarr; Starts Phase 02 Problem Thesis. Research validates whether rural hospital cybersecurity is a real, documented, severe problem worth building for. Produces evidence.yaml, customer-voice.md, and thesis.md with citations.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Revise</strong>
+            <span class="gate-consequence">&rarr; Re-runs capital research targeting specific gaps. Specify what needs strengthening (e.g., more federal grant options, deeper VC profiling, international funders).</span>
+          </div>
+          <div class="gate-option">
+            <strong>Kill</strong>
+            <span class="gate-consequence">&rarr; Archives CyberShield Rural. Capital thesis data preserved at phases/01-capital/ for reference. Project marked as killed in portfolio.</span>
+          </div>
         </div>
       </div>
 
@@ -1774,12 +1957,24 @@
           <div class="gate-num">2</div>
           <div class="gate-question">Which funding track to prioritize?</div>
         </div>
-        <p class="gate-context">The dual-track strategy covers grants and equity. Both primary grant paths have external dependencies (RHT criteria unpublished, SCRA needs MVP).</p>
+        <p class="gate-context">The dual-track strategy covers grants (Track A) and equity (Track B). Both primary grant paths have external dependencies: CMS RHT criteria are unpublished, SCRA requires a working product. VC timelines are unknown for 7 of 12 viable funders. Accelerators offer a middle path with validation + network before committing to either track.</p>
         <div class="gate-options">
-          <div class="gate-option">Grants first (RHT + SCRA)</div>
-          <div class="gate-option">Accelerator first (MassChallenge / MACH37)</div>
-          <div class="gate-option">Dual-track (grants + accelerator in parallel)</div>
-          <div class="gate-option">VC-first (skip grants, go direct)</div>
+          <div class="gate-option">
+            <strong>Grants first</strong>
+            <span class="gate-consequence">&rarr; Prioritize CMS RHT and SCRA alignment in Phases 05-07. Design solution and business model to maximize grant eligibility. Risk: RHT criteria may not align once published.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Accelerator first</strong>
+            <span class="gate-consequence">&rarr; Apply to MassChallenge/MACH37 during Phase 02-04. Use accelerator network to validate approach before committing to grants or VC. Risk: delays funder engagement by one cycle.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Dual-track</strong>
+            <span class="gate-consequence">&rarr; Pursue grants and accelerator/VC in parallel. Higher workload but maximizes optionality. Requires managing multiple application timelines simultaneously.</span>
+          </div>
+          <div class="gate-option">
+            <strong>VC-first</strong>
+            <span class="gate-consequence">&rarr; Skip grants, target healthcare cybersecurity VCs (Ballistic, Ten Eleven, Flare Capital) directly. Faster path but requires MVP + traction (Phase 10-11) before meaningful conversations.</span>
+          </div>
         </div>
       </div>
 
@@ -1788,11 +1983,20 @@
           <div class="gate-num">3</div>
           <div class="gate-question">Accelerator timing?</div>
         </div>
-        <p class="gate-context">MassChallenge HealthTech starts April 2026. MACH37 is rolling. Health Wildcatters runs Fall 2026. All can be pursued pre-MVP as validation paths.</p>
+        <p class="gate-context">MassChallenge HealthTech starts April 2026 (zero-equity, MITRE partner). MACH37 is rolling admission (94 graduates, 83% survival rate). Health Wildcatters runs Fall 2026 ($30K/8% equity). All accept pre-MVP companies and provide validation + network.</p>
         <div class="gate-options">
-          <div class="gate-option">Apply now to MassChallenge and/or MACH37</div>
-          <div class="gate-option">Wait until after MVP (Phase 11)</div>
-          <div class="gate-option">Skip accelerators</div>
+          <div class="gate-option">
+            <strong>Apply now</strong>
+            <span class="gate-consequence">&rarr; Submit to MassChallenge and/or MACH37 during Phase 02-04. Application uses capital thesis + problem thesis as evidence. Acceptance provides validation signal for other funders.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Wait until after MVP</strong>
+            <span class="gate-consequence">&rarr; Apply after Phase 10 with working software. Stronger application but misses MassChallenge April 2026 cohort. MACH37 rolling admission still available.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Skip accelerators</strong>
+            <span class="gate-consequence">&rarr; Focus resources on direct funder engagement. Saves time but loses access to mentor networks, peer cohort, and validation signal that accelerator acceptance provides.</span>
+          </div>
         </div>
       </div>
 
@@ -1801,11 +2005,20 @@
           <div class="gate-num">4</div>
           <div class="gate-question">SCRA engagement timing?</div>
         </div>
-        <p class="gate-context">SCRA requires a working product beyond proof-of-concept. Membership acceptance is below 40%. Relationship-building is essential to the invite-only process.</p>
+        <p class="gate-context">SCRA SC Launch requires a working product beyond proof-of-concept and SC headquarters or employees. Acceptance rate is below 40%. The process is relationship-driven and invite-oriented. SCRA has invested $15M with $2.9B+ follow-on capital since 2006.</p>
         <div class="gate-options">
-          <div class="gate-option">Engage now &mdash; relationship-building before applying</div>
-          <div class="gate-option">Wait for MVP &mdash; apply after Phase 11</div>
-          <div class="gate-option">Both &mdash; informal outreach now, formal after MVP</div>
+          <div class="gate-option">
+            <strong>Engage now</strong>
+            <span class="gate-consequence">&rarr; Begin informal relationship-building during Phase 02-04. Attend SCRA events, connect with board members. Does not result in funding yet but builds the relationship needed for later application.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Wait for MVP</strong>
+            <span class="gate-consequence">&rarr; Formal application after Phase 10-11 with working product. Meets their stated requirements but cold outreach to relationship-driven org carries higher rejection risk.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Both</strong>
+            <span class="gate-consequence">&rarr; Informal outreach now (events, introductions), formal application after MVP. Balances relationship-building with meeting their product requirement. Recommended by SCRA's own process documentation.</span>
+          </div>
         </div>
       </div>
 
@@ -1871,6 +2084,94 @@
       <li><span class="check-icon">&#10003;</span> Clear path to meeting funder requirements identified</li>
       <li><span class="check-icon">&#10003;</span> Funding timelines and decision processes documented</li>
     </ul>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 10: SOURCES
+     ==================================================================== -->
+<section class="section-alt" id="sources">
+  <div class="container">
+    <div class="section-num">10 / Sources</div>
+    <h2>41 third-party sources</h2>
+    <p class="section-lead">Every claim in this thesis is cited to a third-party source. Below is the complete list, organized by category.</p>
+
+    <div class="sources-grid">
+
+      <div class="source-category">
+        <h3>Government (12)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">CMS</span> &mdash; RHT Program Overview <span class="source-date">(Dec 2025)</span><br><a href="https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview" target="_blank">cms.gov</a> &mdash; $50B program; Category F cybersecurity language; SC $200M; Tech Catalyst Fund</li>
+          <li><span class="source-org">CMS</span> &mdash; RHT Program NOFO <span class="source-date">(2025)</span><br>Subaward process; private companies as subrecipients</li>
+          <li><span class="source-org">ARPA-H</span> &mdash; UPGRADE Program <span class="source-date">(May 2024)</span><br><a href="https://arpa-h.gov/news-and-events/arpa-h-announces-program-automate-cybersecurity-health-care-facilities" target="_blank">arpa-h.gov</a> &mdash; UPGRADE $50M + DIGIHEALS $50M; $100M+ total deployed</li>
+          <li><span class="source-org">CISA</span> &mdash; SLCGP Grant Program <span class="source-date">(Aug 2025)</span><br><a href="https://www.cisa.gov/cybergrants/slcgp" target="_blank">cisa.gov</a> &mdash; FY2025 $91.75M (down 67%); 25% rural mandate; government-only eligibility</li>
+          <li><span class="source-org">HHS OCR</span> &mdash; HIPAA Security Rule NPRM <span class="source-date">(Dec 2024)</span><br><a href="https://www.hhs.gov/hipaa/for-professionals/security/hipaa-security-rule-nprm/index.html" target="_blank">hhs.gov</a> &mdash; $9B first-year compliance cost; 22 enforcement actions</li>
+          <li><span class="source-org">ONC</span> &mdash; LEAP Grants <span class="source-date">(Jan 2026)</span><br><a href="https://www.healthit.gov/topic/onc-funding-opportunities/leading-edge-acceleration-projects-leap-health-information" target="_blank">healthit.gov</a> &mdash; Up to $2M per award; for-profit eligible</li>
+          <li><span class="source-org">NIH / SBIR.gov</span> &mdash; SBIR/STTR Program <span class="source-date">(2025)</span><br><a href="https://www.sbir.gov/tutorials/program-basics/tutorial-2" target="_blank">sbir.gov</a> &mdash; Program expiration Oct 2025; pending reauthorization</li>
+          <li><span class="source-org">USDA</span> &mdash; Distance Learning &amp; Telemedicine Grants <span class="source-date">(Jan 2026)</span><br><a href="https://www.rd.usda.gov/programs-services/telecommunications-programs/distance-learning-telemedicine-grants" target="_blank">rd.usda.gov</a> &mdash; $50K&ndash;$1M per award; ~$40M FY2025</li>
+          <li><span class="source-org">HRSA</span> &mdash; Rural Health Grants <span class="source-date">(Jan 2026)</span><br><a href="https://www.hrsa.gov/rural-health/grants" target="_blank">hrsa.gov</a> &mdash; ~$365M annual rural health grants</li>
+          <li><span class="source-org">Federal Register</span> &mdash; HIPAA Security Rule <span class="source-date">(Jan 2025)</span><br>Regulatory mandate; compliance cost estimates</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Industry &amp; Research (7)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">Crunchbase</span> &mdash; 2025 Cybersecurity Report <span class="source-date">(2025)</span><br>Market $19.3B&rarr;$75&ndash;127B at 18.5% CAGR; $18B VC cybersecurity investment (up 52%)</li>
+          <li><span class="source-org">Mordor Intelligence</span> &mdash; Healthcare Cybersecurity Market <span class="source-date">(2025)</span><br>Market size projections (co-cited with Crunchbase)</li>
+          <li><span class="source-org">AHA</span> &mdash; Cybersecurity Year in Review <span class="source-date">(2024)</span><br><a href="https://www.aha.org/news/aha-cyber-intel/2025-10-07-2025-cybersecurity-year-review-part-one-breaches-and-defensive-measures" target="_blank">aha.org</a> &mdash; Change Healthcare breach: 192.7M individuals, $1.98B+ costs</li>
+          <li><span class="source-org">Microsoft</span> &mdash; Rural Hospitals Cybersecurity Program <span class="source-date">(Jun 2024)</span><br><a href="https://news.microsoft.com/source/2024/06/10/microsoft-to-help-rural-hospitals-defend-against-rising-cybersecurity-attacks/" target="_blank">news.microsoft.com</a> &mdash; 550+ hospitals enrolled; philanthropic model</li>
+          <li><span class="source-org">HIPAA Journal</span> &mdash; Healthcare Data Breach Statistics <span class="source-date">(2024&ndash;2025)</span><br><a href="https://www.hipaajournal.com/healthcare-data-breach-statistics/" target="_blank">hipaajournal.com</a> &mdash; Breach statistics; enforcement trends</li>
+          <li><span class="source-org">Guidehouse</span> &mdash; Healthcare IT Budget Survey <span class="source-date">(2024)</span><br>85%+ health systems increased IT budgets post-breach</li>
+          <li><span class="source-org">Black Book Research</span> &mdash; Rural Hospital Cybersecurity <span class="source-date">(2024&ndash;2025)</span><br>73% of small/rural hospitals lack adequate cybersecurity defenses</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Funders &mdash; State &amp; Accelerators (8)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">SCRA</span> &mdash; SC Launch Overview <span class="source-date">(Jan 2026)</span><br><a href="https://scra.org/sc-launch/" target="_blank">scra.org</a> &mdash; $15M fund; $2.9B+ follow-on since 2006; ThreatCaptain $250K investment</li>
+          <li><span class="source-org">SCRA</span> &mdash; Criteria and Eligibility <span class="source-date">(Jan 2026)</span><br><a href="https://scra.org/sc-launch/criteria-and-eligibility/" target="_blank">scra.org</a> &mdash; 10 investment criteria; market, IP, team requirements</li>
+          <li><span class="source-org">SCRA</span> &mdash; Membership FAQ <span class="source-date">(Jan 2026)</span><br><a href="https://scra.org/get-support/scra-membership/" target="_blank">scra.org</a> &mdash; Working product requirement; &lt;40% acceptance rate</li>
+          <li><span class="source-org">SC Commerce / 3Phase</span> &mdash; SBIR Support <span class="source-date">(Jan 2026)</span><br><a href="https://www.3phasesc.com" target="_blank">3phasesc.com</a> &mdash; 30% Phase I success rate; free support</li>
+          <li><span class="source-org">MUSC Zucker Institute</span> &mdash; Innovation Commercialization <span class="source-date">(Jan 2026)</span><br><a href="https://www.zuckerinnovation.org" target="_blank">zuckerinnovation.org</a> &mdash; $300M research; 34 products to market</li>
+          <li><span class="source-org">MassChallenge</span> &mdash; HealthTech Program <span class="source-date">(Jan 2026)</span><br><a href="https://masschallenge.org/programs-healthtech/" target="_blank">masschallenge.org</a> &mdash; Zero-equity; dual healthcare + security tracks</li>
+          <li><span class="source-org">MACH37</span> &mdash; Cyber Accelerator <span class="source-date">(Jan 2026)</span><br><a href="https://www.mach37.com/cyber-accelerator" target="_blank">mach37.com</a> &mdash; 83% survival rate; 64% funded; Censinet alumnus</li>
+          <li><span class="source-org">Health Wildcatters</span> &mdash; Accelerator <span class="source-date">(Jan 2026)</span><br><a href="https://www.healthwildcatters.com/accelerator" target="_blank">healthwildcatters.com</a> &mdash; MIT/Rice top-ranked; 131 companies; $350M+ raised</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Funders &mdash; Venture Capital (14)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">Town Hall Ventures</span> &mdash; Massively Better Healthcare <span class="source-date">(Jan 2026)</span><br>$1M&ndash;$25M; underserved populations; Andy Slavitt (former CMS Admin)</li>
+          <li><span class="source-org">CommonSpirit Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.commonspirit.org/ventures" target="_blank">commonspirit.org</a> &mdash; $250M fund; CAH operations in 21 states</li>
+          <li><span class="source-org">Flare Capital Partners</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.flarecapital.com" target="_blank">flarecapital.com</a> &mdash; ~$1B AUM; ClearDATA (HIPAA cloud security) in portfolio</li>
+          <li><span class="source-org">Ballistic Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://ballisticventures.com" target="_blank">ballisticventures.com</a> &mdash; $600M; cybersecurity-only; Kevin Mandia (Mandiant)</li>
+          <li><span class="source-org">Ten Eleven Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.1011vc.com" target="_blank">1011vc.com</a> &mdash; $1B+ AUM; Anatomy IT (healthcare cyber) in portfolio</li>
+          <li><span class="source-org">Cultivation Capital</span> <span class="source-date">(Jan 2026)</span><br><a href="https://cultivationcapital.com" target="_blank">cultivationcapital.com</a> &mdash; Dual cybersecurity + healthcare focus</li>
+          <li><span class="source-org">7wireVentures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.7wireventures.com" target="_blank">7wireventures.com</a> &mdash; Underserved populations; Glen Tullman (former Allscripts CEO)</li>
+          <li><span class="source-org">ForgePoint Capital</span> <span class="source-date">(Jan 2026)</span><br><a href="https://forgepointcap.com" target="_blank">forgepointcap.com</a> &mdash; $1B+ AUM; cybersecurity/AI focus</li>
+          <li><span class="source-org">Noro-Moseley Partners</span> <span class="source-date">(Jan 2026)</span><br><a href="https://noromoseley.com" target="_blank">noromoseley.com</a> &mdash; $1B+ AUM; Red Canary, Liminal in portfolio</li>
+          <li><span class="source-org">Fulcrum Equity Partners</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.fulcrumep.com" target="_blank">fulcrumep.com</a> &mdash; $372M Fund V; Digital Hands, Prevalent in portfolio</li>
+          <li><span class="source-org">Rock Health Capital</span> <span class="source-date">(Jan 2026)</span><br><a href="https://rockhealthcapital.com" target="_blank">rockhealthcapital.com</a> &mdash; Pre-Seed to Series A digital health</li>
+          <li><span class="source-org">Oak HC/FT</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.oakhcft.com" target="_blank">oakhcft.com</a> &mdash; $5.3B AUM; Main Street Health (rural) in portfolio</li>
+          <li><span class="source-org">Ascension Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://ascensionventures.org" target="_blank">ascensionventures.org</a> &mdash; $1B+ AUM; 149 investments</li>
+          <li><span class="source-org">Kaiser Permanente Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.kpventures.com" target="_blank">kpventures.com</a> &mdash; $500M+ AUM; Protenus in portfolio</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>News (1)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">Politico</span> &mdash; ARPA-H Funding Cuts <span class="source-date">(Aug 2025)</span><br>ARPA-H cuts exceeding $150M; program viability uncertainty</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">6 sources cited without direct URLs: Crunchbase 2025 Report, Mordor Intelligence, Guidehouse survey, Black Book Research, Town Hall Ventures / Massively Better Healthcare, Politico. These were cited in Claude Deep Research outputs without linkable URLs.</p>
+
   </div>
 </section>
 
