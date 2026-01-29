@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberShield Rural — Capital Thesis</title>
+  <title>CyberShield Rural — Venture Forge</title>
   <style>
-    /* ====================================================================
-       DESIGN SYSTEM — Matched to Venture Forge
-       ==================================================================== */
     :root {
       --bg-primary: #09090b;
       --bg-secondary: #18181b;
@@ -35,7 +32,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -46,946 +42,197 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ====================================================================
-       NAVIGATION
-       ==================================================================== */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(9, 9, 11, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text-primary); }
-
-    /* ====================================================================
-       LAYOUT
-       ==================================================================== */
     .container { max-width: 1100px; margin: 0 auto; }
-    section { padding: 6rem 2rem; }
-    .section-alt { background: var(--bg-secondary); }
-    .section-num {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-    .section-lead {
-      font-size: 1.125rem;
-      color: var(--text-secondary);
-      max-width: 640px;
-      margin-bottom: 3rem;
-      line-height: 1.7;
-    }
-    .gradient-text {
-      background: var(--gradient-1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ====================================================================
-       NARRATIVE
-       ==================================================================== */
-    .narrative {
-      padding: 4rem 2rem 6rem;
-      background: var(--bg-secondary);
-    }
-    .narrative .container {
-      max-width: 720px;
-    }
-    .narrative-chapter {
-      margin-bottom: 3rem;
-    }
-    .narrative-chapter:last-child {
-      margin-bottom: 0;
-    }
-    .narrative-num {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .narrative-chapter h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.01em;
-    }
-    .narrative-chapter p {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-    .narrative-chapter p strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    .narrative-divider {
-      width: 48px;
-      height: 2px;
-      background: var(--accent);
-      opacity: 0.4;
-      margin: 3.5rem 0;
-    }
-    .narrative-chapter a {
-      color: var(--text-secondary);
-      text-decoration: underline;
-      text-decoration-color: var(--accent);
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1.5px;
-      transition: color 0.2s;
-    }
-    .narrative-chapter a:hover {
-      color: var(--accent-light);
-    }
-    .narrative-chapter a strong {
-      color: inherit;
-    }
-    .narrative-cta {
-      margin-top: 3rem;
-      padding: 1.5rem 2rem;
-      background: var(--accent-glow);
-      border: 1px solid var(--border-accent);
-      border-radius: 12px;
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .narrative-cta strong {
-      color: var(--accent-light);
-    }
 
     /* ====================================================================
        HERO
        ==================================================================== */
     .hero {
-      padding: 10rem 2rem 6rem;
+      padding: 8rem 2rem 5rem;
       text-align: center;
     }
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 4.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-light);
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      border-radius: 100px;
+      padding: 0.4rem 1.2rem;
       margin-bottom: 1.5rem;
     }
-    .hero .lead {
-      font-size: 1.25rem;
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-lead {
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      max-width: 620px;
+      max-width: 720px;
       margin: 0 auto 3rem;
       line-height: 1.7;
     }
-    .funnel {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
+
+    /* ====================================================================
+       PHASE CARDS
+       ==================================================================== */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem 4rem;
     }
-    .funnel-box {
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-secondary);
+    .phase-card {
       background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
-    .funnel-box.highlight {
+    .phase-card:hover {
+      background: var(--bg-card-hover);
       border-color: var(--border-accent);
-      background: var(--accent-glow);
-      color: var(--accent-light);
+      transform: translateY(-2px);
     }
-    .funnel-arrow {
+    .phase-card.future {
+      opacity: 0.4;
+      cursor: default;
+    }
+    .phase-card.future:hover {
+      background: var(--bg-card);
+      border-color: var(--border);
+      transform: none;
+    }
+    .phase-num {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .phase-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .phase-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .phase-status {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+    }
+    .phase-status.complete {
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid var(--green-border);
+    }
+    .phase-status.gate-review {
+      background: var(--amber-bg);
+      color: var(--amber);
+      border: 1px solid var(--amber-border);
+    }
+    .phase-status.pending {
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text-muted);
-      font-size: 1rem;
+      border: 1px solid var(--border);
     }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
+
+    /* ====================================================================
+       STATS ROW
+       ==================================================================== */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 0 2rem 4rem;
     }
-    .hero-stat-value {
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-value {
       font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.02em;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero-stat-value.accent { color: var(--accent-light); }
-    .hero-stat-value.green { color: var(--green); }
-    .hero-stat-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 0.25rem;
-    }
-
-    /* ====================================================================
-       CARDS
-       ==================================================================== */
-    .card-grid { display: grid; gap: 1.5rem; }
-    .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
-    .card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-    }
-    .card-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-    .card-label.purple { color: var(--accent-light); }
-    .card-label.green { color: var(--green); }
-    .card-label.amber { color: var(--amber); }
-    .card-label.red { color: var(--red); }
-    .card-label.cyan { color: var(--cyan); }
-
-    .card h3 { margin-bottom: 0.5rem; }
-    .card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; }
-
-    .callout {
-      border: 1px dashed var(--amber-border);
-      background: var(--amber-bg);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
-    .callout strong { color: var(--amber); }
-
-    /* ====================================================================
-       STAT CARDS
-       ==================================================================== */
-    .stat-row {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-    .stat-card {
-      flex: 1;
-      min-width: 200px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .stat-card-value {
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.25rem;
-    }
-    .stat-card-label {
+    .stat-label {
       font-size: 0.8rem;
       color: var(--text-muted);
-    }
-
-    /* ====================================================================
-       DATA TABLES
-       ==================================================================== */
-    .table-wrap { overflow-x: auto; }
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
-    }
-    .data-table thead th {
-      text-align: left;
-      padding: 0.75rem 1rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .data-table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-      vertical-align: top;
-    }
-    .data-table tbody tr:hover { background: var(--bg-card); }
-    .data-table .funder-name {
-      color: var(--text-primary);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    /* ====================================================================
-       BADGES
-       ==================================================================== */
-    .badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 600;
+      margin-top: 0.25rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-    }
-    .badge.strong { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-    .badge.moderate { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-    .badge.weak { background: rgba(113,113,122,0.15); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.3); }
-    .badge.ready { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-    .badge.not-ready { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-    .badge.suspended { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-    .badge.na { background: rgba(113,113,122,0.1); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.2); }
-    .badge.type-grant { background: rgba(6,182,212,0.1); color: var(--cyan); border: 1px solid rgba(6,182,212,0.3); }
-    .badge.type-equity { background: var(--accent-glow); color: var(--accent-light); border: 1px solid var(--border-accent); }
-    .badge.type-accel { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-    .badge.type-support { background: rgba(113,113,122,0.1); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.2); }
-    .badge.blocking { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-    .badge.significant { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-    .badge.minor { background: rgba(113,113,122,0.1); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.2); }
-
-    /* ====================================================================
-       FILTER TABS
-       ==================================================================== */
-    .filter-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      padding: 0.45rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: inherit;
-    }
-    .tab-btn:hover { border-color: var(--text-muted); color: var(--text-secondary); }
-    .tab-btn.active {
-      border-color: var(--border-accent);
-      background: var(--accent-glow);
-      color: var(--accent-light);
     }
 
     /* ====================================================================
-       ACCORDION (Deep Dives)
+       PROJECT INFO
        ==================================================================== */
-    .accordion { display: flex; flex-direction: column; gap: 1rem; }
-    .accordion-item {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--bg-card);
-    }
-    .accordion-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 1.5rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .accordion-header:hover { background: var(--bg-card-hover); }
-    .accordion-header-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .accordion-header h3 { margin: 0; font-size: 1.05rem; }
-    .accordion-arrow {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      transition: transform 0.3s;
-      flex-shrink: 0;
-    }
-    .accordion-item.open .accordion-arrow { transform: rotate(180deg); }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    .accordion-item.open .accordion-content { max-height: 3000px; }
-    .accordion-body {
-      padding: 0 1.5rem 1.5rem;
+    .project-info {
+      padding: 3rem 2rem 5rem;
       border-top: 1px solid var(--border);
     }
-    .accordion-body p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.65;
-      margin-top: 1.25rem;
-    }
-    .accordion-body h4 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    /* Alignment lists */
-    .alignment-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .alignment-list li {
-      font-size: 0.875rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      border-left: 3px solid;
-      line-height: 1.5;
-    }
-    .alignment-list li.strength {
-      border-color: var(--green);
-      background: var(--green-bg);
-      color: var(--text-secondary);
-    }
-    .alignment-list li.gap-item {
-      border-color: var(--amber);
-      background: var(--amber-bg);
-      color: var(--text-secondary);
-    }
-    .alignment-list li.gap-item.blocker {
-      border-color: var(--red);
-      background: var(--red-bg);
-    }
-    .criteria-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-    .criteria-list li {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      padding-left: 1rem;
-      position: relative;
-      line-height: 1.5;
-    }
-    .criteria-list li::before {
-      content: "\2192";
-      position: absolute;
-      left: 0;
-      color: var(--accent-light);
-    }
-    .criteria-source {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    /* ====================================================================
-       DUAL-TRACK STRATEGY
-       ==================================================================== */
-    .dual-track {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    .track {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-    .track-header {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .track-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .track-step {
-      padding: 0.5rem 0.75rem;
-      background: var(--bg-secondary);
-      border-radius: 6px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-    .track-arrow {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    .track-merge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .track-merge-label {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* ====================================================================
-       ACTION TIMELINE
-       ==================================================================== */
-    .action-timeline { display: flex; flex-direction: column; gap: 0; }
-    .action-item {
-      display: flex;
-      gap: 1.25rem;
-      padding: 1rem 0;
-      border-left: 2px solid var(--border);
-      margin-left: 1rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .action-item::before {
-      content: attr(data-num);
-      position: absolute;
-      left: -0.85rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      background: var(--accent);
-      color: white;
-      border-radius: 50%;
-      font-size: 0.7rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .action-content { flex: 1; }
-    .action-content strong {
-      font-size: 0.95rem;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .action-content p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    .funder-tags {
-      display: flex;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .funder-tag {
-      font-size: 0.6rem;
-      padding: 0.15rem 0.4rem;
-      border-radius: 3px;
-      background: var(--accent-glow);
-      color: var(--accent-light);
-      border: 1px solid var(--border-accent);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ====================================================================
-       PHASE BADGES
-       ==================================================================== */
-    .phase-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-    }
-    .phase-tag.p05 { background: rgba(99,102,241,0.15); color: #818cf8; }
-    .phase-tag.p06 { background: var(--accent-glow); color: var(--accent-light); }
-    .phase-tag.p11 { background: var(--green-bg); color: var(--green); }
-    .phase-tag.p12 { background: rgba(6,182,212,0.15); color: var(--cyan); }
-    .phase-tag.ext { background: var(--red-bg); color: var(--red); }
-
-    /* ====================================================================
-       GATE REVIEW
-       ==================================================================== */
-    .validation-card {
-      background: var(--bg-card);
-      border: 1px solid var(--green-border);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .validation-status {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .validation-icon {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: var(--green-bg);
-      border: 2px solid var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-    .validation-text h3 { margin-bottom: 0.15rem; font-size: 1rem; }
-    .validation-text p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-    .validation-stats {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .validation-stat { text-align: center; }
-    .validation-stat-value { font-size: 1.5rem; font-weight: 800; }
-    .validation-stat-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
-
-    .gate-cards { display: flex; flex-direction: column; gap: 1.25rem; }
-    .gate-card {
-      background: var(--bg-card);
-      border: 1px solid var(--amber-border);
-      border-left: 4px solid var(--amber);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-    }
-    .gate-card-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.75rem;
-    }
-    .gate-num {
-      width: 2rem; height: 2rem;
-      background: var(--amber-bg);
-      border: 1px solid var(--amber-border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--amber);
-      flex-shrink: 0;
-    }
-    .gate-question {
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    .gate-context {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    .gate-options {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .gate-option {
-      padding: 0.6rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      background: var(--bg-secondary);
-      line-height: 1.5;
-    }
-    .gate-option strong { color: var(--text-primary); }
-    .gate-consequence { color: var(--text-muted); font-size: 0.8rem; }
-    .gate-group-label { font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.25rem; }
-    .gate-group-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .gate-card.strategic {
-      border-color: var(--border);
-      border-left-color: var(--text-muted);
-    }
-    .gate-card.strategic .gate-num {
-      background: var(--bg-secondary);
-      border-color: var(--border);
-      color: var(--text-muted);
-    }
-    .gate-priority {
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      margin-left: auto;
-    }
-    .gate-priority.blocking { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-    .gate-priority.strategic { background: var(--bg-secondary); color: var(--text-muted); border: 1px solid var(--border); }
-    .gate-revisit {
-      font-size: 0.8rem;
-      color: var(--accent-light);
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-
-    /* EVIDENCE BRIEFING */
-    .evidence-briefing {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-    .evidence-briefing h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
-    }
-    .evidence-briefing h4 {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-      color: var(--text-muted);
-    }
-    .briefing-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .briefing-stat { text-align: center; }
-    .briefing-stat-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent-light);
-      display: block;
-    }
-    .briefing-stat-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-    .briefing-columns {
+    .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 3rem;
     }
-    .briefing-list { list-style: none; padding: 0; margin: 0; }
-    .briefing-list li {
-      padding: 0.5rem 0 0.5rem 1rem;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      border-left: 3px solid transparent;
-    }
-    .briefing-list.strong li { border-left-color: var(--green); }
-    .briefing-list.weak li { border-left-color: var(--amber); }
-    h4.briefing-strong { color: var(--green); }
-    h4.briefing-weak { color: var(--amber); }
-
-    /* ====================================================================
-       BAR CHART (CSS-only)
-       ==================================================================== */
-    .bar-chart { margin-top: 2rem; }
-    .bar-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.75rem;
-    }
-    .bar-label {
-      width: 120px;
+    .info-section h3 {
       font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .bar-track {
-      flex: 1;
-      height: 24px;
-      background: var(--bg-secondary);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: var(--gradient-1);
-      display: flex;
-      align-items: center;
-      padding-left: 0.5rem;
-      font-size: 0.7rem;
       font-weight: 600;
-      color: white;
-      min-width: fit-content;
-    }
-
-    /* ====================================================================
-       EVIDENCE STATS
-       ==================================================================== */
-    .evidence-stats {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .evidence-stat {
-      flex: 1;
-      min-width: 120px;
-      text-align: center;
-      padding: 1.25rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .evidence-stat-value {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--accent-light);
-    }
-    .evidence-stat-label {
-      font-size: 0.7rem;
-      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 0.25rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
-
-    /* ====================================================================
-       CHECKLIST
-       ==================================================================== */
-    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .checklist li {
+    .info-section p, .info-section li {
       font-size: 0.9rem;
       color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      line-height: 1.7;
     }
-    .check-icon { color: var(--green); font-size: 1rem; }
-
-    /* ====================================================================
-       SCALE NOTE
-       ==================================================================== */
-    .scale-note {
-      background: var(--accent-glow);
-      border: 1px solid var(--border-accent);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      margin-top: 2rem;
-      line-height: 1.6;
-    }
-    .scale-note strong { color: var(--accent-light); }
-
-    /* ====================================================================
-       SOURCES
-       ==================================================================== */
-    .sources-grid {
-      display: grid;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .source-category {
-      margin-bottom: 1rem;
-    }
-    .source-category h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent-light);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .source-list {
+    .info-section ul {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
     }
-    .source-list li {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      padding: 0.5rem 0;
+    .info-section li {
+      padding: 0.4rem 0;
       border-bottom: 1px solid var(--border);
     }
-    .source-list li:last-child {
-      border-bottom: none;
-    }
-    .source-list a {
-      color: var(--text-secondary);
-      text-decoration: underline;
-      text-decoration-color: var(--accent);
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1.5px;
-      transition: color 0.2s;
-    }
-    .source-list a:hover {
-      color: var(--accent-light);
-    }
-    .source-org {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-    .source-date {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-    }
+    .info-section li:last-child { border-bottom: none; }
 
     /* ====================================================================
        FOOTER
        ==================================================================== */
     footer {
-      padding: 3rem 2rem;
       text-align: center;
+      padding: 3rem 2rem;
       border-top: 1px solid var(--border);
     }
     footer p {
@@ -996,1268 +243,161 @@
     /* ====================================================================
        RESPONSIVE
        ==================================================================== */
-    @media (max-width: 900px) {
-      .dual-track { grid-template-columns: 1fr; }
-      .track-merge { display: none; }
-    }
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .card-grid.cols-3 { grid-template-columns: 1fr; }
-      .card-grid.cols-2 { grid-template-columns: 1fr; }
-      .hero-stats { gap: 1.5rem; }
-      .hero h1 { font-size: 2.5rem; }
-      .validation-card { flex-direction: column; align-items: flex-start; }
-      .validation-stats { gap: 1rem; }
-      .stat-row { flex-direction: column; }
-      .evidence-stats { flex-direction: column; }
-      .briefing-columns { grid-template-columns: 1fr; }
-      section { padding: 4rem 1.25rem; }
-      .data-table { font-size: 0.8rem; }
-      .data-table thead th,
-      .data-table tbody td { padding: 0.5rem 0.6rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: 1fr; }
+      .phase-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ====================================================================
-     NAVIGATION
-     ==================================================================== -->
-<nav>
-  <a href="#" class="nav-logo">CyberShield Rural</a>
-  <ul class="nav-links">
-    <li><a href="#story">The Story</a></li>
-    <li><a href="#summary">Summary</a></li>
-    <li><a href="#landscape">Landscape</a></li>
-    <li><a href="#funders">Funders</a></li>
-    <li><a href="#deep-dives">Deep Dives</a></li>
-    <li><a href="#strategy">Strategy</a></li>
-    <li><a href="#timeline">Timeline</a></li>
-    <li><a href="#gate">Gate Review</a></li>
-    <li><a href="#sources">Sources</a></li>
-  </ul>
-</nav>
+<div class="container">
 
-<!-- ====================================================================
-     SECTION 00: HERO
-     ==================================================================== -->
-<section class="hero">
-  <div class="container">
-    <h1>CyberShield Rural<br><span class="gradient-text">Capital Thesis</span></h1>
-    <p class="lead">12 viable funding paths. 169 citations. No VC-backed competitor in rural hospital cybersecurity.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Venture Forge</div>
+    <h1>CyberShield <span>Rural</span></h1>
+    <p class="hero-lead">
+      A dedicated cybersecurity platform for rural hospitals — protecting ~1,800 facilities serving 46 million Americans. Built through systematic research, evidence-backed validation, and human decision gates.
+    </p>
+  </section>
 
-    <div class="funnel">
-      <div class="funnel-box">Market Gap</div>
-      <span class="funnel-arrow">&rarr;</span>
-      <div class="funnel-box">4 Research Streams</div>
-      <span class="funnel-arrow">&rarr;</span>
-      <div class="funnel-box">35 Funders Analyzed</div>
-      <span class="funnel-arrow">&rarr;</span>
-      <div class="funnel-box highlight">12 Viable</div>
-      <span class="funnel-arrow">&rarr;</span>
-      <div class="funnel-box highlight">Dual-Track Strategy</div>
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Phases Complete</div>
     </div>
-
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-value accent">12</div>
-        <div class="hero-stat-label">Viable Funders</div>
-      </div>
-      <div>
-        <div class="hero-stat-value accent">169</div>
-        <div class="hero-stat-label">Citations</div>
-      </div>
-      <div>
-        <div class="hero-stat-value green">30/31</div>
-        <div class="hero-stat-label">Checks Passed</div>
-      </div>
+    <div class="stat-card">
+      <div class="stat-value">82</div>
+      <div class="stat-label">Unique Sources</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">69/69</div>
+      <div class="stat-label">Validation Checks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">12</div>
+      <div class="stat-label">Total Phases</div>
     </div>
   </div>
-</section>
 
-<!-- ====================================================================
-     THE STORY
-     ==================================================================== -->
-<section class="narrative" id="story">
-  <div class="container">
+  <!-- PHASE CARDS -->
+  <div class="phase-grid">
 
-    <div class="narrative-chapter">
-      <div class="narrative-num">The Opportunity</div>
-      <h3>Rural hospitals are under attack, and nobody is building for them.</h3>
-      <p>In 2024, the Change Healthcare breach exposed <strong>192.7 million patient records</strong> (<a href="https://www.hipaajournal.com/healthcare-data-breach-statistics/" target="_blank">HIPAA Journal</a>) and cost over <strong>$1.98 billion</strong> (<a href="https://www.aha.org/news/aha-cyber-intel/2025-10-07-2025-cybersecurity-year-review-part-one-breaches-and-defensive-measures" target="_blank">AHA</a>). Rural hospitals &mdash; running on skeleton IT staffs and legacy systems &mdash; are the softest targets in American healthcare. But when we searched for a venture-backed company dedicated to solving this problem, we found none. <a href="https://news.microsoft.com/source/2024/06/10/microsoft-to-help-rural-hospitals-defend-against-rising-cybersecurity-attacks/" target="_blank">Microsoft</a> and Google run philanthropic programs. Federal grants patch individual facilities. <strong>No one is building a company around it.</strong></p>
+    <a href="phase-01.html" class="phase-card">
+      <div class="phase-num">Phase 01</div>
+      <h3>Capital Thesis</h3>
+      <p>What funders want. 12 viable funding paths identified across federal grants, state programs, venture capital, and accelerators. Anchored by CMS Rural Health Transformation ($200M to SC) and SCRA/SC Launch.</p>
+      <span class="phase-status complete">Complete &mdash; 36/36 checks</span>
+    </a>
+
+    <a href="phase-02.html" class="phase-card">
+      <div class="phase-num">Phase 02</div>
+      <h3>Problem Thesis</h3>
+      <p>Validated problem. 68% of rural hospitals lack a CISO, 73% have inadequate defenses, 41% already attacked. 17 customer voices, 41 sources, $1.5B annual cost documented.</p>
+      <span class="phase-status gate-review">Gate Review &mdash; 33/33 checks</span>
+    </a>
+
+    <div class="phase-card future">
+      <div class="phase-num">Phase 03</div>
+      <h3>Market Thesis</h3>
+      <p>TAM/SAM/SOM sizing for rural hospital cybersecurity. Pricing model analysis, beachhead segment identification, market entry strategy.</p>
+      <span class="phase-status pending">Pending</span>
     </div>
 
-    <div class="narrative-divider"></div>
-
-    <div class="narrative-chapter">
-      <div class="narrative-num">The Money</div>
-      <h3>Billions are flowing into exactly this gap.</h3>
-      <p>The federal government just launched a <strong>$50 billion Rural Health Transformation Program</strong> (<a href="https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview" target="_blank">CMS</a>) &mdash; and South Carolina received $200M of it, with explicit cybersecurity language in Category F. <a href="https://arpa-h.gov/news-and-events/arpa-h-announces-program-automate-cybersecurity-health-care-facilities" target="_blank">ARPA-H</a> has deployed $100M+ in healthcare cyber R&D. The proposed HIPAA Security Rule update carries a <strong>$9 billion first-year compliance cost</strong> (<a href="https://www.healthcareitnews.com/news/microsoft-and-google-white-house-offers-cybersecurity-tools-rural-hospitals" target="_blank">Healthcare IT News</a>). Meanwhile, VC investment in cybersecurity hit $18B in 2025, up 52% year-over-year. The money is there. The question is whether we can meet the criteria to access it.</p>
+    <div class="phase-card future">
+      <div class="phase-num">Phase 04</div>
+      <h3>Competitive Thesis</h3>
+      <p>Competitive landscape analysis, positioning strategy, structural barriers to existing solutions, differentiation framework.</p>
+      <span class="phase-status pending">Pending</span>
     </div>
 
-    <div class="narrative-divider"></div>
-
-    <div class="narrative-chapter">
-      <div class="narrative-num">The Path</div>
-      <h3>We found 12 doors. Here&rsquo;s which ones open first.</h3>
-      <p>We analyzed <strong>35 potential funders</strong> across federal grants, state programs, venture capital, and accelerators. 12 are viable. Two stand out: the <strong>CMS Rural Health Transformation Program</strong> (<a href="https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview" target="_blank">CMS</a>) &mdash; grant-funded, no dilution, cybersecurity explicitly eligible &mdash; and <strong>SCRA / SC Launch Inc.</strong> (<a href="https://scra.org/sc-launch/criteria-and-eligibility/" target="_blank">SCRA</a>), which already <a href="https://upstatebusinessjournal.com/business-news/greenville-based-threatcaptain-gets-250k-investment-from-sc-launch/" target="_blank">invested $250K in a cybersecurity startup</a> (<em>Upstate Business Journal</em>) and just opened a <a href="https://www.wrdw.com/2025/12/03/south-carolina-unveils-plans-launch-its-own-cybersecurity-hub/" target="_blank">Center for Cybersecurity</a> (<em>WRDW</em>). The strategy is grants first to build without giving up equity, then accelerators for validation, then VC when we have traction to prove.</p>
+    <div class="phase-card future">
+      <div class="phase-num">Phase 05</div>
+      <h3>Solution Thesis</h3>
+      <p>What to build. Product architecture, feature requirements, technology decisions, build vs buy analysis.</p>
+      <span class="phase-status pending">Pending</span>
     </div>
 
-    <div class="narrative-divider"></div>
+    <div class="phase-card future">
+      <div class="phase-num">Phase 06</div>
+      <h3>Business Thesis</h3>
+      <p>How it makes money. Revenue model, pricing strategy, unit economics, go-to-market plan.</p>
+      <span class="phase-status pending">Pending</span>
+    </div>
 
-    <div class="narrative-chapter">
-      <div class="narrative-num">The Ask</div>
-      <h3>Four decisions a human needs to make.</h3>
-      <p>The research is done. The funders are mapped. The gaps are identified. What comes next is a set of <strong>strategic choices</strong>: Do we proceed to Phase 02? Which funding track do we prioritize &mdash; grants or equity? Do we apply to accelerators before we have an MVP? When do we engage SCRA? These are judgment calls, not data problems. <strong>Scroll down for the full evidence, then jump to <a href="#gate" style="color: var(--accent-light);">Gate Review</a> when you&rsquo;re ready to decide.</strong></p>
+    <div class="phase-card future">
+      <div class="phase-num">Phase 07</div>
+      <h3>Risk Thesis</h3>
+      <p>What could go wrong. Risk identification, mitigation strategies, assumption testing, contingency planning.</p>
+      <span class="phase-status pending">Pending</span>
+    </div>
+
+    <div class="phase-card future">
+      <div class="phase-num">Phase 08</div>
+      <h3>Materials Assembly</h3>
+      <p>Evidence library and pitch materials. Case assembly, narrative construction, investor-ready documentation.</p>
+      <span class="phase-status pending">Pending</span>
+    </div>
+
+    <div class="phase-card future">
+      <div class="phase-num">Phase 09</div>
+      <h3>Narrative Assembly</h3>
+      <p>Pitch deck, executive summary, one-pagers. Materials tailored per funder type.</p>
+      <span class="phase-status pending">Pending</span>
+    </div>
+
+    <div class="phase-card future">
+      <div class="phase-num">Phase 10</div>
+      <h3>MVP Architecture</h3>
+      <p>Technical specification, system design, infrastructure decisions, security architecture.</p>
+      <span class="phase-status pending">Pending</span>
+    </div>
+
+    <div class="phase-card future">
+      <div class="phase-num">Phase 11</div>
+      <h3>MVP Build</h3>
+      <p>AI-accelerated development. Working product beyond proof-of-concept.</p>
+      <span class="phase-status pending">Pending</span>
+    </div>
+
+    <div class="phase-card future">
+      <div class="phase-num">Phase 12</div>
+      <h3>Customer Traction</h3>
+      <p>LOI or first customer. Rural hospital pilot partnership. Traction proof for funders.</p>
+      <span class="phase-status pending">Pending</span>
     </div>
 
   </div>
-</section>
 
-<!-- ====================================================================
-     SECTION 01: EXECUTIVE SUMMARY
-     ==================================================================== -->
-<section class="section-alt" id="summary">
-  <div class="container">
-    <div class="section-num">01 / Executive Summary</div>
-    <h2>Two anchor opportunities, one market gap</h2>
-    <p class="section-lead">The capital thesis identifies two high-confidence funding paths anchored by explicit cybersecurity language and investment precedent, targeting a market with zero VC-backed competitors.</p>
-
-    <div class="card-grid cols-3">
-      <div class="card">
-        <div class="card-label cyan">Anchor 1 &mdash; Federal Grant</div>
-        <h3>CMS Rural Health Transformation</h3>
-        <p>$200M to South Carolina from a $50B federal program. Category F <strong>explicitly names</strong> "cybersecurity capability development." Tech Catalyst Fund provides up to $20M/year for startup health companies.</p>
+  <!-- PROJECT INFO -->
+  <div class="project-info">
+    <div class="info-grid">
+      <div class="info-section">
+        <h3>About This Project</h3>
+        <p>CyberShield Rural is being built through Venture Forge — a systematic framework where AI agents handle research, synthesis, and generation while humans review evidence and make strategic decisions at each gate.</p>
+        <p style="margin-top: 1rem;">Each phase produces a thesis backed by third-party evidence, validated against quality gates, and presented for human review before proceeding.</p>
       </div>
-      <div class="card">
-        <div class="card-label purple">Anchor 2 &mdash; State Investment</div>
-        <h3>SCRA / SC Launch Inc.</h3>
-        <p>Invested $250K in ThreatCaptain (cybersecurity) in February 2025. Launched Center for Cybersecurity at SCRA in December 2025. Board chair has healthcare background. No healthcare cybersecurity company in current portfolio.</p>
-      </div>
-      <div class="card">
-        <div class="card-label green">Market Gap</div>
-        <h3>No VC-Backed Competitor</h3>
-        <p>No venture-backed startup dedicated to rural hospital cybersecurity was identified during the research period (2024-2025). Rural needs are addressed through corporate philanthropy (Microsoft, Google) and federal grants&mdash;not dedicated companies.</p>
-      </div>
-    </div>
-
-    <div class="callout">
-      <strong>Critical constraint: Timing.</strong> RHT subaward criteria have not been published by SC. SBIR/STTR programs expired October 2025. SCRA membership requires a working product beyond proof-of-concept. Both primary paths have blocking external dependencies.
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 02: FUNDING LANDSCAPE
-     ==================================================================== -->
-<section id="landscape">
-  <div class="container">
-    <div class="section-num">02 / Funding Landscape</div>
-    <h2>Three forces converge</h2>
-    <p class="section-lead">The healthcare cybersecurity funding environment has undergone a structural shift driven by catastrophic breach impact, unprecedented federal investment, and regulatory mandate.</p>
-
-    <div class="stat-row">
-      <div class="stat-card">
-        <div class="stat-card-value" style="color: var(--accent-light);">$19.3B &rarr; $75B</div>
-        <div class="stat-card-label">Healthcare cybersecurity market by 2032 (18.5% CAGR)</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-value" style="color: var(--red);">192.7M</div>
-        <div class="stat-card-label">Individuals affected by Change Healthcare breach</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-value" style="color: var(--amber);">$9B</div>
-        <div class="stat-card-label">Estimated first-year HIPAA compliance cost</div>
-      </div>
-    </div>
-
-    <div class="card-grid cols-3">
-      <div class="card">
-        <div class="card-label red">Force 1</div>
-        <h3>Change Healthcare Breach</h3>
-        <p>Largest healthcare breach ever (192.7M individuals, $1.98B+ costs). 85%+ of health systems increased 2024 IT budgets. Third-party risk elevated to board-level priority. 94% of AHA hospitals reported financial impact.</p>
-      </div>
-      <div class="card">
-        <div class="card-label cyan">Force 2</div>
-        <h3>Federal Investment</h3>
-        <p>$50B Rural Health Transformation Program with explicit cybersecurity language. $100M+ deployed through ARPA-H (UPGRADE + DIGIHEALS). VC cybersecurity investment reached $18B in 2025, up 52% from 2024.</p>
-      </div>
-      <div class="card">
-        <div class="card-label amber">Force 3</div>
-        <h3>Regulatory Mandate</h3>
-        <p>Proposed HIPAA Security Rule update eliminates "addressable" vs "required" distinction. Mandatory MFA, encryption, annual audits. 22 enforcement actions in 2024 ($9.9M collected). Rule frozen under regulatory review.</p>
-      </div>
-    </div>
-
-    <div class="scale-note">
-      <strong>Gap finding:</strong> No VC-backed startup dedicated to rural hospital cybersecurity was identified. 73% of small/rural hospitals lack adequate defenses. Microsoft enrolled 550+ hospitals in free program&mdash;validating demand but addressing it philanthropically, not commercially.
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 03: ACTIVE FUNDING SOURCES
-     ==================================================================== -->
-<section class="section-alt" id="funders">
-  <div class="container">
-    <div class="section-num">03 / Active Funding Sources</div>
-    <h2>35 analyzed. 12 viable.</h2>
-    <p class="section-lead">Funding sources across four categories: federal grants, state programs, venture capital, and accelerators.</p>
-
-    <div class="filter-tabs">
-      <button class="tab-btn active" data-filter="all">All (14)</button>
-      <button class="tab-btn" data-filter="federal">Federal (4)</button>
-      <button class="tab-btn" data-filter="state">State (2)</button>
-      <button class="tab-btn" data-filter="vc">Venture Capital (6)</button>
-      <button class="tab-btn" data-filter="accelerator">Accelerators (3)</button>
-    </div>
-
-    <div class="table-wrap">
-      <table class="data-table" id="funder-table">
-        <thead>
-          <tr>
-            <th>Funder</th>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Stage</th>
-            <th>Viability</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-category="federal">
-            <td class="funder-name">CMS Rural Health Transformation</td>
-            <td><span class="badge type-grant">Grant</span></td>
-            <td>Up to $20M/yr (Tech Catalyst)</td>
-            <td>Subrecipient</td>
-            <td><span class="badge strong">Strong</span></td>
-          </tr>
-          <tr data-category="state">
-            <td class="funder-name">SCRA / SC Launch Inc.</td>
-            <td><span class="badge type-grant">Grant</span> + <span class="badge type-equity">Equity</span></td>
-            <td>$25K&ndash;$550K</td>
-            <td>Post-MVP</td>
-            <td><span class="badge strong">Strong</span></td>
-          </tr>
-          <tr data-category="federal">
-            <td class="funder-name">ARPA-H UPGRADE/DIGIHEALS</td>
-            <td><span class="badge type-grant">Grant</span></td>
-            <td>$9.5M&ndash;$19M per award</td>
-            <td>R&D</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="federal">
-            <td class="funder-name">ONC LEAP Grants</td>
-            <td><span class="badge type-grant">Grant</span></td>
-            <td>Up to $2M</td>
-            <td>Various</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="vc">
-            <td class="funder-name">Town Hall Ventures</td>
-            <td><span class="badge type-equity">Equity</span></td>
-            <td>$1M&ndash;$25M</td>
-            <td>Various</td>
-            <td><span class="badge strong">Strong</span></td>
-          </tr>
-          <tr data-category="vc">
-            <td class="funder-name">CommonSpirit Ventures</td>
-            <td><span class="badge type-equity">Equity</span></td>
-            <td>Not disclosed ($250M fund)</td>
-            <td>Various</td>
-            <td><span class="badge strong">Strong</span></td>
-          </tr>
-          <tr data-category="vc">
-            <td class="funder-name">Flare Capital Partners</td>
-            <td><span class="badge type-equity">Equity</span></td>
-            <td>$1M&ndash;$8M</td>
-            <td>Seed&ndash;Series B</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="vc">
-            <td class="funder-name">Ballistic Ventures</td>
-            <td><span class="badge type-equity">Equity</span></td>
-            <td>Seed/Series A ($600M fund)</td>
-            <td>Seed&ndash;A</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="vc">
-            <td class="funder-name">Ten Eleven Ventures</td>
-            <td><span class="badge type-equity">Equity</span></td>
-            <td>Stage agnostic ($1B+ AUM)</td>
-            <td>Any</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="vc">
-            <td class="funder-name">Cultivation Capital</td>
-            <td><span class="badge type-equity">Equity</span></td>
-            <td>$100K&ndash;$3.5M</td>
-            <td>Seed&ndash;A</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="accelerator">
-            <td class="funder-name">MassChallenge</td>
-            <td><span class="badge type-accel">Accelerator</span></td>
-            <td>Prizes (zero equity)</td>
-            <td>Early</td>
-            <td><span class="badge strong">Strong</span></td>
-          </tr>
-          <tr data-category="accelerator">
-            <td class="funder-name">MACH37</td>
-            <td><span class="badge type-accel">Accelerator</span></td>
-            <td>5% equity</td>
-            <td>Early</td>
-            <td><span class="badge strong">Strong</span></td>
-          </tr>
-          <tr data-category="accelerator">
-            <td class="funder-name">Health Wildcatters</td>
-            <td><span class="badge type-accel">Accelerator</span></td>
-            <td>$30K&ndash;$380K (8% equity)</td>
-            <td>Early</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-          <tr data-category="state">
-            <td class="funder-name">MUSC Zucker Institute</td>
-            <td><span class="badge type-support">Support</span></td>
-            <td>Varies</td>
-            <td>Various</td>
-            <td><span class="badge moderate">Moderate</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 04: FUNDER DEEP DIVES
-     ==================================================================== -->
-<section id="deep-dives">
-  <div class="container">
-    <div class="section-num">04 / Funder Deep Dives</div>
-    <h2>Detailed analysis of high-alignment sources</h2>
-    <p class="section-lead">Each funder profiled with criteria, portfolio precedent, alignment strengths, and gaps with resolution paths.</p>
-
-    <div class="accordion">
-
-      <!-- CMS RHT -->
-      <div class="accordion-item open">
-        <div class="accordion-header">
-          <div class="accordion-header-left">
-            <h3>CMS Rural Health Transformation</h3>
-            <span class="badge type-grant">Grant</span>
-            <span class="badge strong">Strong</span>
-          </div>
-          <span class="accordion-arrow">&#9660;</span>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-body">
-            <p>$50 billion, five-year initiative distributing $10 billion annually to all 50 states. South Carolina received $200,030,252 for FY2026. Category F explicitly funds "cybersecurity capability development." Tech Catalyst Fund provides up to $20M/year for startup health companies. No repayment, no state match.</p>
-
-            <h4>Stated Criteria</h4>
-            <ul class="criteria-list">
-              <li>Technical assistance, software, and hardware for cybersecurity capability development and patient health outcomes <span class="criteria-source">(CMS RHT Overview, Dec 2025)</span></li>
-              <li>One-time, high-impact investments with sustainability plan <span class="criteria-source">(Director Eunice Medina, 2025)</span></li>
-              <li>Tech Catalyst Fund: seed funding for innovative startup health companies, capped at $20M/year <span class="criteria-source">(CMS RHT Overview)</span></li>
-            </ul>
-
-            <h4>Alignment</h4>
-            <ul class="alignment-list">
-              <li class="strength">Category F explicitly names cybersecurity capability development</li>
-              <li class="strength">Tech Catalyst Fund specifically targets startup health companies</li>
-              <li class="strength">SC received $200M &mdash; among largest allocations</li>
-              <li class="strength">Grant-based (no equity dilution)</li>
-              <li class="gap-item blocker">State subaward criteria not yet published &mdash; cannot prepare targeted application <span class="badge blocking">Blocking</span></li>
-              <li class="gap-item">Requires rural hospital implementation partner <span class="badge significant">Significant</span></li>
-              <li class="gap-item">Sustainability plan required <span class="badge significant">Significant</span></li>
-            </ul>
-
-            <h4>Timeline</h4>
-            <p>State awards announced December 29, 2025. Subaward application dates not yet published. Monitor SCDHHS Medicaid Bulletins. Contact: grants@scdhhs.gov</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- SCRA -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-header-left">
-            <h3>SCRA / SC Launch Inc.</h3>
-            <span class="badge type-grant">Grant</span> <span class="badge type-equity">Equity</span>
-            <span class="badge strong">Strong</span>
-          </div>
-          <span class="accordion-arrow">&#9660;</span>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-body">
-            <p>South Carolina Research Authority operates tiered grant programs ($25K-$50K) and SC Launch Inc. equity investments ($200K-$550K). SC Launch manages a $15 million fund. Portfolio companies generated $2.9B+ in follow-on funding since 2006. Membership acceptance rate below 40%.</p>
-
-            <h4>Stated Criteria</h4>
-            <ul class="criteria-list">
-              <li>Large, rapidly expanding market <span class="criteria-source">(SCRA Criteria and Eligibility)</span></li>
-              <li>Durable intellectual property protection <span class="criteria-source">(SCRA Criteria and Eligibility)</span></li>
-              <li>Experienced team with established board of advisors <span class="criteria-source">(SCRA Criteria and Eligibility)</span></li>
-              <li>High potential to attract follow-on funding <span class="criteria-source">(SCRA Criteria and Eligibility)</span></li>
-              <li>Working product beyond proof-of-concept <span class="criteria-source">(SCRA Membership FAQ)</span></li>
-              <li>HQ in SC or 51%+ full-time employees in SC <span class="criteria-source">(SCRA Membership FAQ)</span></li>
-            </ul>
-
-            <h4>Portfolio Precedent</h4>
-            <ul class="criteria-list">
-              <li>ThreatCaptain: $250K equity + $50K grant (Feb 2025) &mdash; cybersecurity for MSPs</li>
-              <li>PulManage: $250K &mdash; remote monitoring for lung disease</li>
-              <li>VirtueScript: $250K &mdash; post-acute medication delivery</li>
-              <li>No healthcare cybersecurity company in portfolio &mdash; gap for CyberShield to fill</li>
-            </ul>
-
-            <h4>Decision Makers</h4>
-            <ul class="criteria-list">
-              <li>Andrea Marshall &mdash; SC Launch Board Chair; VP/General Counsel at MedTrust Holdings</li>
-              <li>Brian Shea &mdash; Director, Center for Cybersecurity at SCRA</li>
-              <li>Regional IMs: Kevin Eichelberger (Charleston), Mitch Smith (Columbia), Rob Moser (Greenville)</li>
-            </ul>
-
-            <h4>Alignment</h4>
-            <ul class="alignment-list">
-              <li class="strength">ThreatCaptain precedent proves cybersecurity appetite</li>
-              <li class="strength">Center for Cybersecurity launched December 2025</li>
-              <li class="strength">Board chair has healthcare background</li>
-              <li class="strength">No healthcare cybersecurity in portfolio &mdash; gap to fill</li>
-              <li class="gap-item blocker">Requires working product beyond proof-of-concept <span class="badge blocking">Blocking</span></li>
-              <li class="gap-item">Membership acceptance rate below 40% <span class="badge significant">Significant</span></li>
-            </ul>
-
-            <h4>Timeline</h4>
-            <p>Rolling applications. Multi-stage process: interest form &rarr; screening &rarr; formal application &rarr; pitch &rarr; membership approval &rarr; grant invitation &rarr; investment due diligence.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Town Hall Ventures -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-header-left">
-            <h3>Town Hall Ventures</h3>
-            <span class="badge type-equity">Equity</span>
-            <span class="badge strong">Strong</span>
-          </div>
-          <span class="accordion-arrow">&#9660;</span>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-body">
-            <p>Healthcare VC targeting tech-enabled innovation for underserved populations. $1M-$25M check sizes. Key partner Andy Slavitt served as CMS Administrator. Co-invests with CommonSpirit Ventures, a16z, NEA.</p>
-
-            <h4>Stated Criteria</h4>
-            <ul class="criteria-list">
-              <li>Tech-enabled innovation for underserved populations <span class="criteria-source">(Massively Better Healthcare)</span></li>
-            </ul>
-
-            <h4>Alignment</h4>
-            <ul class="alignment-list">
-              <li class="strength">Highest explicit alignment with underserved/rural market positioning</li>
-              <li class="strength">Former CMS Administrator understands rural health funding landscape</li>
-              <li class="strength">Co-investor with CommonSpirit Ventures</li>
-              <li class="gap-item">Requires meaningful traction for investment <span class="badge significant">Significant</span></li>
-            </ul>
-
-            <h4>Timeline</h4>
-            <p>Standard VC process. Rolling. Timeline unknown.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CommonSpirit -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-header-left">
-            <h3>CommonSpirit Ventures</h3>
-            <span class="badge type-equity">Equity</span>
-            <span class="badge strong">Strong</span>
-          </div>
-          <span class="accordion-arrow">&#9660;</span>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-body">
-            <p>Hospital system venture arm. $250M fund (4th fund), 36 direct investments. CommonSpirit Health operates critical access facilities across 21 states&mdash;they understand rural hospital challenges firsthand.</p>
-
-            <h4>Stated Criteria</h4>
-            <ul class="criteria-list">
-              <li>Care outcomes improvement <span class="criteria-source">(CommonSpirit Ventures)</span></li>
-              <li>Consumer experience elevation <span class="criteria-source">(CommonSpirit Ventures)</span></li>
-              <li>Health equity and health disparities <span class="criteria-source">(CommonSpirit Ventures)</span></li>
-            </ul>
-
-            <h4>Alignment</h4>
-            <ul class="alignment-list">
-              <li class="strength">Operates critical access facilities &mdash; firsthand rural understanding</li>
-              <li class="strength">Health disparities focus aligns with rural mission</li>
-              <li class="strength">Strategic value beyond capital (potential pilot customers)</li>
-              <li class="gap-item">No cybersecurity investments identified <span class="badge significant">Significant</span></li>
-              <li class="gap-item">Strategic investors typically want product maturity <span class="badge significant">Significant</span></li>
-            </ul>
-
-            <h4>Timeline</h4>
-            <p>Standard VC process. Rolling. Timeline unknown.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARPA-H -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-header-left">
-            <h3>ARPA-H UPGRADE / DIGIHEALS</h3>
-            <span class="badge type-grant">Grant</span>
-            <span class="badge moderate">Moderate</span>
-          </div>
-          <span class="accordion-arrow">&#9660;</span>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-body">
-            <p>$100M+ deployed for healthcare cybersecurity R&D. UPGRADE ($50M) focuses on automated patching. DIGIHEALS ($50M) on digital health security. Private companies can apply directly. Awards: Northeastern ($19M), UC San Diego ($9.5M), Systems &amp; Technology Research ($16M).</p>
-
-            <h4>Alignment</h4>
-            <ul class="alignment-list">
-              <li class="strength">Direct healthcare cybersecurity focus</li>
-              <li class="strength">Private companies eligible</li>
-              <li class="strength">Large award sizes ($9.5M&ndash;$19M)</li>
-              <li class="gap-item blocker">August 2025 reports of ARPA-H funding cuts (Politico) <span class="badge blocking">Blocking</span></li>
-              <li class="gap-item">R&D focus requires advanced technical capabilities <span class="badge significant">Significant</span></li>
-              <li class="gap-item">Awards skew heavily toward universities <span class="badge significant">Significant</span></li>
-            </ul>
-
-            <h4>Timeline</h4>
-            <p>Current solicitation status requires direct verification with ARPA-H. Confidence: low.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Accelerators -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-header-left">
-            <h3>Accelerators (MassChallenge, MACH37, Health Wildcatters)</h3>
-            <span class="badge type-accel">Accelerator</span>
-            <span class="badge strong">Strong</span>
-          </div>
-          <span class="accordion-arrow">&#9660;</span>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-body">
-            <p><strong>MassChallenge</strong> &mdash; Zero-equity dual track: Healthcare (April) and Security &amp; Resiliency (September). Partners include MITRE. Eligibility: under $3M revenue, under $5M equity funding.</p>
-            <p><strong>MACH37</strong> &mdash; Cybersecurity-only accelerator. 94 graduates, 83% survival rate, 64% received investment. Censinet (healthcare third-party risk, AHA Preferred Provider) is alumnus. 5% equity to VentureScope.</p>
-            <p><strong>Health Wildcatters</strong> &mdash; Top-ranked (MIT/Rice) healthcare accelerator. $30K for 8% equity, follow-on up to $380K. 131 companies, $350M+ raised.</p>
-
-            <h4>Alignment</h4>
-            <ul class="alignment-list">
-              <li class="strength">MassChallenge: Zero equity, dual healthcare + security tracks</li>
-              <li class="strength">MACH37: Censinet alumnus proves healthcare cybersecurity path</li>
-              <li class="strength">Can be pursued pre-MVP as validation path</li>
-              <li class="strength">All three provide investor network and Demo Day exposure</li>
-              <li class="gap-item">8% equity (Health Wildcatters) is meaningful dilution <span class="badge minor">Minor</span></li>
-            </ul>
-
-            <h4>Timeline</h4>
-            <p>MassChallenge HealthTech: April 2026. MassChallenge Security: September 2026. Health Wildcatters: Fall 2026 cohort. MACH37: Application-based (TBD).</p>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /accordion -->
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 05: ALIGNMENT STRATEGY
-     ==================================================================== -->
-<section class="section-alt" id="strategy">
-  <div class="container">
-    <div class="section-num">05 / Alignment Strategy</div>
-    <h2>Dual-track: grants first, equity second</h2>
-    <p class="section-lead">Non-dilutive grant funding as primary path, with accelerators and VC engagement building toward equity investment when traction demonstrates market validation.</p>
-
-    <div class="dual-track">
-      <div class="track">
-        <div class="track-header" style="color: var(--cyan);">Track A &mdash; Grants (Non-Dilutive)</div>
-        <div class="track-flow">
-          <div class="track-step">CMS RHT Program (Tech Catalyst Fund)</div>
-          <div class="track-arrow">&darr;</div>
-          <div class="track-step">SCRA Startup/Acceleration Grants ($25K&ndash;$50K)</div>
-          <div class="track-arrow">&darr;</div>
-          <div class="track-step">ONC LEAP / ARPA-H (if solicitations align)</div>
-          <div class="track-arrow">&darr;</div>
-          <div class="track-step">SBIR/STTR (when reauthorized)</div>
-        </div>
-      </div>
-      <div class="track-merge">
-        <div class="track-merge-label">Converge</div>
-      </div>
-      <div class="track">
-        <div class="track-header" style="color: var(--accent-light);">Track B &mdash; Equity (Dilutive)</div>
-        <div class="track-flow">
-          <div class="track-step">Accelerators (MassChallenge, MACH37)</div>
-          <div class="track-arrow">&darr;</div>
-          <div class="track-step">SCRA / SC Launch Equity ($200K&ndash;$550K)</div>
-          <div class="track-arrow">&darr;</div>
-          <div class="track-step">Strategic VC (Town Hall, CommonSpirit)</div>
-          <div class="track-arrow">&darr;</div>
-          <div class="track-step">Cybersecurity VC (Ballistic, Ten Eleven)</div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Priority Actions</h3>
-    <div class="action-timeline">
-      <div class="action-item" data-num="1">
-        <div class="action-content">
-          <strong>Subscribe to SCDHHS Medicaid Bulletins and contact grants@scdhhs.gov</strong>
-          <p>Addresses RHT Program's unpublished subaward criteria (blocking gap)</p>
-          <div class="funder-tags"><span class="funder-tag">CMS RHT</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="2">
-        <div class="action-content">
-          <strong>Build working product beyond proof-of-concept</strong>
-          <p>Addresses SCRA's MVP requirement (blocking); required for all VC engagement</p>
-          <div class="funder-tags"><span class="funder-tag">SCRA</span><span class="funder-tag">All VCs</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="3">
-        <div class="action-content">
-          <strong>Secure rural hospital LOI or pilot partnership</strong>
-          <p>Addresses RHT rural implementation requirement; validates market for VCs</p>
-          <div class="funder-tags"><span class="funder-tag">CMS RHT</span><span class="funder-tag">Town Hall</span><span class="funder-tag">CommonSpirit</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="4">
-        <div class="action-content">
-          <strong>Apply for SCRA Membership</strong>
-          <p>Prerequisite to all SCRA grant and investment opportunities; begin relationship with Regional Investment Manager</p>
-          <div class="funder-tags"><span class="funder-tag">SCRA</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="5">
-        <div class="action-content">
-          <strong>Develop sustainability narrative</strong>
-          <p>Required by RHT; expected by all funders; Phase 06 (Business Thesis) deliverable</p>
-          <div class="funder-tags"><span class="funder-tag">CMS RHT</span><span class="funder-tag">SCRA</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="6">
-        <div class="action-content">
-          <strong>Establish advisory board</strong>
-          <p>SCRA stated criterion; include healthcare, cybersecurity, and rural health expertise</p>
-          <div class="funder-tags"><span class="funder-tag">SCRA</span><span class="funder-tag">All VCs</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="7">
-        <div class="action-content">
-          <strong>Prepare IP strategy</strong>
-          <p>SCRA evaluates "durable intellectual property protection"; include patents, trade secrets, or proprietary methodology</p>
-          <div class="funder-tags"><span class="funder-tag">SCRA</span><span class="funder-tag">Ballistic</span><span class="funder-tag">Ten Eleven</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="8">
-        <div class="action-content">
-          <strong>Apply to MassChallenge and/or MACH37</strong>
-          <p>Non-dilutive or low-dilution validation + network building; can pursue before MVP</p>
-          <div class="funder-tags"><span class="funder-tag">MassChallenge</span><span class="funder-tag">MACH37</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="9">
-        <div class="action-content">
-          <strong>Enroll in 3Phase for SBIR readiness</strong>
-          <p>Free support; 30% success rate vs 17% national average; activate when SBIR/STTR reauthorized</p>
-          <div class="funder-tags"><span class="funder-tag">SBIR/STTR</span><span class="funder-tag">3Phase</span></div>
-        </div>
-      </div>
-      <div class="action-item" data-num="10">
-        <div class="action-content">
-          <strong>Build VC pitch materials for Town Hall and CommonSpirit</strong>
-          <p>Highest strategic alignment; approach after traction (Phase 12)</p>
-          <div class="funder-tags"><span class="funder-tag">Town Hall</span><span class="funder-tag">CommonSpirit</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 06: PHASE DEPENDENCIES
-     ==================================================================== -->
-<section>
-  <div class="container">
-    <div class="section-num">06 / Phase Dependencies</div>
-    <h2>Seven gaps mapped to resolution phases</h2>
-    <p class="section-lead">Each gap is tied to a specific Venture Forge phase (or external dependency) and lists which funders are affected.</p>
-
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Gap</th>
-            <th>Resolution</th>
-            <th>Funders Affected</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="funder-name">No working product</td>
-            <td><span class="phase-tag p11">Phase 11</span> MVP Build</td>
-            <td>SCRA, all VCs, most accelerators</td>
-          </tr>
-          <tr>
-            <td class="funder-name">No rural hospital partner</td>
-            <td><span class="phase-tag p12">Phase 12</span> Customer Traction</td>
-            <td>CMS RHT, Town Hall, CommonSpirit</td>
-          </tr>
-          <tr>
-            <td class="funder-name">No sustainability model</td>
-            <td><span class="phase-tag p06">Phase 06</span> Business Thesis</td>
-            <td>CMS RHT, SCRA</td>
-          </tr>
-          <tr>
-            <td class="funder-name">No IP strategy</td>
-            <td><span class="phase-tag p05">Phase 05</span> Solution Thesis</td>
-            <td>SCRA, Ballistic, Ten Eleven</td>
-          </tr>
-          <tr>
-            <td class="funder-name">No advisory board</td>
-            <td><span class="phase-tag p05">Phase 05</span>&ndash;<span class="phase-tag p06">06</span></td>
-            <td>SCRA, all VCs</td>
-          </tr>
-          <tr>
-            <td class="funder-name">RHT subaward criteria unknown</td>
-            <td><span class="phase-tag ext">External</span> SCDHHS</td>
-            <td>CMS RHT</td>
-          </tr>
-          <tr>
-            <td class="funder-name">SBIR/STTR expired</td>
-            <td><span class="phase-tag ext">External</span> Congress</td>
-            <td>SBIR, 3Phase, SCRA Federal Matching</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 07: FUNDING TIMELINE
-     ==================================================================== -->
-<section class="section-alt" id="timeline">
-  <div class="container">
-    <div class="section-num">07 / Funding Timeline</div>
-    <h2>Deadlines, decisions, and readiness</h2>
-    <p class="section-lead">Mapped across all viable funders with readiness assessment for each path.</p>
-
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Funder</th>
-            <th>Next Deadline</th>
-            <th>Decision Timeline</th>
-            <th>Readiness</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="funder-name">CMS RHT (SC)</td>
-            <td>TBD &mdash; subaward criteria not published</td>
-            <td>Unknown</td>
-            <td><span class="badge not-ready">Not yet</span> needs rural partner + SCDHHS criteria</td>
-          </tr>
-          <tr>
-            <td class="funder-name">SCRA Membership</td>
-            <td>Rolling</td>
-            <td>Multi-stage (not public)</td>
-            <td><span class="badge not-ready">Not yet</span> needs working product beyond PoC</td>
-          </tr>
-          <tr>
-            <td class="funder-name">ARPA-H</td>
-            <td>Unknown &mdash; verify status</td>
-            <td>Unknown</td>
-            <td><span class="badge not-ready">Not yet</span> needs R&D capability assessment</td>
-          </tr>
-          <tr>
-            <td class="funder-name">ONC LEAP</td>
-            <td>FY2026 solicitation TBD</td>
-            <td>Annual cycle</td>
-            <td><span class="badge not-ready">Not yet</span> needs cybersecurity in solicitation</td>
-          </tr>
-          <tr>
-            <td class="funder-name">MassChallenge HealthTech</td>
-            <td>April 2026 program start</td>
-            <td>Before program start</td>
-            <td><span class="badge ready">Ready</span></td>
-          </tr>
-          <tr>
-            <td class="funder-name">MassChallenge Security</td>
-            <td>September 2026 program start</td>
-            <td>Before program start</td>
-            <td><span class="badge ready">Ready</span></td>
-          </tr>
-          <tr>
-            <td class="funder-name">Health Wildcatters</td>
-            <td>Fall 2026 cohort</td>
-            <td>Before cohort start</td>
-            <td><span class="badge ready">Ready</span></td>
-          </tr>
-          <tr>
-            <td class="funder-name">MACH37</td>
-            <td>Application-based (TBD)</td>
-            <td>12-week program</td>
-            <td><span class="badge ready">Ready</span></td>
-          </tr>
-          <tr>
-            <td class="funder-name">Town Hall Ventures</td>
-            <td>Rolling</td>
-            <td>Standard VC</td>
-            <td><span class="badge not-ready">Not yet</span> needs traction</td>
-          </tr>
-          <tr>
-            <td class="funder-name">CommonSpirit Ventures</td>
-            <td>Rolling</td>
-            <td>Standard VC</td>
-            <td><span class="badge not-ready">Not yet</span> needs traction</td>
-          </tr>
-          <tr>
-            <td class="funder-name">Ballistic Ventures</td>
-            <td>Rolling</td>
-            <td>Standard VC</td>
-            <td><span class="badge not-ready">Not yet</span> needs traction + differentiation</td>
-          </tr>
-          <tr>
-            <td class="funder-name">Flare Capital</td>
-            <td>Rolling</td>
-            <td>Standard VC</td>
-            <td><span class="badge not-ready">Not yet</span> needs traction</td>
-          </tr>
-          <tr>
-            <td class="funder-name">Ten Eleven Ventures</td>
-            <td>Rolling</td>
-            <td>Standard VC</td>
-            <td><span class="badge not-ready">Not yet</span> needs traction</td>
-          </tr>
-          <tr>
-            <td class="funder-name">Cultivation Capital</td>
-            <td>Rolling</td>
-            <td>Standard VC</td>
-            <td><span class="badge not-ready">Not yet</span> needs traction</td>
-          </tr>
-          <tr>
-            <td class="funder-name">MUSC Zucker</td>
-            <td>Rolling</td>
-            <td>Direct engagement</td>
-            <td><span class="badge ready">Ready</span> partnership value</td>
-          </tr>
-          <tr>
-            <td class="funder-name">SBIR/STTR</td>
-            <td>SUSPENDED</td>
-            <td>Pending reauthorization</td>
-            <td><span class="badge suspended">Expired</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="scale-note" style="margin-top: 1.5rem;">
-      <strong>Note:</strong> Seven viable VC funders have unknown decision timelines&mdash;standard for VC processes with no fixed application cycles. All are documented in funder-profiles.yaml.
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 08: GATE REVIEW
-     ==================================================================== -->
-<section id="gate">
-  <div class="container">
-    <div class="section-num">08 / Gate Review</div>
-    <h2>Human decisions needed</h2>
-    <p class="section-lead">AI researched. AI validated. Humans decide. Review the evidence briefing, then make four strategic decisions.</p>
-
-    <!-- Evidence Briefing -->
-    <div class="evidence-briefing">
-      <h3>Evidence Briefing</h3>
-
-      <div class="briefing-section">
-        <h4>What the Evidence Shows</h4>
-        <div class="briefing-stats">
-          <div class="briefing-stat">
-            <span class="briefing-stat-value">35</span>
-            <span class="briefing-stat-label">Funders Analyzed</span>
-          </div>
-          <div class="briefing-stat">
-            <span class="briefing-stat-value">12</span>
-            <span class="briefing-stat-label">Viable Funders</span>
-          </div>
-          <div class="briefing-stat">
-            <span class="briefing-stat-value">169</span>
-            <span class="briefing-stat-label">Citations</span>
-          </div>
-          <div class="briefing-stat">
-            <span class="briefing-stat-value">41</span>
-            <span class="briefing-stat-label">Unique Sources</span>
-          </div>
-          <div class="briefing-stat">
-            <span class="briefing-stat-value">30/31</span>
-            <span class="briefing-stat-label">Checks Passed</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="briefing-columns">
-        <div class="briefing-column">
-          <h4 class="briefing-strong">What's Strong</h4>
-          <ul class="briefing-list strong">
-            <li>Multiple funding tracks available (federal grants, state programs, VC, accelerators) &mdash; no single-source dependency</li>
-            <li>Two strong anchor funders: CMS RHT Program ($50B, Category F cybersecurity language) and ARPA-H UPGRADE ($50M+ for healthcare cybersecurity automation)</li>
-            <li>Market tailwind: healthcare cybersecurity spending up 52% YoY, HIPAA Security Rule NPRM creates $9B compliance mandate</li>
-            <li>SC-specific advantages: SCRA $15M fund, 3Phase SBIR support, MUSC Zucker Institute &mdash; geographic clustering creates a support ecosystem</li>
-            <li>Three zero-equity accelerator paths (MassChallenge, MACH37, Health Wildcatters) available pre-MVP for validation and network</li>
-          </ul>
-        </div>
-        <div class="briefing-column">
-          <h4 class="briefing-weak">What's Weak or Unresolved</h4>
-          <ul class="briefing-list weak">
-            <li>7 of 12 viable funders are VCs with unknown application timelines &mdash; outreach timing is a guess until conversations start</li>
-            <li>Primary anchor (CMS RHT) has unpublished Category F criteria &mdash; alignment is inferred from program language, not confirmed requirements</li>
-            <li>SCRA requires a working product beyond proof-of-concept and has &lt;40% acceptance rate &mdash; not accessible until Phase 10-11</li>
-            <li>No working product, no team, no traction yet &mdash; all funder conversations are hypothetical until later phases address these gaps</li>
-            <li>ARPA-H facing $150M+ funding cuts (Politico, Aug 2025) &mdash; UPGRADE program viability uncertain</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Validation Summary -->
-    <div class="validation-card">
-      <div class="validation-status">
-        <div class="validation-icon">&#10003;</div>
-        <div class="validation-text">
-          <h3>Ready for Gate Review</h3>
-          <p>31 automated checks completed. 30 passed, 1 warning (7 VCs with unknown timelines&mdash;expected for pre-engagement stage).</p>
-        </div>
-      </div>
-      <div class="validation-stats">
-        <div class="validation-stat">
-          <div class="validation-stat-value" style="color: var(--green);">30</div>
-          <div class="validation-stat-label">Passed</div>
-        </div>
-        <div class="validation-stat">
-          <div class="validation-stat-value" style="color: var(--amber);">1</div>
-          <div class="validation-stat-label">Warning</div>
-        </div>
-        <div class="validation-stat">
-          <div class="validation-stat-value" style="color: var(--red);">0</div>
-          <div class="validation-stat-label">Failed</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Blocking Decisions -->
-    <h3 class="gate-group-label">Blocking Decision</h3>
-    <p class="gate-group-desc">Must be resolved before the next phase can start.</p>
-    <div class="gate-cards">
-
-      <div class="gate-card blocking">
-        <div class="gate-card-header">
-          <div class="gate-num">1</div>
-          <div class="gate-question">Proceed to Phase 02?</div>
-          <span class="gate-priority blocking">Blocking</span>
-        </div>
-        <p class="gate-context">The capital thesis identifies 12 viable funding paths across 4 categories with two strong anchors (CMS RHT, ARPA-H). The healthcare cybersecurity market is growing at 18.5% CAGR with a regulatory mandate (HIPAA NPRM) creating urgency. All funders require a validated problem and most require a working product &mdash; both are addressed in later phases.</p>
-        <div class="gate-options">
-          <div class="gate-option">
-            <strong>Proceed</strong>
-            <span class="gate-consequence">&rarr; Starts Phase 02 Problem Thesis. Research validates whether rural hospital cybersecurity is a real, documented, severe problem worth building for. Produces evidence.yaml, customer-voice.md, and thesis.md with citations.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Revise</strong>
-            <span class="gate-consequence">&rarr; Re-runs capital research targeting specific gaps. Specify what needs strengthening (e.g., more federal grant options, deeper VC profiling, international funders).</span>
-          </div>
-          <div class="gate-option">
-            <strong>Kill</strong>
-            <span class="gate-consequence">&rarr; Archives CyberShield Rural. Capital thesis data preserved at phases/01-capital/ for reference. Project marked as killed in portfolio.</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Strategic Decisions -->
-    <h3 class="gate-group-label">Strategic Decisions</h3>
-    <p class="gate-group-desc">Inform strategy but do not block the next phase. Can be deferred &mdash; later phases will produce data that makes these choices clearer.</p>
-    <div class="gate-cards">
-
-      <div class="gate-card strategic">
-        <div class="gate-card-header">
-          <div class="gate-num">2</div>
-          <div class="gate-question">Which funding track to prioritize?</div>
-          <span class="gate-priority strategic">Strategic</span>
-        </div>
-        <p class="gate-context">The dual-track strategy covers grants (Track A) and equity (Track B). Both primary grant paths have external dependencies: CMS RHT criteria are unpublished, SCRA requires a working product. VC timelines are unknown for 7 of 12 viable funders. Accelerators offer a middle path with validation + network before committing to either track.</p>
-        <p class="gate-revisit">Revisit after Phase 05 (Solution Thesis) &mdash; solution design will determine which funders align best and which track to weight.</p>
-        <div class="gate-options">
-          <div class="gate-option">
-            <strong>Grants first</strong>
-            <span class="gate-consequence">&rarr; Prioritize CMS RHT and SCRA alignment in Phases 05-07. Design solution and business model to maximize grant eligibility. Risk: RHT criteria may not align once published.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Accelerator first</strong>
-            <span class="gate-consequence">&rarr; Apply to MassChallenge/MACH37 during Phase 02-04. Use accelerator network to validate approach before committing to grants or VC. Risk: delays funder engagement by one cycle.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Dual-track</strong>
-            <span class="gate-consequence">&rarr; Pursue grants and accelerator/VC in parallel. Higher workload but maximizes optionality. Requires managing multiple application timelines simultaneously.</span>
-          </div>
-          <div class="gate-option">
-            <strong>VC-first</strong>
-            <span class="gate-consequence">&rarr; Skip grants, target healthcare cybersecurity VCs (Ballistic, Ten Eleven, Flare Capital) directly. Faster path but requires MVP + traction (Phase 10-11) before meaningful conversations.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gate-card strategic">
-        <div class="gate-card-header">
-          <div class="gate-num">3</div>
-          <div class="gate-question">Accelerator timing?</div>
-          <span class="gate-priority strategic">Strategic</span>
-        </div>
-        <p class="gate-context">MassChallenge HealthTech starts April 2026 (zero-equity, MITRE partner). MACH37 is rolling admission (94 graduates, 83% survival rate). Health Wildcatters runs Fall 2026 ($30K/8% equity). All accept pre-MVP companies and provide validation + network.</p>
-        <p class="gate-revisit">Revisit after Phase 04 (Competitive Thesis) &mdash; competitive analysis will clarify whether accelerator network or direct funder engagement is more valuable.</p>
-        <div class="gate-options">
-          <div class="gate-option">
-            <strong>Apply now</strong>
-            <span class="gate-consequence">&rarr; Submit to MassChallenge and/or MACH37 during Phase 02-04. Application uses capital thesis + problem thesis as evidence. Acceptance provides validation signal for other funders.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Wait until after MVP</strong>
-            <span class="gate-consequence">&rarr; Apply after Phase 10 with working software. Stronger application but misses MassChallenge April 2026 cohort. MACH37 rolling admission still available.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Skip accelerators</strong>
-            <span class="gate-consequence">&rarr; Focus resources on direct funder engagement. Saves time but loses access to mentor networks, peer cohort, and validation signal that accelerator acceptance provides.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gate-card strategic">
-        <div class="gate-card-header">
-          <div class="gate-num">4</div>
-          <div class="gate-question">SCRA engagement timing?</div>
-          <span class="gate-priority strategic">Strategic</span>
-        </div>
-        <p class="gate-context">SCRA SC Launch requires a working product beyond proof-of-concept and SC headquarters or employees. Acceptance rate is below 40%. The process is relationship-driven and invite-oriented. SCRA has invested $15M with $2.9B+ follow-on capital since 2006.</p>
-        <p class="gate-revisit">Revisit after Phase 09 (MVP Architecture) &mdash; tech spec will determine timeline to working product, which is SCRA's primary requirement.</p>
-        <div class="gate-options">
-          <div class="gate-option">
-            <strong>Engage now</strong>
-            <span class="gate-consequence">&rarr; Begin informal relationship-building during Phase 02-04. Attend SCRA events, connect with board members. Does not result in funding yet but builds the relationship needed for later application.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Wait for MVP</strong>
-            <span class="gate-consequence">&rarr; Formal application after Phase 10-11 with working product. Meets their stated requirements but cold outreach to relationship-driven org carries higher rejection risk.</span>
-          </div>
-          <div class="gate-option">
-            <strong>Both</strong>
-            <span class="gate-consequence">&rarr; Informal outreach now (events, introductions), formal application after MVP. Balances relationship-building with meeting their product requirement. Recommended by SCRA's own process documentation.</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 09: EVIDENCE SUMMARY & FOOTER
-     ==================================================================== -->
-<section class="section-alt">
-  <div class="container">
-    <div class="section-num">09 / Evidence Base</div>
-    <h2>Quantified research foundation</h2>
-
-    <div class="evidence-stats">
-      <div class="evidence-stat">
-        <div class="evidence-stat-value">35</div>
-        <div class="evidence-stat-label">Funders Analyzed</div>
-      </div>
-      <div class="evidence-stat">
-        <div class="evidence-stat-value">12</div>
-        <div class="evidence-stat-label">Viable</div>
-      </div>
-      <div class="evidence-stat">
-        <div class="evidence-stat-value">169</div>
-        <div class="evidence-stat-label">Total Citations</div>
-      </div>
-      <div class="evidence-stat">
-        <div class="evidence-stat-value">47</div>
-        <div class="evidence-stat-label">Evidence Items</div>
-      </div>
-      <div class="evidence-stat">
-        <div class="evidence-stat-value">7</div>
-        <div class="evidence-stat-label">Conflicts Resolved</div>
-      </div>
-    </div>
-
-    <h3>Citation Distribution</h3>
-    <div class="bar-chart">
-      <div class="bar-row">
-        <div class="bar-label">Requirements</div>
-        <div class="bar-track"><div class="bar-fill" style="width: 100%;">56</div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label">Landscape</div>
-        <div class="bar-track"><div class="bar-fill" style="width: 89%;">50</div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label">Criteria</div>
-        <div class="bar-track"><div class="bar-fill" style="width: 84%;">47</div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label">Portfolio</div>
-        <div class="bar-track"><div class="bar-fill" style="width: 43%;">24</div></div>
-      </div>
-    </div>
-
-    <h3 style="margin-top: 2.5rem;">Gate Criteria</h3>
-    <ul class="checklist">
-      <li><span class="check-icon">&#10003;</span> At least 2 viable funding sources identified (12 viable)</li>
-      <li><span class="check-icon">&#10003;</span> Funder criteria clearly documented with sources</li>
-      <li><span class="check-icon">&#10003;</span> Clear path to meeting funder requirements identified</li>
-      <li><span class="check-icon">&#10003;</span> Funding timelines and decision processes documented</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ====================================================================
-     SECTION 10: SOURCES
-     ==================================================================== -->
-<section class="section-alt" id="sources">
-  <div class="container">
-    <div class="section-num">10 / Sources</div>
-    <h2>41 third-party sources</h2>
-    <p class="section-lead">Every claim in this thesis is cited to a third-party source. Below is the complete list, organized by category.</p>
-
-    <div class="sources-grid">
-
-      <div class="source-category">
-        <h3>Government (12)</h3>
-        <ul class="source-list">
-          <li><span class="source-org">CMS</span> &mdash; RHT Program Overview <span class="source-date">(Dec 2025)</span><br><a href="https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview" target="_blank">cms.gov</a> &mdash; $50B program; Category F cybersecurity language; SC $200M; Tech Catalyst Fund</li>
-          <li><span class="source-org">CMS</span> &mdash; RHT Program NOFO <span class="source-date">(2025)</span><br>Subaward process; private companies as subrecipients</li>
-          <li><span class="source-org">ARPA-H</span> &mdash; UPGRADE Program <span class="source-date">(May 2024)</span><br><a href="https://arpa-h.gov/news-and-events/arpa-h-announces-program-automate-cybersecurity-health-care-facilities" target="_blank">arpa-h.gov</a> &mdash; UPGRADE $50M + DIGIHEALS $50M; $100M+ total deployed</li>
-          <li><span class="source-org">CISA</span> &mdash; SLCGP Grant Program <span class="source-date">(Aug 2025)</span><br><a href="https://www.cisa.gov/cybergrants/slcgp" target="_blank">cisa.gov</a> &mdash; FY2025 $91.75M (down 67%); 25% rural mandate; government-only eligibility</li>
-          <li><span class="source-org">HHS OCR</span> &mdash; HIPAA Security Rule NPRM <span class="source-date">(Dec 2024)</span><br><a href="https://www.hhs.gov/hipaa/for-professionals/security/hipaa-security-rule-nprm/index.html" target="_blank">hhs.gov</a> &mdash; $9B first-year compliance cost; 22 enforcement actions</li>
-          <li><span class="source-org">ONC</span> &mdash; LEAP Grants <span class="source-date">(Jan 2026)</span><br><a href="https://www.healthit.gov/topic/onc-funding-opportunities/leading-edge-acceleration-projects-leap-health-information" target="_blank">healthit.gov</a> &mdash; Up to $2M per award; for-profit eligible</li>
-          <li><span class="source-org">NIH / SBIR.gov</span> &mdash; SBIR/STTR Program <span class="source-date">(2025)</span><br><a href="https://www.sbir.gov/tutorials/program-basics/tutorial-2" target="_blank">sbir.gov</a> &mdash; Program expiration Oct 2025; pending reauthorization</li>
-          <li><span class="source-org">USDA</span> &mdash; Distance Learning &amp; Telemedicine Grants <span class="source-date">(Jan 2026)</span><br><a href="https://www.rd.usda.gov/programs-services/telecommunications-programs/distance-learning-telemedicine-grants" target="_blank">rd.usda.gov</a> &mdash; $50K&ndash;$1M per award; ~$40M FY2025</li>
-          <li><span class="source-org">HRSA</span> &mdash; Rural Health Grants <span class="source-date">(Jan 2026)</span><br><a href="https://www.hrsa.gov/rural-health/grants" target="_blank">hrsa.gov</a> &mdash; ~$365M annual rural health grants</li>
-          <li><span class="source-org">Federal Register</span> &mdash; HIPAA Security Rule <span class="source-date">(Jan 2025)</span><br>Regulatory mandate; compliance cost estimates</li>
+      <div class="info-section">
+        <h3>Technology Stack</h3>
+        <ul>
+          <li>Research: Claude Deep Research</li>
+          <li>Processing &amp; Generation: Claude Opus 4.5</li>
+          <li>Orchestration: Claude Code</li>
+          <li>Framework: Venture Forge</li>
+          <li>Storage: Files + GitHub</li>
         </ul>
       </div>
-
-      <div class="source-category">
-        <h3>Industry &amp; Research (7)</h3>
-        <ul class="source-list">
-          <li><span class="source-org">Crunchbase</span> &mdash; 2025 Cybersecurity Report <span class="source-date">(2025)</span><br>Market $19.3B&rarr;$75&ndash;127B at 18.5% CAGR; $18B VC cybersecurity investment (up 52%)</li>
-          <li><span class="source-org">Mordor Intelligence</span> &mdash; Healthcare Cybersecurity Market <span class="source-date">(2025)</span><br>Market size projections (co-cited with Crunchbase)</li>
-          <li><span class="source-org">AHA</span> &mdash; Cybersecurity Year in Review <span class="source-date">(2024)</span><br><a href="https://www.aha.org/news/aha-cyber-intel/2025-10-07-2025-cybersecurity-year-review-part-one-breaches-and-defensive-measures" target="_blank">aha.org</a> &mdash; Change Healthcare breach: 192.7M individuals, $1.98B+ costs</li>
-          <li><span class="source-org">Microsoft</span> &mdash; Rural Hospitals Cybersecurity Program <span class="source-date">(Jun 2024)</span><br><a href="https://news.microsoft.com/source/2024/06/10/microsoft-to-help-rural-hospitals-defend-against-rising-cybersecurity-attacks/" target="_blank">news.microsoft.com</a> &mdash; 550+ hospitals enrolled; philanthropic model</li>
-          <li><span class="source-org">HIPAA Journal</span> &mdash; Healthcare Data Breach Statistics <span class="source-date">(2024&ndash;2025)</span><br><a href="https://www.hipaajournal.com/healthcare-data-breach-statistics/" target="_blank">hipaajournal.com</a> &mdash; Breach statistics; enforcement trends</li>
-          <li><span class="source-org">Guidehouse</span> &mdash; Healthcare IT Budget Survey <span class="source-date">(2024)</span><br>85%+ health systems increased IT budgets post-breach</li>
-          <li><span class="source-org">Black Book Research</span> &mdash; Rural Hospital Cybersecurity <span class="source-date">(2024&ndash;2025)</span><br>73% of small/rural hospitals lack adequate cybersecurity defenses</li>
-        </ul>
-      </div>
-
-      <div class="source-category">
-        <h3>Funders &mdash; State &amp; Accelerators (8)</h3>
-        <ul class="source-list">
-          <li><span class="source-org">SCRA</span> &mdash; SC Launch Overview <span class="source-date">(Jan 2026)</span><br><a href="https://scra.org/sc-launch/" target="_blank">scra.org</a> &mdash; $15M fund; $2.9B+ follow-on since 2006; ThreatCaptain $250K investment</li>
-          <li><span class="source-org">SCRA</span> &mdash; Criteria and Eligibility <span class="source-date">(Jan 2026)</span><br><a href="https://scra.org/sc-launch/criteria-and-eligibility/" target="_blank">scra.org</a> &mdash; 10 investment criteria; market, IP, team requirements</li>
-          <li><span class="source-org">SCRA</span> &mdash; Membership FAQ <span class="source-date">(Jan 2026)</span><br><a href="https://scra.org/get-support/scra-membership/" target="_blank">scra.org</a> &mdash; Working product requirement; &lt;40% acceptance rate</li>
-          <li><span class="source-org">SC Commerce / 3Phase</span> &mdash; SBIR Support <span class="source-date">(Jan 2026)</span><br><a href="https://www.3phasesc.com" target="_blank">3phasesc.com</a> &mdash; 30% Phase I success rate; free support</li>
-          <li><span class="source-org">MUSC Zucker Institute</span> &mdash; Innovation Commercialization <span class="source-date">(Jan 2026)</span><br><a href="https://www.zuckerinnovation.org" target="_blank">zuckerinnovation.org</a> &mdash; $300M research; 34 products to market</li>
-          <li><span class="source-org">MassChallenge</span> &mdash; HealthTech Program <span class="source-date">(Jan 2026)</span><br><a href="https://masschallenge.org/programs-healthtech/" target="_blank">masschallenge.org</a> &mdash; Zero-equity; dual healthcare + security tracks</li>
-          <li><span class="source-org">MACH37</span> &mdash; Cyber Accelerator <span class="source-date">(Jan 2026)</span><br><a href="https://www.mach37.com/cyber-accelerator" target="_blank">mach37.com</a> &mdash; 83% survival rate; 64% funded; Censinet alumnus</li>
-          <li><span class="source-org">Health Wildcatters</span> &mdash; Accelerator <span class="source-date">(Jan 2026)</span><br><a href="https://www.healthwildcatters.com/accelerator" target="_blank">healthwildcatters.com</a> &mdash; MIT/Rice top-ranked; 131 companies; $350M+ raised</li>
-        </ul>
-      </div>
-
-      <div class="source-category">
-        <h3>Funders &mdash; Venture Capital (14)</h3>
-        <ul class="source-list">
-          <li><span class="source-org">Town Hall Ventures</span> &mdash; Massively Better Healthcare <span class="source-date">(Jan 2026)</span><br>$1M&ndash;$25M; underserved populations; Andy Slavitt (former CMS Admin)</li>
-          <li><span class="source-org">CommonSpirit Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.commonspirit.org/ventures" target="_blank">commonspirit.org</a> &mdash; $250M fund; CAH operations in 21 states</li>
-          <li><span class="source-org">Flare Capital Partners</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.flarecapital.com" target="_blank">flarecapital.com</a> &mdash; ~$1B AUM; ClearDATA (HIPAA cloud security) in portfolio</li>
-          <li><span class="source-org">Ballistic Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://ballisticventures.com" target="_blank">ballisticventures.com</a> &mdash; $600M; cybersecurity-only; Kevin Mandia (Mandiant)</li>
-          <li><span class="source-org">Ten Eleven Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.1011vc.com" target="_blank">1011vc.com</a> &mdash; $1B+ AUM; Anatomy IT (healthcare cyber) in portfolio</li>
-          <li><span class="source-org">Cultivation Capital</span> <span class="source-date">(Jan 2026)</span><br><a href="https://cultivationcapital.com" target="_blank">cultivationcapital.com</a> &mdash; Dual cybersecurity + healthcare focus</li>
-          <li><span class="source-org">7wireVentures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.7wireventures.com" target="_blank">7wireventures.com</a> &mdash; Underserved populations; Glen Tullman (former Allscripts CEO)</li>
-          <li><span class="source-org">ForgePoint Capital</span> <span class="source-date">(Jan 2026)</span><br><a href="https://forgepointcap.com" target="_blank">forgepointcap.com</a> &mdash; $1B+ AUM; cybersecurity/AI focus</li>
-          <li><span class="source-org">Noro-Moseley Partners</span> <span class="source-date">(Jan 2026)</span><br><a href="https://noromoseley.com" target="_blank">noromoseley.com</a> &mdash; $1B+ AUM; Red Canary, Liminal in portfolio</li>
-          <li><span class="source-org">Fulcrum Equity Partners</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.fulcrumep.com" target="_blank">fulcrumep.com</a> &mdash; $372M Fund V; Digital Hands, Prevalent in portfolio</li>
-          <li><span class="source-org">Rock Health Capital</span> <span class="source-date">(Jan 2026)</span><br><a href="https://rockhealthcapital.com" target="_blank">rockhealthcapital.com</a> &mdash; Pre-Seed to Series A digital health</li>
-          <li><span class="source-org">Oak HC/FT</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.oakhcft.com" target="_blank">oakhcft.com</a> &mdash; $5.3B AUM; Main Street Health (rural) in portfolio</li>
-          <li><span class="source-org">Ascension Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://ascensionventures.org" target="_blank">ascensionventures.org</a> &mdash; $1B+ AUM; 149 investments</li>
-          <li><span class="source-org">Kaiser Permanente Ventures</span> <span class="source-date">(Jan 2026)</span><br><a href="https://www.kpventures.com" target="_blank">kpventures.com</a> &mdash; $500M+ AUM; Protenus in portfolio</li>
-        </ul>
-      </div>
-
-      <div class="source-category">
-        <h3>News (1)</h3>
-        <ul class="source-list">
-          <li><span class="source-org">Politico</span> &mdash; ARPA-H Funding Cuts <span class="source-date">(Aug 2025)</span><br>ARPA-H cuts exceeding $150M; program viability uncertainty</li>
-        </ul>
-      </div>
-
     </div>
-
-    <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">6 sources cited without direct URLs: Crunchbase 2025 Report, Mordor Intelligence, Guidehouse survey, Black Book Research, Town Hall Ventures / Massively Better Healthcare, Politico. These were cited in Claude Deep Research outputs without linkable URLs.</p>
-
   </div>
-</section>
+
+</div>
 
 <footer>
-  <div class="container">
-    <p>CyberShield Rural &mdash; Capital Thesis v1.0 &mdash; January 28, 2026 &mdash; Venture Forge</p>
-  </div>
+  <p>CyberShield Rural &bull; Venture Forge &bull; 2026-01-28</p>
 </footer>
-
-<!-- ====================================================================
-     JAVASCRIPT
-     ==================================================================== -->
-<script>
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Filter tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      const filter = this.dataset.filter;
-      document.querySelectorAll('#funder-table tbody tr').forEach(row => {
-        row.style.display = (filter === 'all' || row.dataset.category === filter) ? '' : 'none';
-      });
-    });
-  });
-
-  // Accordion
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', function() {
-      const item = this.parentElement;
-      item.classList.toggle('open');
-    });
-  });
-</script>
 
 </body>
 </html>

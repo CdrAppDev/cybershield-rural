@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShield Rural — Problem Thesis</title>
+  <style>
+    /* ====================================================================
+       DESIGN SYSTEM — Matched to Venture Forge
+       ==================================================================== */
+    :root {
+      --bg-primary: #09090b;
+      --bg-secondary: #18181b;
+      --bg-card: #1f1f23;
+      --bg-card-hover: #27272a;
+      --accent: #8b5cf6;
+      --accent-light: #a78bfa;
+      --accent-glow: rgba(139, 92, 246, 0.12);
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(139, 92, 246, 0.3);
+      --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      --green: #22c55e;
+      --green-bg: rgba(34, 197, 94, 0.1);
+      --green-border: rgba(34, 197, 94, 0.3);
+      --amber: #fbbf24;
+      --amber-bg: rgba(251, 191, 36, 0.1);
+      --amber-border: rgba(251, 191, 36, 0.3);
+      --red: #ef4444;
+      --red-bg: rgba(239, 68, 68, 0.1);
+      --red-border: rgba(239, 68, 68, 0.3);
+      --cyan: #06b6d4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 2rem;
+    }
+
+    /* ====================================================================
+       PHASE NAVIGATION
+       ==================================================================== */
+    .phase-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 101;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+    .phase-nav a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .phase-nav a:hover { color: var(--text-primary); }
+    .phase-nav .phase-current {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .phase-nav .phase-future {
+      color: var(--text-muted);
+      cursor: default;
+    }
+
+    /* ====================================================================
+       NAVIGATION
+       ==================================================================== */
+    nav {
+      position: fixed;
+      top: 2rem; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    /* ====================================================================
+       LAYOUT
+       ==================================================================== */
+    .container { max-width: 1100px; margin: 0 auto; }
+    section { padding: 6rem 2rem; }
+    .section-alt { background: var(--bg-secondary); }
+    .section-num {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .section-lead {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+    .gradient-text {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ====================================================================
+       NARRATIVE
+       ==================================================================== */
+    .narrative {
+      padding: 4rem 2rem 6rem;
+      background: var(--bg-secondary);
+    }
+    .narrative .container {
+      max-width: 720px;
+    }
+    .narrative-chapter {
+      margin-bottom: 3rem;
+    }
+    .narrative-chapter:last-child {
+      margin-bottom: 0;
+    }
+    .narrative-num {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .narrative-chapter h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .narrative-chapter p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .narrative-chapter p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .narrative-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.4;
+      margin: 3.5rem 0;
+    }
+    .narrative-chapter a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      transition: color 0.2s;
+    }
+    .narrative-chapter a:hover {
+      color: var(--accent-light);
+    }
+    .narrative-chapter a strong {
+      color: inherit;
+    }
+    .narrative-cta {
+      margin-top: 3rem;
+      padding: 1.5rem 2rem;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .narrative-cta strong {
+      color: var(--accent-light);
+    }
+
+    /* ====================================================================
+       HERO
+       ==================================================================== */
+    .hero {
+      padding: 12rem 2rem 6rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    .hero .lead {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .hero-stat-value.accent { color: var(--accent-light); }
+    .hero-stat-value.green { color: var(--green); }
+    .hero-stat-value.red { color: var(--red); }
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.25rem;
+    }
+
+    /* ====================================================================
+       CARDS
+       ==================================================================== */
+    .card-grid { display: grid; gap: 1.5rem; }
+    .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .card-label.purple { color: var(--accent-light); }
+    .card-label.green { color: var(--green); }
+    .card-label.amber { color: var(--amber); }
+    .card-label.red { color: var(--red); }
+    .card-label.cyan { color: var(--cyan); }
+
+    .card h3 { margin-bottom: 0.5rem; }
+    .card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; }
+
+    .callout {
+      border: 1px dashed var(--amber-border);
+      background: var(--amber-bg);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .callout strong { color: var(--amber); }
+
+    /* ====================================================================
+       STAT CARDS
+       ==================================================================== */
+    .stat-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 200px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-card-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+    .stat-card-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ====================================================================
+       DATA TABLES
+       ==================================================================== */
+    .table-wrap { overflow-x: auto; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .data-table thead th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .data-table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .data-table tbody tr:hover { background: var(--bg-card); }
+    .data-table .funder-name {
+      color: var(--text-primary);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* ====================================================================
+       BADGES
+       ==================================================================== */
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+    .badge.strong { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .badge.moderate { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .badge.weak { background: rgba(113,113,122,0.15); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.3); }
+    .badge.ready { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .badge.not-ready { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .badge.suspended { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .badge.na { background: rgba(113,113,122,0.1); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.2); }
+    .badge.type-grant { background: rgba(6,182,212,0.1); color: var(--cyan); border: 1px solid rgba(6,182,212,0.3); }
+    .badge.type-equity { background: var(--accent-glow); color: var(--accent-light); border: 1px solid var(--border-accent); }
+    .badge.type-accel { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .badge.type-support { background: rgba(113,113,122,0.1); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.2); }
+    .badge.blocking { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .badge.significant { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .badge.minor { background: rgba(113,113,122,0.1); color: var(--text-muted); border: 1px solid rgba(113,113,122,0.2); }
+    .badge.rural-no { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .badge.rural-partial { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .badge.rural-yes { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+
+    /* ====================================================================
+       FILTER TABS
+       ==================================================================== */
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .tab-btn:hover { border-color: var(--text-muted); color: var(--text-secondary); }
+    .tab-btn.active {
+      border-color: var(--border-accent);
+      background: var(--accent-glow);
+      color: var(--accent-light);
+    }
+
+    /* ====================================================================
+       ACCORDION (Deep Dives)
+       ==================================================================== */
+    .accordion { display: flex; flex-direction: column; gap: 1rem; }
+    .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .accordion-header:hover { background: var(--bg-card-hover); }
+    .accordion-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .accordion-header h3 { margin: 0; font-size: 1.05rem; }
+    .accordion-arrow {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .accordion-item.open .accordion-arrow { transform: rotate(180deg); }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-item.open .accordion-content { max-height: 5000px; }
+    .accordion-body {
+      padding: 0 1.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .accordion-body p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-top: 1.25rem;
+    }
+    .accordion-body h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Alignment lists */
+    .alignment-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .alignment-list li {
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      border-left: 3px solid;
+      line-height: 1.5;
+    }
+    .alignment-list li.strength {
+      border-color: var(--green);
+      background: var(--green-bg);
+      color: var(--text-secondary);
+    }
+    .alignment-list li.gap-item {
+      border-color: var(--amber);
+      background: var(--amber-bg);
+      color: var(--text-secondary);
+    }
+    .alignment-list li.gap-item.blocker {
+      border-color: var(--red);
+      background: var(--red-bg);
+    }
+    .criteria-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .criteria-list li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .criteria-list li::before {
+      content: "\2192";
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+    }
+    .criteria-source {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ====================================================================
+       DUAL-TRACK STRATEGY
+       ==================================================================== */
+    .dual-track {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .track {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .track-header {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .track-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .track-step {
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-secondary);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .track-arrow {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .track-merge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .track-merge-label {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ====================================================================
+       ACTION TIMELINE
+       ==================================================================== */
+    .action-timeline { display: flex; flex-direction: column; gap: 0; }
+    .action-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1rem 0;
+      border-left: 2px solid var(--border);
+      margin-left: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .action-item::before {
+      content: attr(data-num);
+      position: absolute;
+      left: -0.85rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .action-content { flex: 1; }
+    .action-content strong {
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .action-content p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .funder-tags {
+      display: flex;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .funder-tag {
+      font-size: 0.6rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      background: var(--accent-glow);
+      color: var(--accent-light);
+      border: 1px solid var(--border-accent);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ====================================================================
+       PHASE BADGES
+       ==================================================================== */
+    .phase-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .phase-tag.p05 { background: rgba(99,102,241,0.15); color: #818cf8; }
+    .phase-tag.p06 { background: var(--accent-glow); color: var(--accent-light); }
+    .phase-tag.p11 { background: var(--green-bg); color: var(--green); }
+    .phase-tag.p12 { background: rgba(6,182,212,0.15); color: var(--cyan); }
+    .phase-tag.ext { background: var(--red-bg); color: var(--red); }
+
+    /* ====================================================================
+       GATE REVIEW
+       ==================================================================== */
+    .validation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--green-border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .validation-status {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .validation-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--green-bg);
+      border: 2px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .validation-text h3 { margin-bottom: 0.15rem; font-size: 1rem; }
+    .validation-text p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+    .validation-stats {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .validation-stat { text-align: center; }
+    .validation-stat-value { font-size: 1.5rem; font-weight: 800; }
+    .validation-stat-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .gate-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+    .gate-card {
+      background: var(--bg-card);
+      border: 1px solid var(--amber-border);
+      border-left: 4px solid var(--amber);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+    }
+    .gate-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .gate-num {
+      width: 2rem; height: 2rem;
+      background: var(--amber-bg);
+      border: 1px solid var(--amber-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+    .gate-question {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .gate-context {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .gate-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .gate-option {
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      line-height: 1.5;
+    }
+    .gate-option strong { color: var(--text-primary); }
+    .gate-consequence { color: var(--text-muted); font-size: 0.8rem; }
+    .gate-group-label { font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.25rem; }
+    .gate-group-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .gate-card.strategic {
+      border-color: var(--border);
+      border-left-color: var(--text-muted);
+    }
+    .gate-card.strategic .gate-num {
+      background: var(--bg-secondary);
+      border-color: var(--border);
+      color: var(--text-muted);
+    }
+    .gate-priority {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+    .gate-priority.blocking { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .gate-priority.strategic { background: var(--bg-secondary); color: var(--text-muted); border: 1px solid var(--border); }
+    .gate-revisit {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    /* EVIDENCE BRIEFING */
+    .evidence-briefing {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .evidence-briefing h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+    .evidence-briefing h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+    .briefing-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .briefing-stat { text-align: center; }
+    .briefing-stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      display: block;
+    }
+    .briefing-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .briefing-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .briefing-list { list-style: none; padding: 0; margin: 0; }
+    .briefing-list li {
+      padding: 0.5rem 0 0.5rem 1rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      border-left: 3px solid transparent;
+    }
+    .briefing-list.strong li { border-left-color: var(--green); }
+    .briefing-list.weak li { border-left-color: var(--amber); }
+    h4.briefing-strong { color: var(--green); }
+    h4.briefing-weak { color: var(--amber); }
+
+    /* ====================================================================
+       BAR CHART (CSS-only)
+       ==================================================================== */
+    .bar-chart { margin-top: 2rem; }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .bar-label {
+      width: 180px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .bar-track {
+      flex: 1;
+      height: 28px;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--gradient-1);
+      display: flex;
+      align-items: center;
+      padding-left: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: white;
+      min-width: fit-content;
+    }
+
+    /* ====================================================================
+       EVIDENCE STATS
+       ==================================================================== */
+    .evidence-stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .evidence-stat {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .evidence-stat-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent-light);
+    }
+    .evidence-stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.25rem;
+    }
+
+    /* ====================================================================
+       CHECKLIST
+       ==================================================================== */
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .checklist li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .check-icon { color: var(--green); font-size: 1rem; }
+
+    /* ====================================================================
+       SCALE NOTE
+       ==================================================================== */
+    .scale-note {
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-top: 2rem;
+      line-height: 1.6;
+    }
+    .scale-note strong { color: var(--accent-light); }
+
+    /* ====================================================================
+       SOURCES
+       ==================================================================== */
+    .sources-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .source-category {
+      margin-bottom: 1rem;
+    }
+    .source-category h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .source-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .source-list li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-list li:last-child {
+      border-bottom: none;
+    }
+    .source-list a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      transition: color 0.2s;
+    }
+    .source-list a:hover {
+      color: var(--accent-light);
+    }
+    .source-org {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .source-date {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ====================================================================
+       QUOTE CARD
+       ==================================================================== */
+    .quote-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+    }
+    .quote-card .quote-theme {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--accent-light);
+      margin-bottom: 0.75rem;
+    }
+    .quote-card blockquote {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .quote-card .quote-attr {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ====================================================================
+       ADOPTION BARRIERS
+       ==================================================================== */
+    .barrier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .barrier-list li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      padding: 0.75rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      border-radius: 6px;
+      line-height: 1.5;
+    }
+    .barrier-list li strong {
+      color: var(--text-primary);
+    }
+
+    /* ====================================================================
+       FOOTER
+       ==================================================================== */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    footer p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ====================================================================
+       RESPONSIVE
+       ==================================================================== */
+    @media (max-width: 900px) {
+      .dual-track { grid-template-columns: 1fr; }
+      .track-merge { display: none; }
+      .bar-label { width: 140px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .card-grid.cols-3 { grid-template-columns: 1fr; }
+      .card-grid.cols-2 { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .hero h1 { font-size: 2.5rem; }
+      .validation-card { flex-direction: column; align-items: flex-start; }
+      .validation-stats { gap: 1rem; }
+      .stat-row { flex-direction: column; }
+      .evidence-stats { flex-direction: column; }
+      .briefing-columns { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.25rem; }
+      .data-table { font-size: 0.8rem; }
+      .data-table thead th,
+      .data-table tbody td { padding: 0.5rem 0.6rem; }
+      .bar-label { width: 100px; font-size: 0.65rem; }
+      .phase-nav { font-size: 0.7rem; padding: 0.4rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====================================================================
+     PHASE NAVIGATION
+     ==================================================================== -->
+<div class="phase-nav">
+  <a href="phase-01.html">&larr; Phase 01: Capital Thesis</a>
+  <a href="index.html" class="phase-current">CyberShield Rural</a>
+  <span class="phase-future">Phase 03: Market Thesis &rarr;</span>
+</div>
+
+<!-- ====================================================================
+     SECTION NAVIGATION
+     ==================================================================== -->
+<nav>
+  <a href="#" class="nav-logo">CyberShield Rural</a>
+  <ul class="nav-links">
+    <li><a href="#story">The Story</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#evidence">Evidence</a></li>
+    <li><a href="#voices">Customer Voices</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#gate">Gate Review</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+<!-- ====================================================================
+     SECTION 00: HERO
+     ==================================================================== -->
+<section class="hero">
+  <div class="container">
+    <h1>CyberShield Rural<br><span class="gradient-text">Problem Thesis</span></h1>
+    <p class="lead">~1,800 rural hospitals face an existential cybersecurity crisis they cannot solve alone. 68% have no dedicated cybersecurity leader, 73% lack adequate defenses, and no dedicated solution exists for this segment.</p>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-value accent">~1,800</div>
+        <div class="hero-stat-label">Rural Hospitals at Risk</div>
+      </div>
+      <div>
+        <div class="hero-stat-value accent">68%</div>
+        <div class="hero-stat-label">No Dedicated CISO</div>
+      </div>
+      <div>
+        <div class="hero-stat-value red">41%</div>
+        <div class="hero-stat-label">Already Attacked</div>
+      </div>
+      <div>
+        <div class="hero-stat-value green">33/33</div>
+        <div class="hero-stat-label">Validation Checks Passed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     THE STORY
+     ==================================================================== -->
+<section class="narrative" id="story">
+  <div class="container">
+
+    <div class="narrative-chapter">
+      <div class="narrative-num">The Problem</div>
+      <h3>Rural hospitals face the same cyber threats as major health systems with a fraction of the resources.</h3>
+      <p>Approximately <strong>~1,800 rural community hospitals</strong> serve <strong>46 million Americans</strong>, including ~1,377 Critical Access Hospitals across 45 states. <strong>68% have no dedicated CISO</strong>, <strong>73% lack adequate cybersecurity defenses</strong> (up from 61% in 2023), and IT staff "wear 15-20 hats" &mdash; looking at logs one minute, changing light bulbs the next. With <strong>46% operating at negative margins</strong> and average CAH margins at just 2.6%, cybersecurity competes directly with keeping hospital doors open. <span class="criteria-source">(<a href="https://www.beckershospitalreview.com/healthcare-information-technology/cybersecurity/cybersecurity-takes-back-seat-at-rural-hospitals-facing-medicaid-cuts-report/" target="_blank">Black Book Research, June 2025</a>; <a href="https://www.kff.org/health-costs/10-things-to-know-about-rural-hospitals/" target="_blank">KFF, April 2025</a>; <a href="https://www.chartis.com/insights/2025-rural-health-state-state" target="_blank">Chartis, February 2025</a>)</span></p>
+    </div>
+
+    <div class="narrative-divider"></div>
+
+    <div class="narrative-chapter">
+      <div class="narrative-num">The Evidence</div>
+      <h3>41 unique sources. 8 prevalence stats. 8 severity stats. 7 cost metrics.</h3>
+      <p>The evidence base spans government reports, academic research, industry surveys, and vendor data. <strong>Healthcare is the #1 ransomware target</strong> among critical infrastructure sectors, with <a href="https://www.ic3.gov/" target="_blank">249 FBI complaints in 2023</a>. <strong>67% of healthcare organizations were hit by ransomware in 2024</strong> &mdash; double the 34% rate in 2021 (<a href="https://www.sophos.com/en-us/press/press-releases/2024/09/two-thirds-healthcare-organizations-hit-ransomware-four-year-high" target="_blank">Sophos</a>). The average recovery cost for a rural hospital is <strong>~$11 million</strong> (<a href="https://www.aha.org/advancing-health-podcast/2025-03-10-critical-condition-cybersecurity-rural-hospitals-microsoft-part-1" target="_blank">AHA/Microsoft</a>), and downtime averages <strong>17+ days at $1.9 million per day</strong>. Large healthcare breaches increased 93% from 2018-2022; ransomware-related breaches increased 278%.</p>
+    </div>
+
+    <div class="narrative-divider"></div>
+
+    <div class="narrative-chapter">
+      <div class="narrative-num">The Human Cost</div>
+      <h3>17 distinct voices. From congressional testimony to hospital IT directors.</h3>
+      <p>"<strong>Dead in the water.</strong>" That's how Linda Burt, VP of Quality at St. Margaret's Health, described the aftermath of their cyberattack. St. Margaret's became the <strong>first hospital to close citing a cyberattack</strong> (<a href="https://www.nbcnews.com/tech/security/illinois-hospital-links-closure-ransomware-attack-rcna85983" target="_blank">NBC News, June 2023</a>). They were down a minimum of 14 weeks. No claims went out. Nothing got entered. Academic research estimates <strong>42-67 Medicare patient deaths</strong> attributable to ransomware from 2016-2021 (<a href="https://www.statnews.com/2023/11/17/hospital-ransomware-attack-patient-deaths-study/" target="_blank">University of Minnesota/DePaul</a>), with <strong>28-29% of attacked organizations reporting increased mortality</strong> (<a href="https://www.proofpoint.com/us/resources/threat-reports/ponemon-healthcare-cybersecurity-report" target="_blank">Ponemon/Proofpoint</a>). When the nearest alternative is 40+ miles away, a downed hospital means patients have nowhere to go.</p>
+    </div>
+
+    <div class="narrative-divider"></div>
+
+    <div class="narrative-chapter">
+      <div class="narrative-num">The Ask</div>
+      <h3>One blocking decision: is this problem real and significant enough to build for?</h3>
+      <p>Phase 02 surfaces one question that must be answered before proceeding: <strong>is this problem validated with sufficient evidence to justify building a solution?</strong> The research documents ~1,800 facilities, $1.5B annual cost, 41 unique sources, 33/33 validation checks passed. Three additional strategic decisions &mdash; compliance-first vs. security-first positioning, beachhead segment, and Microsoft positioning &mdash; are deferred to future phases where relevant data will emerge.</p>
+    </div>
+
+    <div class="narrative-cta">
+      <strong>Phase 02 presents the evidence.</strong> The problem is documented across government, academic, industry, and customer sources. The gate review asks whether this evidence is sufficient to proceed to market sizing.
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 01: EXECUTIVE SUMMARY
+     ==================================================================== -->
+<section id="summary">
+  <div class="container">
+    <div class="section-num">01 / Executive Summary</div>
+    <h2>The Crisis in Three Dimensions</h2>
+    <p class="section-lead">Scale, severity, and a structural market gap combine to create an unsolved problem affecting 46 million Americans.</p>
+
+    <div class="card-grid cols-3">
+      <div class="card">
+        <div class="card-label red">Scale</div>
+        <h3>~1,800 Rural Hospitals</h3>
+        <p>46 million Americans served. ~1,377 Critical Access Hospitals across 45 states. 35% of all US community hospitals. Under 100 beds, 0-1 dedicated security staff, thin margins.</p>
+      </div>
+      <div class="card">
+        <div class="card-label amber">Severity</div>
+        <h3>$11M Average Recovery</h3>
+        <p>17+ days downtime at $1.9M/day. 84% of rural attacks cause operational disruptions. 33% involve ambulance diversion. 28-29% report increased mortality post-attack. Documented patient deaths.</p>
+      </div>
+      <div class="card">
+        <div class="card-label purple">Gap</div>
+        <h3>No Dedicated Solution</h3>
+        <p>Enterprise vendors don't fit. Healthcare-specific platforms are consolidating upmarket. Microsoft's philanthropic program is a self-described "stopgap." 88% of rural IT leaders say vendors market "urban-first" solutions as "rural-ready."</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>"Rural hospitals are not 'small urban systems.'</strong> They require rural-fit products, rural-fit implementation models, and rural-fit support." &mdash; HSCC "On the Edge" Report, May 2025
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 02: EVIDENCE
+     ==================================================================== -->
+<section class="section-alt" id="evidence">
+  <div class="container">
+    <div class="section-num">02 / Evidence</div>
+    <h2>Evidence Base</h2>
+    <p class="section-lead">41 unique sources across government, academic, industry, and vendor research. Every claim cited to a third-party source.</p>
+
+    <div class="accordion">
+
+      <!-- Prevalence -->
+      <div class="accordion-item open">
+        <div class="accordion-header">
+          <div class="accordion-header-left">
+            <h3>Prevalence (8 citations)</h3>
+            <span class="badge type-grant">Core Evidence</span>
+          </div>
+          <span class="accordion-arrow">&#9660;</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <ul class="criteria-list">
+              <li>1,796-1,844 rural community hospitals in the US, including ~1,377 Critical Access Hospitals across 45 states <span class="criteria-source">(KFF / Chartis / Flex Monitoring Team, 2025)</span></li>
+              <li>68% of small/rural hospitals have no full-time CISO or cybersecurity leader <span class="criteria-source">(Black Book Research, June 2025)</span></li>
+              <li>73% of rural hospitals lack adequate cybersecurity infrastructure (up from 61% in 2023) <span class="criteria-source">(Black Book Research, June 2025)</span></li>
+              <li>41% of small/rural hospitals experienced malware or ransomware attacks since early 2024 <span class="criteria-source">(Black Book Research, June 2025)</span></li>
+              <li>82% of small/rural hospitals do not meet NIST federal cybersecurity standards <span class="criteria-source">(Black Book Research, June 2025)</span></li>
+              <li>73% of healthcare providers rely on legacy operating systems (Windows Server 2012, Windows 7, etc.) <span class="criteria-source">(HIMSS Healthcare Cybersecurity Survey, 2021 baseline)</span></li>
+              <li>Healthcare reported 249 ransomware complaints to FBI in 2023 &mdash; highest of any critical infrastructure sector <span class="criteria-source">(FBI IC3 Annual Report, March 2024)</span></li>
+              <li>67% of healthcare organizations hit by ransomware in 2024 (up from 34% in 2021) <span class="criteria-source">(Sophos, September 2024)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Severity -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-header-left">
+            <h3>Severity (8 citations)</h3>
+            <span class="badge significant">High Impact</span>
+          </div>
+          <span class="accordion-arrow">&#9660;</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <ul class="criteria-list">
+              <li>$9.77 million average cost per healthcare data breach (2024) &mdash; healthcare has been the costliest sector for 14 consecutive years <span class="criteria-source">(IBM/Ponemon Institute, August 2024)</span></li>
+              <li>~$11 million average recovery cost per ransomware attack for rural hospitals <span class="criteria-source">(AHA/Microsoft, John Riggi, March 2025)</span></li>
+              <li>17-18.7 days average downtime from ransomware; only 22% recover in under one week (down from 54% in 2022) <span class="criteria-source">(Comparitech/Statista, 2024)</span></li>
+              <li>$1.9 million per day average cost of hospital downtime <span class="criteria-source">(Comparitech/HFMA, 2024)</span></li>
+              <li>84% of ransomware attacks on rural hospitals resulted in operational disruptions; 33% involved ambulance diversion <span class="criteria-source">(University of Minnesota, June 2024)</span></li>
+              <li>28-29% of healthcare organizations report increased mortality rates after cyberattacks <span class="criteria-source">(Ponemon Institute/Proofpoint, 2024-2025)</span></li>
+              <li>Estimated 42-67 Medicare patient deaths attributable to ransomware (2016-2021); 33% relative increase in in-hospital mortality <span class="criteria-source">(University of Minnesota/DePaul, November 2023)</span></li>
+              <li>35.2% increase in EMS arrivals at neighboring hospitals during attacks; 113.6% increase in confirmed strokes at adjacent facilities <span class="criteria-source">(Microsoft Security/JAMA, 2024)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost of Status Quo -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-header-left">
+            <h3>Cost of Status Quo (7 citations)</h3>
+            <span class="badge blocking">Critical</span>
+          </div>
+          <span class="accordion-arrow">&#9660;</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <ul class="criteria-list">
+              <li>Estimated $1.5 billion total annual cybersecurity cost across rural hospitals; projected to reach $3B by 2030 <span class="criteria-source">(Bottom-up analysis from IBM/Ponemon, Black Book, Sophos, 2024-2025)</span></li>
+              <li>Rural hospitals spend $50,000-$200,000/year on cybersecurity vs. $500,000-$1.5M for adequately-secured systems &mdash; a gap of $250,000-$600,000 per facility <span class="criteria-source">(Black Book Research / Microsoft, 2025)</span></li>
+              <li>$30,000-$40,000 per hospital to address top vulnerabilities; $70-75 million total across all rural hospitals <span class="criteria-source">(Microsoft Rural Hospital Cybersecurity Landscape Report, March 2025)</span></li>
+              <li>94% of hospitals reported financial impact from Change Healthcare breach; 33% reported attack disrupted more than half their revenue <span class="criteria-source">(AHA Survey, 2024)</span></li>
+              <li>$6.3 billion drop in claims value in first three weeks of Change Healthcare breach <span class="criteria-source">(Kodiak Solutions / Senate Finance Committee, May 2024)</span></li>
+              <li>46% of rural hospitals operate with negative margins; 432 currently vulnerable to closure <span class="criteria-source">(Chartis Center for Rural Health, February 2025)</span></li>
+              <li>$9 billion estimated first-year compliance cost for proposed HIPAA Security Rule update (HHS's own estimate) <span class="criteria-source">(HHS / Federal Register, January 2025)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Solutions -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-header-left">
+            <h3>Current Solutions (7 documented)</h3>
+            <span class="badge moderate">Gap Analysis</span>
+          </div>
+          <span class="accordion-arrow">&#9660;</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="table-wrap" style="margin-top: 1.25rem;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Solution</th>
+                    <th>Type</th>
+                    <th>Rural Fit</th>
+                    <th>Limitation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="funder-name">Enterprise Vendors (CrowdStrike, Palo Alto)</td>
+                    <td>Software</td>
+                    <td><span class="badge rural-no">No</span></td>
+                    <td>Designed for large health systems; CrowdStrike 299-endpoint minimum; $15K-$30K+/yr</td>
+                  </tr>
+                  <tr>
+                    <td class="funder-name">Healthcare IoT (Claroty, Cynerio, Armis)</td>
+                    <td>Software</td>
+                    <td><span class="badge rural-no">No</span></td>
+                    <td>Cynerio acquired by Axonius Jul 2025; Armis acquired by ServiceNow; consolidation moving upmarket</td>
+                  </tr>
+                  <tr>
+                    <td class="funder-name">Fortinet</td>
+                    <td>Software/Hardware</td>
+                    <td><span class="badge rural-partial">Partial</span></td>
+                    <td>Only major vendor with documented rural deployment; $3K-$8K/yr; still requires IT staff</td>
+                  </tr>
+                  <tr>
+                    <td class="funder-name">Healthcare MSSPs (Fortified, Clearwater)</td>
+                    <td>Managed Service</td>
+                    <td><span class="badge rural-yes">Yes</span></td>
+                    <td>Best in KLAS; explicit rural support; but $60K-$240K/yr prices out negative-margin facilities</td>
+                  </tr>
+                  <tr>
+                    <td class="funder-name">Microsoft Program</td>
+                    <td>Philanthropic</td>
+                    <td><span class="badge rural-partial">Partial</span></td>
+                    <td>700+ enrolled; free assessments/training; self-described "not entirely sufficient" stopgap</td>
+                  </tr>
+                  <tr>
+                    <td class="funder-name">CISA / HHS 405(d)</td>
+                    <td>Government Guidance</td>
+                    <td><span class="badge rural-partial">Partial</span></td>
+                    <td>Free but limited to guidance and external scanning; no tools, implementation, or funding</td>
+                  </tr>
+                  <tr>
+                    <td class="funder-name">Do Nothing (Majority)</td>
+                    <td>Default</td>
+                    <td><span class="badge rural-no">No</span></td>
+                    <td>73% inadequate defenses; 69% spend &lt;4% of IT budget on security; 92% underutilize existing tools</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gaps -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-header-left">
+            <h3>Gaps (4 identified)</h3>
+            <span class="badge blocking">Structural</span>
+          </div>
+          <span class="accordion-arrow">&#9660;</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <ul class="alignment-list" style="margin-top: 1.25rem;">
+              <li class="gap-item blocker"><strong>No solution designed from inception</strong> for 0-1 security staff, sub-100-bed facilities, and $30K-$50K annual budgets. Enterprise vendors require dedicated security teams; MSSPs price at $60K-$240K/yr; Microsoft program is explicitly a stopgap. <span class="criteria-source">(Black Book Research; Microsoft, 2025)</span></li>
+              <li class="gap-item blocker"><strong>No VC-backed startup</strong> dedicated exclusively to rural hospital cybersecurity. Market consolidation (Cynerio &rarr; Axonius, Armis &rarr; ServiceNow) is moving healthcare security upmarket. <span class="criteria-source">(Capital thesis research; KLAS Research 2025)</span></li>
+              <li class="gap-item"><strong>88% of rural IT stakeholders</strong> report vendors market "urban-first" solutions as "rural-ready." 82% forced to adapt workflows to technology; only 29% agree vendors solve rural-specific problems. <span class="criteria-source">(Black Book Research Rural IT Survey, January 2026)</span></li>
+              <li class="gap-item"><strong>No pricing model</strong> scaled to rural hospital economics (per-bed, CAH-specific tiers). HSCC states rural hospitals require "rural-fit products, rural-fit implementation models, and rural-fit support." <span class="criteria-source">(HSCC "On the Edge" Report, May 2025)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 03: CUSTOMER VOICES
+     ==================================================================== -->
+<section id="voices">
+  <div class="container">
+    <div class="section-num">03 / Customer Voices</div>
+    <h2>What Rural Hospital Leaders Say</h2>
+    <p class="section-lead">17 distinct voices from congressional testimony, news interviews, industry publications, and professional reports (2023-2026).</p>
+
+    <div class="card-grid cols-2">
+      <div class="quote-card">
+        <div class="quote-theme">Budget</div>
+        <blockquote>"We could have cybersecurity, or we can get that CT machine that we need to bring in more revenue and keep the doors open. And so that's the constant battle that we face."</blockquote>
+        <div class="quote-attr">&mdash; Jim Roeder, VP of IT, Lakewood Health System (25-bed CAH, MN)</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-theme">Staffing</div>
+        <blockquote>"At a lot of these facilities, the IT director is looking at logs one minute, and the next minute, he's changing light bulbs."</blockquote>
+        <div class="quote-attr">&mdash; John Riggi, National Adviser for Cybersecurity, AHA</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-theme">Existential</div>
+        <blockquote>"You're dead in the water. We were down a minimum of 14 weeks. Nothing went out. No claims. Nothing got entered. So it took months and months and months."</blockquote>
+        <div class="quote-attr">&mdash; Linda Burt, VP of Quality, St. Margaret's Health (first hospital to close citing cyberattack)</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-theme">Patient Safety</div>
+        <blockquote>"There's not another facility for 40 miles &mdash; we can't just say, 'sorry, we can't take you. Our network is down.'"</blockquote>
+        <div class="quote-attr">&mdash; Kate Pierce, Former CIO/CISO, North Country Hospital (25-bed CAH, VT)</div>
+      </div>
+      <div class="quote-card" style="grid-column: 1 / -1;">
+        <div class="quote-theme">Awareness</div>
+        <blockquote>"People don't realize how much these smaller systems are attacked and get hit by ransomware or are extorted just as much as the larger systems."</blockquote>
+        <div class="quote-attr">&mdash; Jim Roeder, VP of IT, Lakewood Health System</div>
+      </div>
+    </div>
+
+    <div class="stat-row" style="margin-top: 3rem;">
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--accent-light);">17</div>
+        <div class="stat-card-label">Distinct Voices</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--cyan);">7+</div>
+        <div class="stat-card-label">Source Types</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--green);">5</div>
+        <div class="stat-card-label">Themes Identified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 04: IMPACT & SEVERITY
+     ==================================================================== -->
+<section class="section-alt" id="impact">
+  <div class="container">
+    <div class="section-num">04 / Impact &amp; Severity</div>
+    <h2>The Numbers Behind the Crisis</h2>
+    <p class="section-lead">The problem is intensifying. Large breaches increased 93% from 2018-2022. Ransomware attacks doubled from 34% (2021) to 67% (2024).</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--red);">$9.77M</div>
+        <div class="stat-card-label">Avg. Breach Cost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--red);">$11M</div>
+        <div class="stat-card-label">Rural Recovery Cost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--amber);">$1.9M/day</div>
+        <div class="stat-card-label">Downtime Cost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value" style="color: var(--accent-light);">$1.5B</div>
+        <div class="stat-card-label">Annual Market Cost</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 0.5rem;">Vulnerability Landscape</h3>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Percentage of rural hospitals affected (largest bar = 100%)</p>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Don't Meet NIST</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 100%;">82%</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Lack Adequate Defenses</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 89%;">73%</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">No Dedicated CISO</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 83%;">68%</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Hit by Ransomware (2024)</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 82%;">67%</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Negative Margins</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 56%;">46%</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Attacked Since 2024</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 50%;">41%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-note" style="margin-top: 3rem;">
+      <strong>Trajectory: Worsening.</strong> Healthcare organizations experiencing attacks doubled from 34% (2021) to 67% (2024). Rural hospital ransomware attacks increased from 5 (2016) to 17 (2021). 259 million Americans were affected by healthcare hacks in 2024. Driving forces: ransomware-as-a-service, IoT proliferation (10-15 devices per bed, 77% with known vulnerabilities), cybersecurity workforce shortage, and rural hospital financial deterioration (debt-to-equity ratio from 1.59 in 2018 to 3.35 in 2024).
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 05: SOLUTIONS LANDSCAPE
+     ==================================================================== -->
+<section id="solutions">
+  <div class="container">
+    <div class="section-num">05 / Solutions Landscape</div>
+    <h2>Current Solutions &amp; Why They Don't Fit</h2>
+    <p class="section-lead">The market gap is not "no solutions exist" &mdash; it is "no solution fits" the rural hospital operating reality.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Solution</th>
+            <th>Type</th>
+            <th>Rural Fit</th>
+            <th>Est. Annual Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="funder-name">CrowdStrike</td>
+            <td>Enterprise Endpoint</td>
+            <td><span class="badge rural-no">No</span></td>
+            <td>$27,750+</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Palo Alto Networks</td>
+            <td>Enterprise Platform</td>
+            <td><span class="badge rural-no">No</span></td>
+            <td>$15,000-$30,000+</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Fortinet</td>
+            <td>Hardware/Software</td>
+            <td><span class="badge rural-partial">Partial</span></td>
+            <td>$3,000-$8,000</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Claroty/Medigate</td>
+            <td>Healthcare IoT</td>
+            <td><span class="badge rural-no">No</span></td>
+            <td>Not published</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Cynerio (acquired)</td>
+            <td>Healthcare IoT</td>
+            <td><span class="badge rural-no">No</span></td>
+            <td>Eliminated</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Armis (acquired)</td>
+            <td>IoT Security</td>
+            <td><span class="badge rural-no">No</span></td>
+            <td>Not published</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Fortified Health Security</td>
+            <td>Healthcare MSSP</td>
+            <td><span class="badge rural-yes">Yes</span></td>
+            <td>$60,000-$240,000</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Clearwater</td>
+            <td>Healthcare MSSP</td>
+            <td><span class="badge rural-yes">Yes</span></td>
+            <td>Not published</td>
+          </tr>
+          <tr>
+            <td class="funder-name">Microsoft Program</td>
+            <td>Philanthropic</td>
+            <td><span class="badge rural-partial">Partial</span></td>
+            <td>Free (limited scope)</td>
+          </tr>
+          <tr>
+            <td class="funder-name">CISA / HHS 405(d)</td>
+            <td>Government Guidance</td>
+            <td><span class="badge rural-partial">Partial</span></td>
+            <td>Free (no implementation)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top: 3rem; margin-bottom: 1rem;">5 Structural Barriers to Adoption</h3>
+
+    <ul class="barrier-list">
+      <li><strong>Cost mismatch</strong> &mdash; Enterprise solutions assume $1-4M/year budgets; 50% of rural hospitals are in the red; 69% spend less than 4% of IT budget on security</li>
+      <li><strong>Staffing impossibility</strong> &mdash; Solutions require dedicated security teams; rural hospitals have 2-5 total IT staff handling everything; cybersecurity roles take 70% longer to fill</li>
+      <li><strong>Complexity assumptions</strong> &mdash; 88% report vendors market "urban-first" solutions as "rural-ready"; 82% forced to adapt workflows to technology; 92% admit existing tools are severely underutilized</li>
+      <li><strong>Legacy system burden</strong> &mdash; 73% on legacy OS; 40%+ of devices at end-of-life; physical device lifecycles (10-15 years) mismatched with software lifecycles (3-5 years)</li>
+      <li><strong>Connectivity constraints</strong> &mdash; 157 million Americans lack broadband; cloud-based security tools assume bandwidth rural areas don't have</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 06: GATE REVIEW
+     ==================================================================== -->
+<section class="section-alt" id="gate">
+  <div class="container">
+    <div class="section-num">06 / Gate Review</div>
+    <h2>Gate Review</h2>
+    <p class="section-lead">Evidence briefing and human decisions required before proceeding to Phase 03: Market Thesis.</p>
+
+    <!-- Evidence Briefing -->
+    <div class="evidence-briefing">
+      <h3>Evidence Briefing</h3>
+
+      <div class="briefing-section">
+        <h4>What the Evidence Shows</h4>
+        <div class="briefing-stats">
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">8</span>
+            <span class="briefing-stat-label">Prevalence Stats</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">8</span>
+            <span class="briefing-stat-label">Severity Stats</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">7</span>
+            <span class="briefing-stat-label">Cost Stats</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">17</span>
+            <span class="briefing-stat-label">Customer Voices</span>
+          </div>
+          <div class="briefing-stat">
+            <span class="briefing-stat-value">41</span>
+            <span class="briefing-stat-label">Total Sources</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="briefing-columns">
+        <div class="briefing-column">
+          <h4 class="briefing-strong">What's Strong</h4>
+          <ul class="briefing-list strong">
+            <li>Problem prevalence is heavily documented with authoritative sources &mdash; 8 statistics from Black Book (187 hospital leaders), FBI IC3, Sophos (402 orgs), HIMSS, UMN.</li>
+            <li>Customer voice is exceptionally deep &mdash; 17 distinct named voices including congressional testimony, AHA advisors, and direct hospital IT leader quotes.</li>
+            <li>Market gap validated from multiple angles &mdash; enterprise vendors don't serve rural, closest rural solution was acquired and eliminated, Microsoft self-describes as "stopgap."</li>
+            <li>Financial severity quantified with rural-specific data &mdash; $11M rural recovery cost, $1.9M/day downtime, Change Healthcare case study with congressional testimony.</li>
+            <li>Regulatory tailwind adds urgency &mdash; $9B HIPAA compliance cost (HHS's own estimate), no size-based exemptions, CMS planning to tie cybersecurity to Medicare reimbursement.</li>
+          </ul>
+        </div>
+        <div class="briefing-column">
+          <h4 class="briefing-weak">What's Weak or Unresolved</h4>
+          <ul class="briefing-list weak">
+            <li>Rural-specific breach cost relies on a single source &mdash; the ~$11M figure comes from one AHA/Microsoft podcast statement. IBM/Ponemon does not segment by hospital size.</li>
+            <li>Mortality data is correlational, not causal (with one exception) &mdash; the UMN/DePaul study uses Medicare claims data but covers 2016-2021, pre-dating current threat level.</li>
+            <li>South Carolina-specific data is thin &mdash; 15 rural hospitals, 3-4 CAHs, but no SC-specific cybersecurity incident data or enforcement actions.</li>
+            <li>MSSP pricing is not published &mdash; Fortified and Clearwater serve rural hospitals but neither publishes pricing. The $60K-$240K/yr estimate is an industry range.</li>
+            <li>The $1.5B market cost is an estimate built from ranges &mdash; 20-40% attack probability and $1.5-3M average incident cost produce a wide $711M-$3.02B range.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Validation Card -->
+    <div class="validation-card">
+      <div class="validation-status">
+        <div class="validation-icon">&#10003;</div>
+        <div class="validation-text">
+          <h3>READY FOR GATE REVIEW</h3>
+          <p>33/33 validation checks passed. 0 warnings, 0 failures.</p>
+        </div>
+      </div>
+      <div class="validation-stats">
+        <div class="validation-stat">
+          <div class="validation-stat-value" style="color: var(--green);">33</div>
+          <div class="validation-stat-label">Passed</div>
+        </div>
+        <div class="validation-stat">
+          <div class="validation-stat-value" style="color: var(--amber);">0</div>
+          <div class="validation-stat-label">Warning</div>
+        </div>
+        <div class="validation-stat">
+          <div class="validation-stat-value" style="color: var(--red);">0</div>
+          <div class="validation-stat-label">Failed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blocking Decision -->
+    <h3 class="gate-group-label">Blocking Decisions</h3>
+    <p class="gate-group-desc">Must be resolved before the next phase can start.</p>
+    <div class="gate-cards">
+      <div class="gate-card blocking">
+        <div class="gate-card-header">
+          <div class="gate-num">1</div>
+          <div class="gate-question">Is this problem real and significant enough to build for?</div>
+          <span class="gate-priority blocking">Blocking</span>
+        </div>
+        <p class="gate-context">Phase 02 documents ~1,800 facilities, 46M Americans, $1.5B annual cost burden, 41 unique sources across government/academic/industry/vendor research, 17 customer voices, and a structural market gap with no dedicated solution. 33/33 validation checks passed.</p>
+        <div class="gate-options">
+          <div class="gate-option">
+            <strong>Proceed</strong>
+            <span class="gate-consequence">&rarr; Starts Phase 03 Market Thesis. Research quantifies TAM/SAM/SOM, models pricing assumptions, and identifies beachhead customers.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Revise</strong>
+            <span class="gate-consequence">&rarr; Re-runs problem research targeting evidence gaps: independent rural breach cost data, SC-specific incidents, confirmed MSSP pricing.</span>
+          </div>
+          <div class="gate-option">
+            <strong>Kill</strong>
+            <span class="gate-consequence">&rarr; Archives CyberShield Rural. Problem thesis data preserved in phases/02-problem/ for reference.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategic Decisions -->
+    <h3 class="gate-group-label">Strategic Decisions</h3>
+    <p class="gate-group-desc">Inform strategy but do not block the next phase. Can be deferred &mdash; later phases will produce data that makes these choices clearer.</p>
+    <div class="gate-cards">
+      <div class="gate-card strategic">
+        <div class="gate-card-header">
+          <div class="gate-num">2</div>
+          <div class="gate-question">Should the solution focus on compliance-first or security-first positioning?</div>
+          <span class="gate-priority strategic">Strategic</span>
+        </div>
+        <p class="gate-context">Regulatory tailwind ($9B HIPAA, pending CMS conditions) suggests compliance as a buying trigger. But customer voice data emphasizes operational protection ("keep the doors open") over compliance.</p>
+        <p class="gate-revisit">Revisit after Phase 05 &mdash; Solution Thesis will design the product and determine the primary job-to-be-done.</p>
+        <div class="gate-options">
+          <div class="gate-option">
+            <strong>Compliance-first</strong>
+            <span class="gate-consequence">&rarr; Faster sales cycle where regulation mandates action; competes with Clearwater and Fortified</span>
+          </div>
+          <div class="gate-option">
+            <strong>Security-first</strong>
+            <span class="gate-consequence">&rarr; Addresses existential threat customers describe; differentiates from MSSPs; harder to sell without mandate</span>
+          </div>
+          <div class="gate-option">
+            <strong>Both</strong>
+            <span class="gate-consequence">&rarr; Compliance as entry point, security as value; risk of diluted positioning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gate-card strategic">
+        <div class="gate-card-header">
+          <div class="gate-num">3</div>
+          <div class="gate-question">Should CyberShield target all ~1,800 rural hospitals or focus on a narrower beachhead?</div>
+          <span class="gate-priority strategic">Strategic</span>
+        </div>
+        <p class="gate-context">The segment includes ~1,377 CAHs (homogeneous 25-bed cap, cost-based Medicare), 15 SC rural hospitals (CMS RHT alignment), and broader rural community hospitals.</p>
+        <p class="gate-revisit">Revisit after Phase 03 &mdash; Market Thesis will size specific segments and identify stronger buying characteristics.</p>
+        <div class="gate-options">
+          <div class="gate-option">
+            <strong>All rural (~1,800)</strong>
+            <span class="gate-consequence">&rarr; Larger TAM narrative; harder go-to-market; diluted positioning</span>
+          </div>
+          <div class="gate-option">
+            <strong>CAHs only (~1,377)</strong>
+            <span class="gate-consequence">&rarr; Homogeneous segment; easier product design; smaller TAM</span>
+          </div>
+          <div class="gate-option">
+            <strong>SC-first (15)</strong>
+            <span class="gate-consequence">&rarr; CMS RHT alignment; tiny market but strong proof-of-concept path</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gate-card strategic">
+        <div class="gate-card-header">
+          <div class="gate-num">4</div>
+          <div class="gate-question">How should CyberShield position relative to Microsoft's philanthropic program?</div>
+          <span class="gate-priority strategic">Strategic</span>
+        </div>
+        <p class="gate-context">700+ hospitals enrolled in Microsoft's free program, which Microsoft itself calls a "stopgap." CyberShield could be complementary or independent.</p>
+        <p class="gate-revisit">Revisit after Phase 05 &mdash; Solution Thesis will determine technical architecture.</p>
+        <div class="gate-options">
+          <div class="gate-option">
+            <strong>Complementary</strong>
+            <span class="gate-consequence">&rarr; Builds on Microsoft's baseline; smaller scope but easier adoption for 700+ enrolled hospitals</span>
+          </div>
+          <div class="gate-option">
+            <strong>Independent</strong>
+            <span class="gate-consequence">&rarr; Full solution not dependent on Microsoft; differentiates but competes with "free"</span>
+          </div>
+          <div class="gate-option">
+            <strong>Layered</strong>
+            <span class="gate-consequence">&rarr; Works with or without Microsoft; adapts to customer's existing posture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 07: SOURCES
+     ==================================================================== -->
+<section id="sources">
+  <div class="container">
+    <div class="section-num">07 / Sources</div>
+    <h2>Sources</h2>
+    <p class="section-lead">41 unique sources across government, academic, industry, vendor, news, and publications.</p>
+
+    <div class="sources-grid">
+
+      <div class="source-category">
+        <h3>Government (12)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">FBI IC3</span> &mdash; Internet Crime Complaint Center Annual Report 2023 <span class="source-date">(March 2024)</span><br><a href="https://www.ic3.gov/" target="_blank">ic3.gov</a> &mdash; Healthcare as #1 ransomware target (249 complaints)</li>
+          <li><span class="source-org">HHS Office for Civil Rights</span> &mdash; HIPAA Security Rule NPRM <span class="source-date">(January 2025)</span><br><a href="https://www.federalregister.gov/documents/2025/01/06/2024-30983/hipaa-security-rule-to-strengthen-the-cybersecurity-of-electronic-protected-health-information" target="_blank">federalregister.gov</a> &mdash; $9B first-year compliance cost, elimination of addressable vs required</li>
+          <li><span class="source-org">HHS ASPR</span> &mdash; Healthcare Sector Cybersecurity Strategy <span class="source-date">(December 2023)</span><br><a href="https://aspr.hhs.gov/cyber/Documents/Health-Care-Sector-Cybersecurity-Dec2023-508.pdf" target="_blank">aspr.hhs.gov</a> &mdash; 93% increase in large breaches, 278% increase in ransomware breaches</li>
+          <li><span class="source-org">HHS OCR</span> &mdash; Resolution Agreements and Enforcement Data <span class="source-date">(2023-2025)</span><br><a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/" target="_blank">hhs.gov</a> &mdash; $144.9M total HIPAA penalties, 2024 busiest enforcement year</li>
+          <li><span class="source-org">HHS</span> &mdash; Change Healthcare FAQ <span class="source-date">(Updated January 2025)</span><br><a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/change-healthcare-cybersecurity-incident-frequently-asked-questions/index.html" target="_blank">hhs.gov</a> &mdash; 192.7M individuals affected</li>
+          <li><span class="source-org">HHS Cyber Gateway</span> &mdash; Healthcare and Public Health Sector CPGs <span class="source-date">(January 2024)</span><br><a href="https://hhscyber.hhs.gov/performance-goals.html" target="_blank">hhscyber.hhs.gov</a> &mdash; Essential and enhanced goal tiers</li>
+          <li><span class="source-org">CMS / Flex Monitoring Team</span> &mdash; Critical Access Hospital Locations <span class="source-date">(January 2026)</span><br><a href="https://www.flexmonitoring.org/critical-access-hospital-locations-list" target="_blank">flexmonitoring.org</a> &mdash; ~1,377 CAHs across 45 states</li>
+          <li><span class="source-org">GAO</span> &mdash; Report GAO-25-107755 <span class="source-date">(November 2024)</span><br><a href="https://gao.gov" target="_blank">gao.gov</a> &mdash; Criticism of HHS not tracking cybersecurity adoption</li>
+          <li><span class="source-org">CISA</span> &mdash; CPG Adoption Report <span class="source-date">(October 2024)</span><br><a href="https://cisa.gov" target="_blank">cisa.gov</a> &mdash; 7,791 organizations in Cyber Hygiene Services</li>
+          <li><span class="source-org">NY Department of Health</span> &mdash; Hospital Cybersecurity Regulations <span class="source-date">(October 2024)</span><br><a href="https://www.health.ny.gov/facilities/hospital/cybersecurity/" target="_blank">health.ny.gov</a> &mdash; First-in-nation state hospital cybersecurity mandate</li>
+          <li><span class="source-org">S.C. Code &sect; 39-1-90</span> &mdash; Data Breach Notification Law <span class="source-date">(Accessed January 2026)</span><br><a href="https://law.justia.com/codes/south-carolina/title-39/chapter-1/section-39-1-90/" target="_blank">law.justia.com</a> &mdash; SC breach notification, $1,000/resident penalty</li>
+          <li><span class="source-org">Congress</span> &mdash; Health Care Cybersecurity and Resiliency Act of 2025 <span class="source-date">(2025)</span><br><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3315/text/is" target="_blank">congress.gov</a> &mdash; Proposed grants for rural hospitals</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Industry Associations (7)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">American Hospital Association</span> &mdash; Cybersecurity Reports and Surveys <span class="source-date">(May 2025)</span><br><a href="https://www.aha.org/news/headline/2025-05-12-report-health-care-had-most-reported-cyberthreats-2024" target="_blank">aha.org</a> &mdash; 444 healthcare incidents in 2024</li>
+          <li><span class="source-org">AHA / Microsoft Podcast</span> &mdash; Critical Condition: Cybersecurity in Rural Hospitals <span class="source-date">(March 2025)</span><br><a href="https://www.aha.org/advancing-health-podcast/2025-03-10-critical-condition-cybersecurity-rural-hospitals-microsoft-part-1" target="_blank">aha.org</a> &mdash; $11M average rural recovery cost</li>
+          <li><span class="source-org">American Medical Association</span> &mdash; Change Healthcare Physician Survey <span class="source-date">(April 2024)</span><br>80% lost revenue, 55% used personal funds, rural practitioner quotes</li>
+          <li><span class="source-org">National Rural Health Association</span> &mdash; Rural Hospital Cybersecurity Policy Statement <span class="source-date">(April 2025)</span><br><a href="https://www.ruralhealth.us/blogs/2025/04/rural-hospital-cybersecurity-is-a-critical-health-issue" target="_blank">ruralhealth.us</a> &mdash; RaaS threat, rural-specific policy recommendations</li>
+          <li><span class="source-org">HSCC</span> &mdash; "On the Edge" Report <span class="source-date">(May 2025)</span><br><a href="https://healthsectorcouncil.org/wp-content/uploads/2025/05/On-the-Edge-RESOURCE-CONSTRAINED-HEALTHCARE-CYBERSECURITY.pdf" target="_blank">healthsectorcouncil.org</a> &mdash; "Rural-fit" solutions quote, resource-constrained provider analysis</li>
+          <li><span class="source-org">HFMA</span> &mdash; Ransomware Attacks Healthcare Costs <span class="source-date">(2024)</span><br><a href="https://www.hfma.org/fast-finance/ransomware-attacks-healthcare-costs/" target="_blank">hfma.org</a> &mdash; $1.9M/day downtime cost, $21.9B total downtime losses</li>
+          <li><span class="source-org">HFMA</span> &mdash; Congressional Hearings on Change Healthcare <span class="source-date">(2024)</span><br><a href="https://www.hfma.org/technology/cybersecurity/congressional-hearings-on-the-change-healthcare-cyberattack-bring-attention-to-providers-continuing-predicament/" target="_blank">hfma.org</a> &mdash; $6.3B claims drop</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Research &amp; Academic (5)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">University of Minnesota Rural Health Research Center</span> &mdash; Understanding the Rise of Ransomware Attacks on Rural Hospitals <span class="source-date">(June 2024)</span><br><a href="https://rhrc.umn.edu/wp-content/uploads/2025/04/Understanding-the-Rise-of-Ransomware-Attacks-on-Rural-Hospitals-2024April-2025-Revised.pdf" target="_blank">rhrc.umn.edu</a> &mdash; 84% operational disruption, 33% ambulance diversion</li>
+          <li><span class="source-org">University of Minnesota / DePaul University</span> &mdash; Hospital Ransomware Mortality Study <span class="source-date">(November 2023)</span><br><a href="https://www.statnews.com/2023/11/17/hospital-ransomware-attack-patient-deaths-study/" target="_blank">statnews.com</a> &mdash; 42-67 estimated Medicare deaths, 33% mortality increase</li>
+          <li><span class="source-org">University of Minnesota School of Public Health</span> &mdash; CMS Change Healthcare Relief Distribution Study <span class="source-date">(2024)</span><br>Only 11% of hospitals received CMS relief; rural hospitals disproportionately excluded</li>
+          <li><span class="source-org">KFF</span> &mdash; 10 Things to Know About Rural Hospitals <span class="source-date">(April 2025)</span><br><a href="https://www.kff.org/health-costs/10-things-to-know-about-rural-hospitals/" target="_blank">kff.org</a> &mdash; 1,796 rural hospitals, bed-size breakdowns, margin data</li>
+          <li><span class="source-org">Chartis Center for Rural Health</span> &mdash; 2025 Rural Health State of the State <span class="source-date">(February 2025)</span><br><a href="https://www.chartis.com/insights/2025-rural-health-state-state" target="_blank">chartis.com</a> &mdash; 432 vulnerable hospitals, 182 closures since 2010</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Vendor Research (10)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">IBM / Ponemon Institute</span> &mdash; Cost of a Data Breach Report <span class="source-date">(2024-2025)</span><br><a href="https://www.ibm.com/think/insights/cost-of-a-data-breach-healthcare-industry" target="_blank">ibm.com</a> &mdash; $9.77M (2024), $7.42M (2025) average healthcare breach cost</li>
+          <li><span class="source-org">Sophos</span> &mdash; State of Ransomware in Healthcare <span class="source-date">(September 2024)</span><br><a href="https://www.sophos.com/en-us/press/press-releases/2024/09/two-thirds-healthcare-organizations-hit-ransomware-four-year-high" target="_blank">sophos.com</a> &mdash; 67% hit rate, ransom payment data</li>
+          <li><span class="source-org">Microsoft</span> &mdash; Rural Hospital Cybersecurity Landscape Report <span class="source-date">(March 2025)</span><br><a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/TSI-Rural-Hospital-Cybersecurity-Landscape-Report-2025.pdf" target="_blank">microsoft.com</a> &mdash; 250+ assessments, $30K-$40K per hospital baseline</li>
+          <li><span class="source-org">Microsoft Philanthropies / NRHA</span> &mdash; Enhancing Cybersecurity in Rural Health <span class="source-date">(March 2025)</span><br><a href="https://blogs.microsoft.com/on-the-issues/2025/03/05/enhancing-cybersecurity-rural-health/" target="_blank">microsoft.com</a> &mdash; 700+ enrollment, "not entirely sufficient" self-assessment</li>
+          <li><span class="source-org">Microsoft Security / JAMA</span> &mdash; US Healthcare at Risk <span class="source-date">(2024)</span><br><a href="https://www.microsoft.com/en-us/security/security-insider/threat-landscape/us-healthcare-at-risk-strengthening-resiliency-against-ransomware-attacks" target="_blank">microsoft.com</a> &mdash; 35.2% EMS arrival increase, 113.6% stroke increase</li>
+          <li><span class="source-org">Ponemon Institute / Proofpoint</span> &mdash; Healthcare Cybersecurity Report <span class="source-date">(2022-2025)</span><br><a href="https://www.proofpoint.com/us/resources/threat-reports/ponemon-healthcare-cybersecurity-report" target="_blank">proofpoint.com</a> &mdash; 28-29% mortality increase, 93% attack rate</li>
+          <li><span class="source-org">Comparitech / Statista</span> &mdash; Healthcare Ransomware Downtime Data <span class="source-date">(2024)</span><br><a href="https://www.statista.com/statistics/1422159/us-healthcare-ransomware-attacks-downtime-average-by-days/" target="_blank">statista.com</a> &mdash; 18.71 days average downtime</li>
+          <li><span class="source-org">Check Point Research / Claroty</span> &mdash; IoT Healthcare Device Threat Analysis <span class="source-date">(2025)</span><br><a href="https://c2a-sec.com/from-bedside-to-breach-the-growing-cyber-threat-to-iot-healthcare-devices/" target="_blank">c2a-sec.com</a> &mdash; 83% outdated IoT OS, 75% infusion pump vulnerabilities</li>
+          <li><span class="source-org">KLAS Research</span> &mdash; 2025 Best in KLAS Report <span class="source-date">(February 2025)</span><br><a href="https://klasresearch.com" target="_blank">klasresearch.com</a> &mdash; Claroty Best in KLAS 5 years (IoT), Fortified 4 years (MSSP)</li>
+          <li><span class="source-org">HIMSS</span> &mdash; Healthcare Cybersecurity Survey <span class="source-date">(2021 baseline)</span><br>73% legacy systems, 74% hospitals with legacy systems experienced incidents</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>News &amp; Congressional (3)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">NBC News</span> &mdash; Illinois Hospital Links Closure to Ransomware Attack <span class="source-date">(June 2023)</span><br><a href="https://www.nbcnews.com/tech/security/illinois-hospital-links-closure-ransomware-attack-rcna85983" target="_blank">nbcnews.com</a> &mdash; St. Margaret's Health closure, first cyber-attributed hospital closure</li>
+          <li><span class="source-org">Senate Finance Committee / HSGAC</span> &mdash; Congressional Hearings and Testimony <span class="source-date">(2023-2024)</span><br>Kate Pierce testimony, rural impact documentation</li>
+          <li><span class="source-org">NPR</span> &mdash; Rural Hospital Cybersecurity Coverage <span class="source-date">(August 2024)</span><br>Bob Olson (Montana Hospital Association) on cost and recruitment barriers</li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Industry Publications (3)</h3>
+        <ul class="source-list">
+          <li><span class="source-org">Black Book Research</span> &mdash; Rural Hospital Cybersecurity Survey (187 leaders at hospitals &lt;150 beds) <span class="source-date">(June 2025)</span><br><a href="https://www.beckershospitalreview.com/healthcare-information-technology/cybersecurity/cybersecurity-takes-back-seat-at-rural-hospitals-facing-medicaid-cuts-report/" target="_blank">beckershospitalreview.com</a> &mdash; 68% no CISO, 73% inadequate, 41% attacked, 82% not meeting NIST</li>
+          <li><span class="source-org">Black Book Research</span> &mdash; Rural Hospital IT Survey <span class="source-date">(January 2026)</span><br><a href="https://www.pharmiweb.com/press-release/2026-01-16/black-book-research-rural-hospital-survey-finds-health-it-still-too-often-urban-first-driving-ad" target="_blank">pharmiweb.com</a> &mdash; 88% urban-first marketing, 82% workflow adaptation</li>
+          <li><span class="source-org">SC Office of Rural Health / Rural Health Information Hub</span> &mdash; South Carolina Rural Health Data <span class="source-date">(Accessed January 2026)</span><br><a href="https://scorh.net/rural-hospitals/" target="_blank">scorh.net</a> &mdash; 15 small rural hospitals, 3-4 CAHs, closure data</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">
+      3 sources (HIMSS 2021 baseline, AMA Survey, Senate testimony) have no direct URL &mdash; these are institutional publications and congressional testimony available through their respective organizations.
+    </p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer>
+  <div class="container">
+    <p>CyberShield Rural &mdash; Phase 02: Problem Thesis &mdash; v1.0 &mdash; 2026-01-28 &mdash; Venture Forge</p>
+  </div>
+</footer>
+
+<!-- ====================================================================
+     JAVASCRIPT
+     ==================================================================== -->
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Accordion toggle
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', function() {
+      const item = this.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
