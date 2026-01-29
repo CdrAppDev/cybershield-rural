@@ -49,37 +49,9 @@
     /* ====================================================================
        NAVIGATION
        ==================================================================== */
-    /* Phase navigation bar */
-    .phase-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 101;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-    }
-    .phase-nav a {
-      color: var(--accent-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .phase-nav a:hover { color: var(--text-primary); }
-    .phase-nav .phase-current {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    .phase-nav .phase-future {
-      color: var(--text-muted);
-      cursor: default;
-    }
-
     nav {
       position: fixed;
-      top: 2rem; left: 0; right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       background: rgba(9, 9, 11, 0.8);
       backdrop-filter: blur(20px);
@@ -1049,19 +1021,10 @@
 <body>
 
 <!-- ====================================================================
-     PHASE NAVIGATION
-     ==================================================================== -->
-<div class="phase-nav">
-  <a href="index.html" class="phase-current">CyberShield Rural</a>
-  <span style="color: var(--text-muted);">Phase 01: Capital Thesis</span>
-  <a href="phase-02.html">Phase 02: Problem Thesis &rarr;</a>
-</div>
-
-<!-- ====================================================================
-     SECTION NAVIGATION
+     NAVIGATION
      ==================================================================== -->
 <nav>
-  <a href="#" class="nav-logo">CyberShield Rural</a>
+  <a href="index.html" class="nav-logo">&larr; All Phases</a>
   <ul class="nav-links">
     <li><a href="#story">The Story</a></li>
     <li><a href="#summary">Summary</a></li>
@@ -1073,6 +1036,7 @@
     <li><a href="#gate">Gate Review</a></li>
     <li><a href="#sources">Sources</a></li>
   </ul>
+  <a href="phase-02.html" style="color: var(--accent-light); text-decoration: none; font-size: 0.85rem; font-weight: 500;">Phase 02 &rarr;</a>
 </nav>
 
 <!-- ====================================================================

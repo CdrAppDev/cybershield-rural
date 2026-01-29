@@ -48,41 +48,11 @@
     }
 
     /* ====================================================================
-       PHASE NAVIGATION
-       ==================================================================== */
-    .phase-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 101;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-    }
-    .phase-nav a {
-      color: var(--accent-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .phase-nav a:hover { color: var(--text-primary); }
-    .phase-nav .phase-current {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    .phase-nav .phase-future {
-      color: var(--text-muted);
-      cursor: default;
-    }
-
-    /* ====================================================================
        NAVIGATION
        ==================================================================== */
     nav {
       position: fixed;
-      top: 2rem; left: 0; right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       background: rgba(9, 9, 11, 0.8);
       backdrop-filter: blur(20px);
@@ -1080,26 +1050,16 @@
       .data-table thead th,
       .data-table tbody td { padding: 0.5rem 0.6rem; }
       .bar-label { width: 100px; font-size: 0.65rem; }
-      .phase-nav { font-size: 0.7rem; padding: 0.4rem 1rem; }
     }
   </style>
 </head>
 <body>
 
 <!-- ====================================================================
-     PHASE NAVIGATION
-     ==================================================================== -->
-<div class="phase-nav">
-  <a href="phase-01.html">&larr; Phase 01: Capital Thesis</a>
-  <a href="index.html" class="phase-current">CyberShield Rural</a>
-  <span class="phase-future">Phase 03: Market Thesis &rarr;</span>
-</div>
-
-<!-- ====================================================================
-     SECTION NAVIGATION
+     NAVIGATION
      ==================================================================== -->
 <nav>
-  <a href="#" class="nav-logo">CyberShield Rural</a>
+  <a href="phase-01.html" class="nav-logo">&larr; Phase 01</a>
   <ul class="nav-links">
     <li><a href="#story">The Story</a></li>
     <li><a href="#summary">Summary</a></li>
@@ -1110,6 +1070,7 @@
     <li><a href="#gate">Gate Review</a></li>
     <li><a href="#sources">Sources</a></li>
   </ul>
+  <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">Phase 03 &rarr;</span>
 </nav>
 
 <!-- ====================================================================
