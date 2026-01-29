@@ -1,170 +1,145 @@
 # Problem Thesis: Rural Hospital Cybersecurity
 
 **Project:** CyberShield Rural
-**Version:** 1.0
-**Date:** 2026-01-28
+**Version:** 2.0
+**Date:** 2026-01-29
 **Status:** Pending Review
+**Writing Register:** Research (analytical, third-person, data-first, hedging required)
 
 ## Problem Statement
 
-Rural hospitals — approximately 1,800 facilities serving 46 million Americans (KFF, April 2025) — face an existential cybersecurity crisis they cannot solve alone. 68% have no dedicated cybersecurity leader (Black Book Research, June 2025), 73% lack adequate defenses (Black Book Research, June 2025), 41% have already experienced malware or ransomware attacks (Black Book Research, June 2025), and the average recovery cost of ~$11 million (AHA/Microsoft, March 2025) exceeds what most facilities can absorb given that 46% already operate at negative margins (Chartis, February 2025). No dedicated solution exists for this segment: enterprise vendors target large health systems, healthcare-specific platforms are consolidating upmarket (Cynerio acquired by Axonius, July 2025; Armis acquired by ServiceNow, 2026), and Microsoft's philanthropic program — the largest intervention to date with 700+ hospitals enrolled — explicitly calls itself "not entirely sufficient" (Microsoft Rural Hospital Report, March 2025). The result is ~1,800 hospitals defending against the same threat landscape as major health systems with a fraction of the staff, running on legacy systems, and one attack away from a path to closure.
+Approximately 1,800 rural hospitals serve 46 million Americans (KFF, April 2025), and 73% of these facilities lack adequate cybersecurity defenses (Black Book Research, June 2025). 68% operate without a dedicated cybersecurity leader (Black Book Research, June 2025), 82% do not meet federal NIST cybersecurity standards (Black Book Research, June 2025), and 41% have already experienced malware or ransomware attacks since early 2024 (Black Book Research, June 2025). These facilities face the same threat environment as large health systems but with a fraction of the staffing, budget, and technical infrastructure, and no dedicated solution exists for hospitals operating with 0-1 security staff on thin or negative margins.
 
 ## Who Experiences This Problem
 
-**~1,800 rural community hospitals** across the United States, including **~1,377 Critical Access Hospitals** (CAHs) in 45 states (Flex Monitoring Team, January 2026). These facilities are characterized by:
+The affected population consists of approximately 1,796 to 1,844 rural community hospitals, representing 35% of all U.S. community hospitals (KFF, April 2025; Chartis Center for Rural Health, February 2025). Within this group, approximately 1,300 to 1,377 are Critical Access Hospitals -- facilities limited to 25 beds, located at least 35 miles from other hospitals, and receiving cost-based Medicare reimbursement (Flex Monitoring Team / CMS, January 2026). These facilities serve a geographically dispersed population; in most rural areas, the next closest healthcare facility may be 45 miles or more away (Kate Pierce, Former CIO/CISO, North Country Hospital, TechTarget, 2024).
 
-- **Under 100 beds** — 50% are CAHs capped at 25 beds (KFF, April 2025)
-- **0-1 dedicated security staff** — 68% have no CISO (Black Book Research, June 2025); IT staff "wear 15-20 hats" (Jackie Mattingly, Clearwater, TechTarget 2025)
-- **Thin margins** — 46% operate at negative margins; average CAH margin is 2.6% (Chartis, February 2025)
-- **Legacy infrastructure** — 73% run outdated operating systems (HIMSS, 2021); 71% of medical devices run obsolete software (Check Point/Claroty, 2025)
-- **Rural isolation** — next nearest facility often 40-45+ miles away; patient diversion during attacks is infeasible (Kate Pierce, Senate HSGAC testimony, March 2023)
+46% of rural hospitals operate with negative margins (Chartis Center for Rural Health, February 2025), and 432 are currently classified as vulnerable to closure (Chartis Center for Rural Health, February 2025). 182 rural hospitals have closed or converted since 2010 (Chartis Center for Rural Health, February 2025). The financial fragility of this population indicates that the capacity to absorb cybersecurity incident costs is limited.
 
-**South Carolina specifically:** 15 small rural hospitals, 3-4 Critical Access Hospitals, 728,419 people in nonmetro areas (14.0% of state population), 6 hospital closures since 2010, and the highest rural premature death rate in the nation (95th percentile) (SC Office of Rural Health; Rural Health Information Hub). SC is a Medicaid non-expansion state — 53% of rural hospitals in non-expansion states operate in the red vs. 43% in expansion states (Chartis, February 2025).
+South Carolina -- the state where CyberShield Rural would initially operate -- has 15 small rural hospitals, 3-4 Critical Access Hospitals, and ranks at the 95th percentile nationally for rural premature death (SC Office of Rural Health; Chartis Center for Rural Health, February 2025). South Carolina is a Medicaid non-expansion state, and 53% of rural hospitals in non-expansion states operate at a loss compared to 43% in expansion states (KFF, April 2025).
 
 ## Severity and Impact
+
+Healthcare data breach costs averaged $9.77 million per incident in 2024, the highest of any industry for 14 consecutive years (IBM/Ponemon Institute, August 2024). For rural hospitals specifically, the AHA's National Advisor for Cybersecurity estimated average recovery costs of approximately $11 million per ransomware attack (AHA/Microsoft, March 2025). Given that 46% of rural hospitals already operate with negative margins (Chartis Center for Rural Health, February 2025), this figure suggests that a single ransomware incident could threaten the financial viability of most affected facilities.
+
+84% of ransomware attacks on rural hospitals resulted in operational disruptions, 33% involved ambulance diversion, and 42% involved delays or cancellations of scheduled care (University of Minnesota Rural Health Research Center, June 2024). Average downtime following a ransomware attack extends to 17-18 days (Comparitech/Statista, 2024), with daily downtime costs averaging $1.9 million (Comparitech/HFMA, 2024). Only 22% of healthcare organizations recovered in less than one week in 2024, down from 54% in 2022 (Sophos, September 2024).
+
+The patient safety dimension is particularly acute for rural facilities. An estimated 42 to 67 Medicare patient deaths were attributable to ransomware between 2016 and 2021, with in-hospital mortality rising from approximately 3% to 4% during active attacks (University of Minnesota/DePaul University, November 2023). 28-29% of survey respondents reported increased mortality rates following cyberattacks (Ponemon Institute/Proofpoint, 2024-2025). Research on neighboring facility impacts showed a 35.2% increase in EMS arrivals and a 113.6% increase in confirmed strokes at adjacent hospitals during attacks (Microsoft/JAMA, 2024), indicating that rural cyberattacks create cascading effects across regional healthcare systems. The mortality data represents correlational evidence from surveys and one peer-reviewed Medicare claims study; causation is suggested but not established with certainty across all contexts.
 
 ### Key Statistics
 
 | Metric | Value | Source |
 |--------|-------|--------|
 | Rural hospitals lacking adequate cyber defenses | 73% (up from 61% in 2023) | Black Book Research, June 2025 |
-| Rural hospitals with no CISO | 68% | Black Book Research, June 2025 |
-| Rural hospitals hit by malware/ransomware since 2024 | 41% | Black Book Research, June 2025 |
-| Average recovery cost per ransomware attack (rural) | ~$11 million | AHA/Microsoft (John Riggi), March 2025 |
-| Average healthcare breach cost | $9.77M (2024), $7.42M (2025) | IBM/Ponemon, 2024-2025 |
-| Average downtime from ransomware | 17-18.7 days | Comparitech/Statista, 2024 |
-| Daily cost of hospital downtime | $1.9 million | Comparitech/HFMA, 2024 |
-| Rural attacks causing operational disruptions | 84% | University of Minnesota, June 2024 |
-| Rural attacks involving ambulance diversion | 33% | University of Minnesota, June 2024 |
-| Organizations reporting increased mortality post-attack | 28-29% | Ponemon Institute/Proofpoint, 2024-2025 |
-| Healthcare: #1 ransomware target (critical infrastructure) | 249 FBI complaints (2023) | FBI IC3, March 2024 |
-| Orgs hit by ransomware in 2024 | 67% (up from 34% in 2021) | Sophos, September 2024 |
-| Rural hospitals vulnerable to closure | 432 | Chartis, February 2025 |
-| First cyber-attributed hospital closure | St. Margaret's Health (IL), June 2023 | NBC News |
-
-### Patient Impact
-
-Cyberattacks on rural hospitals create patient safety crises that urban attacks do not. When a rural hospital goes down, the nearest alternative may be 40-45+ miles away (Kate Pierce, Senate HSGAC testimony, March 2023). University of Minnesota research documented that travel time to alternative hospitals is 4-7 times greater for patients of rural ransomware victims compared to urban attacks (University of Minnesota, June 2024). Microsoft/JAMA research found 35.2% increase in EMS arrivals at neighboring hospitals, 47.6% increase in wait times, and 113.6% increase in confirmed strokes at adjacent facilities during attacks (Microsoft Security/JAMA, 2024). Academic research using Medicare claims data estimated 42-67 patient deaths attributable to ransomware from 2016-2021, with a 33% relative increase in in-hospital mortality during attacks and a 61.8-73.0% mortality increase for Black patients specifically (University of Minnesota/DePaul University, November 2023).
-
-### Trajectory: Worsening
-
-The problem is intensifying:
-- Large breaches reported to HHS increased 93% from 2018-2022, from 369 to 712 (HHS ASPR, December 2023)
-- Ransomware-related breaches increased 278% over same period (HHS ASPR, December 2023)
-- Healthcare organizations experiencing attacks doubled from 34% in 2021 to 67% in 2024 (Sophos, September 2024)
-- Rural hospital ransomware attacks increased from 5 in 2016 to 17 in 2021 (University of Minnesota, June 2024)
-- 259 million Americans affected by healthcare hacks in 2024 (AHA, May 2025)
-
-Driving forces: ransomware-as-a-service lowering attacker barriers, IoT medical device proliferation with 10-15 devices per bed and 77% having known vulnerabilities (Check Point/Claroty, 2025), cybersecurity workforce shortage with 74% reporting hiring difficulty and roles taking 70% longer to fill (HSCC, May 2025), and rural hospital financial deterioration with debt-to-equity ratio rising from 1.59 in 2018 to 3.35 in 2024 (Microsoft/NRHA, March 2025).
+| Rural hospitals without a CISO | 68% | Black Book Research, June 2025 |
+| Rural hospitals attacked (malware/ransomware) | 41% since early 2024 | Black Book Research, June 2025 |
+| Average rural hospital ransomware recovery cost | ~$11 million | AHA/Microsoft, March 2025 |
+| Average ransomware downtime | 17-18 days | Comparitech/Statista, 2024 |
+| Daily downtime cost | $1.9 million | Comparitech/HFMA, 2024 |
+| Rural hospitals operating at negative margins | 46% | Chartis Center for Rural Health, February 2025 |
+| Rural hospitals vulnerable to closure | 432 | Chartis Center for Rural Health, February 2025 |
+| Healthcare organizations hit by ransomware (2024) | 67% | Sophos, September 2024 |
+| Healthcare FBI ransomware complaints (2023) | 249 (#1 sector) | FBI IC3, March 2024 |
 
 ## Current State
 
 ### Existing Solutions
 
-| Solution | Type | Rural Fit | Annual Cost (50-bed hospital) |
-|----------|------|-----------|-------------------------------|
-| CrowdStrike | Enterprise endpoint | No — 299-endpoint minimum for MDR | $27,750+ |
-| Palo Alto Networks | Enterprise platform | No — "thousands of devices" positioning | $15,000-$30,000+ |
-| Fortinet | Hardware/software | Partial — only major vendor with documented rural deployment (RWHC) | $3,000-$8,000 |
-| Claroty/Medigate | Healthcare IoT | No — enterprise customers, Best in KLAS 5 years (KLAS, February 2025) | Not published |
-| Cynerio | Healthcare IoT | Was closest — "Cynerio Now!" for small hospitals, but acquired by Axonius July 2025 | Eliminated |
-| Armis | IoT security | No — Global 2000 focus; being acquired by ServiceNow for $7.75B | Not published |
-| Fortified Health Security | Healthcare MSSP | Yes — Best in KLAS 4 years (KLAS, February 2025), explicit rural support | $60,000-$240,000 |
-| Clearwater | Healthcare MSSP | Yes — ClearAdvantage for CAHs, Cyber Now Initiative | Not published |
-| Microsoft Program | Philanthropic | Partial — 700+ enrolled (AHA, July 2025); free assessments/training; self-described "stopgap" (Microsoft, March 2025) | Free (limited scope) |
-| CISA/HHS 405(d) | Government guidance | Limited — guidance and external scanning only; no tools or funding (GAO-25-107755, November 2024) | Free (no implementation) |
+The current solution landscape reveals an enterprise bias that leaves rural hospitals underserved. Commercial cybersecurity vendors -- including CrowdStrike (299-endpoint minimum for MDR service) and Palo Alto Networks (enterprise-scale positioning) -- do not publish programs, pricing, or case studies for hospitals under 100 beds (vendor product pages, January 2026). Fortinet is the only major commercial vendor with a documented rural deployment, through its partnership with Rural Wisconsin Healthcare Cooperative serving 35 member hospitals (Fortinet, January 2026).
 
-### Why They're Insufficient
+Healthcare-specific medical device security platforms -- Claroty, Cynerio, and Armis -- serve predominantly large health systems. Cynerio was the only vendor with an explicit small hospital program ("Cynerio Now!"), but Axonius acquired Cynerio in July 2025 for over $100 million (Axonius, July 2025), and the program's continuation remains unverified. Armis is being acquired by ServiceNow for $7.75 billion (ServiceNow, 2025), with the transaction expected to reinforce its enterprise orientation.
 
-The market gap is not "no solutions exist" — it is "no solution fits." The HSCC report captured this: **"Rural hospitals are not 'small urban systems.' They require rural-fit products, rural-fit implementation models, and rural-fit support."** (HSCC "On the Edge" Report, May 2025)
+Managed Security Service Providers represent the most practical current option. Fortified Health Security has won Best in KLAS for Security and Privacy Managed Services four consecutive years and explicitly serves rural hospitals (KLAS Research, February 2025). Clearwater operates a dedicated "ClearAdvantage for Regional and Critical Access Hospitals" program with virtual CISO leadership and 24/7 SOC support (Clearwater, January 2026). Neither vendor publishes pricing; industry estimates place healthcare MSSP services at $5,000 to $20,000 per month (03-current-solutions.md analysis, January 2026).
 
-Five structural barriers prevent adoption:
+Microsoft's Cybersecurity Program for Rural Hospitals, launched June 2024, has enrolled more than 700 of approximately 2,000 eligible rural hospitals and conducted 375 or more assessments (Microsoft, March 2025). The program provides free assessments, training, and up to 75% discounts on security products for Critical Access Hospitals. However, Microsoft's own white paper describes the program as "not entirely sufficient" and a "stop-gap measure" (Microsoft, March 2025).
 
-1. **Cost mismatch** — Enterprise solutions assume $1-4M/year budgets; 50% of rural hospitals are in the red (Chartis, February 2025); 69% spend less than 4% of IT budget on security (Black Book Research, June 2025)
-2. **Staffing impossibility** — Solutions require dedicated security teams; rural hospitals have 2-5 total IT staff handling everything (Jackie Mattingly, Clearwater, 2025); cybersecurity roles take 70% longer to fill (HSCC, May 2025)
-3. **Complexity assumptions** — 88% report vendors market "urban-first" solutions as "rural-ready" (Black Book Research, January 2026); 82% forced to adapt workflows to technology; 92% admit existing tools are severely underutilized (Black Book Research, January 2026)
-4. **Legacy system burden** — 73% on legacy OS (HIMSS, 2021); 40%+ of devices at end-of-life (Check Point/Claroty, 2025); physical device lifecycles (10-15 years) mismatched with software lifecycles (3-5 years)
-5. **Connectivity constraints** — 157 million Americans lack broadband (Microsoft TechSpark); cloud-based security tools assume bandwidth rural areas don't have
+Federal programs -- CISA Cyber Hygiene Services and HHS 405(d) HICP -- provide guidance and limited scanning services but not implementation support, funding, or staffing. HHS's Hospital Cyber Resiliency Initiative found only 49% of hospitals passing vulnerability scanning assessments (HHS 405(d), April 2023).
+
+### Why Existing Solutions Are Insufficient
+
+Five structural barriers explain the adoption failure documented across the research:
+
+**Pricing mismatch.** Enterprise security solutions assume annual budgets of $1 million to $4 million (03-current-solutions.md, January 2026). 69% of rural hospitals allocate less than 4% of their IT budgets to cybersecurity (Black Book Research, June 2025), and 50% operate at negative margins (Chartis Center for Rural Health, February 2025).
+
+**Staffing impossibility.** 74% of healthcare organizations report significant difficulty hiring cybersecurity professionals, and cybersecurity roles take 70% longer to fill than other healthcare IT positions (HSCC, May 2025). Rural hospitals typically operate with 2-5 total IT staff handling all technology functions (Black Book Research, January 2026). 92% report that existing cybersecurity tools remain severely underutilized due to inadequate staffing (Black Book Research, January 2026).
+
+**Complexity assumptions.** 88% of rural IT stakeholders report that vendors market "urban-first" solutions as "rural-ready" (Black Book Research, January 2026). The HSCC characterized the gap directly: "Rural hospitals are not 'small urban systems.' They require rural-fit products, rural-fit implementation models, and rural-fit support" (HSCC, May 2025).
+
+**Legacy system burden.** 73% of healthcare providers rely on legacy operating systems (HIMSS, 2021). 40% or more of medical devices are at end-of-life with no security patches available (Claroty/Check Point Research, 2025). The mismatch between physical device lifecycles of 10-15 years and software lifecycles of 3-5 years creates persistent vulnerabilities.
+
+**Market consolidation moving upmarket.** The acquisition of Cynerio by Axonius (July 2025) and the pending acquisition of Armis by ServiceNow ($7.75 billion) indicate that the healthcare cybersecurity market is consolidating toward enterprise-scale offerings rather than developing downmarket solutions.
 
 ## Customer Voice
 
-Rural hospital IT leaders describe cybersecurity as an impossible choice between protecting patient data and keeping hospital doors open. Across 17 distinct voices from congressional testimony, news interviews, industry publications, and professional reports (2023-2026), five themes dominate:
+Rural hospital IT leaders describe a consistent pattern of awareness without capability. 17 distinct voices from congressional testimony, news interviews, industry publications, and professional reports (2023-2026) document structural barriers to cybersecurity adoption.
 
-**Budget trade-offs:** "We could have cybersecurity, or we can get that CT machine that we need to bring in more revenue and keep the doors open." — Jim Roeder, VP of IT, Lakewood Health System, 25-bed CAH (HealthTech Magazine/TechTarget, 2025)
+Jim Roeder, VP of IT at Lakewood Health System, a 25-bed Critical Access Hospital in Minnesota, described the core trade-off: "We could have a couple million dollars for cybersecurity, or we can get that CT machine that we need to bring in more revenue and keep the doors open" (HealthTech Magazine, June 2025). Jackie Mattingly, Senior Director of Consulting Services at Clearwater, characterized the staffing reality across her rural hospital clients: "They're running on shoestring budgets with two to five people doing the work of 20...The current state of rural health is one of constant triage" (TechTarget, 2025).
 
-**Staffing crisis:** "At a lot of these facilities, the IT director is looking at logs one minute, and the next minute, he's changing light bulbs." — John Riggi, AHA National Adviser for Cybersecurity (HealthTech Magazine, 2024-2025)
+The patient safety dimension is expressed with particular intensity by rural leaders who lack nearby alternatives. Kate Pierce, former CIO/CISO at North Country Hospital in Vermont, stated: "In most rural areas, the next closest healthcare facility may be 45 miles away or more, making the diversion of patients infeasible" (TechTarget, 2024).
 
-**Existential threat:** "You're dead in the water. We were down a minimum of 14 weeks. Nothing went out. No claims. Nothing got entered." — Linda Burt, VP of Quality, St. Margaret's Health, first hospital to close citing cyberattack (NBC News, June 2023)
+St. Margaret's Health in Spring Valley, Illinois became the first U.S. hospital to publicly cite a cyberattack as a contributor to its closure in June 2023. Linda Burt, VP of Quality, described the aftermath: "You're dead in the water. We were down a minimum of 14 weeks" (NBC News, June 2023). During the Change Healthcare breach of February 2024, anonymous rural physicians reported: "This cyberattack is leading me to bankruptcy" and "may bankrupt our practice of 50 years in this rural community" (AMA Survey, April 2024).
 
-**Patient safety:** "There's not another facility for 40 miles — we can't just say, 'sorry, we can't take you. Our network is down.'" — Kate Pierce, Former CIO/CISO, North Country Hospital (TechTarget, 2024)
-
-**Awareness without capability:** "People don't realize how much these smaller systems are attacked and get hit by ransomware or are extorted just as much as the larger systems." — Jim Roeder, Lakewood Health (Chief Healthcare Executive, 2025)
-
-The most actionable insight: rural hospital IT leaders explicitly request **"out-of-the-box" managed solutions** that don't require dedicated security staff to operate (HSCC, May 2025; Microsoft Rural Hospital Report, March 2025). They know what they need — they list specific tools, processes, and resources with precision — but face systematic barriers to getting it.
-
-*Full customer voice detail: customer-voice.md*
+Full customer voice documentation with 20 quotes across 5 themes is available in customer-voice.md.
 
 ## Cost of Status Quo
 
-The economic burden of inadequate rural hospital cybersecurity is estimated at **$1.5 billion annually** across ~1,800 facilities, with a trajectory toward $3 billion by 2030. This estimate is built bottom-up from IBM/Ponemon (2024-2025), Black Book Research (June 2025), and Sophos (September 2024) data.
+The estimated annual cybersecurity cost burden across approximately 1,800 rural hospitals reaches $1.5 billion at a medium estimate, derived from per-hospital prevention spending of $95,000 to $480,000 and annualized incident costs of $300,000 to $1.2 million (04-cost.md analysis, 2024-2025). The underinvestment gap -- the difference between current average spending of approximately $150,000 per rural hospital and the minimum adequate spend of $400,000 to $750,000 -- ranges from $250,000 to $600,000 per facility, producing an aggregate annual underinvestment of $450 million to $1.08 billion across the sector (04-cost.md analysis, 2024-2025).
 
-**Per-hospital costs:**
-- Prevention spending: $95,000-$480,000/year at current inadequate levels (Black Book Research, June 2025; Microsoft Rural Hospital Report, March 2025)
-- Annualized incident cost (20-40% attack probability × $1.5-3M average): $300,000-$1.2M (derived from Sophos, September 2024; IBM/Ponemon, 2024)
-- Total per-hospital: $395,000-$1.68M/year
+Microsoft estimates that basic cybersecurity remediation would require $30,000 to $40,000 per hospital, totaling $70 to $75 million across all rural hospitals nationally (Microsoft, March 2025). This figure represents the floor for initial posture improvement rather than ongoing protection.
 
-**Underinvestment gap:**
-- Current average spend: ~$150,000/year (Black Book Research, June 2025)
-- Minimum adequate spend: $400,000-$750,000/year (industry benchmark: 10-15% of IT budget)
-- Per-hospital gap: $250,000-$600,000/year
-- Market-wide gap: **$450M-$1.08B annually**
+The Change Healthcare breach of February 2024 demonstrated how third-party vendor concentration creates systemic risk that disproportionately affects rural facilities. 94% of hospitals reported financial impact (AHA, 2024), but a University of Minnesota study found that only 11% of hospitals received CMS relief funds, and rural hospitals were disproportionately excluded from emergency assistance (University of Minnesota School of Public Health, 2024). More than 312 hospitals with significant revenue losses received no relief (University of Minnesota School of Public Health, 2024).
 
-**Change Healthcare case study:** The February 2024 breach disabled systems processing 40% of all US healthcare claims (HHS, January 2025). 94% of hospitals reported financial impact (AHA Survey, 2024). Claims submissions dropped $6.3 billion in the first three weeks (Kodiak Solutions/Senate Finance Committee, May 2024). Rural hospitals were disproportionately excluded from federal relief — only 11% of hospitals received CMS relief funds, with rural and unaffiliated hospitals disproportionately left out (University of Minnesota School of Public Health, 2024). 312+ hospitals with significant revenue losses received no assistance.
-
-## Regulatory Tailwind
-
-The regulatory environment is tightening, creating urgency:
-
-- **Proposed HIPAA Security Rule update** (Federal Register, January 6, 2025): Eliminates "required" vs. "addressable" distinction — all specifications become mandatory. $9B estimated first-year compliance cost — HHS's own figure in the regulatory impact analysis (Morgan Lewis, January 2025). 180-day compliance deadline. No size-based exemptions for rural hospitals.
-- **CMS cybersecurity conditions**: HHS strategy calls for tying cybersecurity to Medicare reimbursement — existential for rural hospitals dependent on cost-based reimbursement (HHS ASPR, December 2023).
-- **State action**: New York's October 2025 hospital cybersecurity rules are first-in-nation mandatory state requirements (NY DOH, October 2024); may become national model.
-- **Enforcement intensifying**: 2024 was OCR's busiest year with 22 enforcement actions (HHS OCR enforcement data, 2024); Risk Analysis Initiative yielding 10+ actions through mid-2025.
-- **South Carolina**: No state-specific healthcare cybersecurity mandates beyond federal HIPAA. Breach notification law imposes $1,000/resident penalties for willful violations (S.C. Code § 39-1-90).
-
-The regulatory trajectory creates both demand — hospitals must comply — and potential funding: CMS RHT $50B program (One Big Beautiful Bill Act, July 2025) explicitly lists cybersecurity as eligible use, and pending legislation (S.3315, Health Care Cybersecurity and Resiliency Act of 2025) would couple mandates with grants.
+The proposed HIPAA Security Rule update, published January 6, 2025, carries an estimated first-year compliance cost of $9 billion industry-wide (Federal Register, January 2025). No explicit size-based exemptions exist in the proposed rule, and the elimination of the distinction between "required" and "addressable" specifications would remove the primary mechanism that previously allowed risk-based alternatives for smaller organizations (Federal Register, January 2025). However, this rule is currently paused under the Trump administration's regulatory freeze (Federal Register, January 2025), and over 100 hospital systems submitted a joint letter urging its withdrawal (December 2025). The timeline for compliance-driven cybersecurity spending therefore remains uncertain.
 
 ## Alignment with Capital Thesis
 
-The problem thesis strengthens every capital alignment identified in Phase 01:
+The problem evidence aligns with the capital thesis (Phase 01) across the primary funding paths identified for CyberShield Rural.
 
-- **CMS RHT Program**: Category F explicitly funds "cybersecurity capability development" (CMS, December 2025). Research now documents exactly why rural hospitals need it — 73% inadequate defenses (Black Book Research), 41% already attacked (Black Book Research), $11M average recovery cost (AHA/Microsoft). The problem is not theoretical.
-- **SCRA/SC Launch**: SC has 15 small rural hospitals, 3-4 CAHs, and the highest rural premature death rate in the nation (SC Office of Rural Health; Rural Health Information Hub). Cybersecurity vulnerability compounds existing healthcare access crisis.
-- **Town Hall Ventures**: Core thesis is "tech-enabled innovation for underserved populations." Research documents rural hospitals as cybersecurity's most underserved segment — 73% lack adequate defenses, no dedicated solution exists (Black Book Research, June 2025).
-- **CommonSpirit Ventures**: Operates critical access facilities across 21 states. Research documents the exact threats their facilities face — 41% attacked, $11M recovery cost (Black Book Research; AHA/Microsoft).
-- **Accelerators (MassChallenge, MACH37)**: Research validates market gap and urgency — both key ingredients for accelerator selection committees. $1.5B annual cost, $450M-$1.08B underinvestment gap.
+The CMS Rural Health Transformation Program allocated $200,030,252 to South Carolina, with cybersecurity explicitly listed among eligible uses under Category F (IT Advances) (CMS, December 2025). The severity data documented in this thesis -- 73% lacking adequate defenses, 68% without cybersecurity leadership, $11 million average recovery costs -- provides the evidence base that a state subaward application would require to justify cybersecurity-focused funding within the RHT Program.
 
-The regulatory tailwind ($9B HIPAA compliance cost per HHS; pending CMS conditions per HHS ASPR, December 2023) adds urgency that wasn't fully visible in Phase 01. Funders can now see both the problem and the forcing function.
+SCRA/SC Launch Inc. invested $250,000 in a cybersecurity startup (ThreatCaptain) in February 2025 and launched a statewide Center for Cybersecurity in December 2025 (SCRA, January 2026; WLTX News, December 2025). No healthcare cybersecurity company exists in the current SCRA portfolio (SCRA, January 2026). The problem data supports the case that a rural hospital cybersecurity venture would address a documented gap within SCRA's demonstrated areas of investment interest.
+
+Town Hall Ventures targets "healthcare companies focused on tech-enabled innovation for underserved populations" (Massively Better Healthcare, January 2026), and CommonSpirit Ventures operates critical access facilities across 21 states (CommonSpirit Ventures, January 2026). The problem thesis documents that rural hospitals constitute an underserved population facing a quantified cybersecurity gap, which suggests alignment with both firms' stated investment criteria.
+
+The capital thesis identified no venture-backed startup dedicated to rural hospital cybersecurity during the 2024-2025 research period (Phase 01, January 2026). The problem evidence in this thesis supports that finding by documenting why the gap persists: existing solutions are designed for enterprise environments, and the market is consolidating upmarket rather than developing downmarket solutions for resource-constrained facilities.
+
+## Limitations and Caveats
+
+The following data limitations affect the analysis:
+
+- **Mortality causation:** Survey data from Ponemon Institute/Proofpoint shows correlation between cyberattacks and increased mortality. Only the University of Minnesota/DePaul University study (November 2023) establishes a causal link using Medicare claims data. The broader mortality figures should be treated as correlational.
+- **2025 cost declines:** Sophos 2025 data shows significant declines in ransom payments and recovery costs. These may reflect improved defenses, shifting attacker tactics, or methodology changes. Cost projections based on 2024 peaks should be treated with caution.
+- **South Carolina CAH count:** A discrepancy exists between SC Office of Rural Health (4 CAHs) and Rural Health Information Hub (3 CAHs). The 3-4 range is used pending verification.
+- **MSSP pricing:** Neither Fortified Health Security nor Clearwater publishes pricing. The $5,000-$20,000/month estimate is an industry-level figure, not specific to rural hospital programs.
+- **Aggregate cost estimates:** The $1.5 billion annual burden is a derived figure from the cost research file, built on assumptions about attack probability and average costs. The estimate provides directional guidance but should not be treated as precise.
+- **HIPAA Security Rule uncertainty:** The proposed rule is paused under regulatory freeze with significant industry opposition. The $9 billion compliance cost estimate assumes the rule is finalized substantially as proposed, which remains uncertain.
+- **FBI reporting rate:** FBI IC3 data captures approximately 20% of actual incidents, meaning the 249 reported healthcare ransomware complaints significantly undercount actual attack volume.
+
+## Inline Citation Standard
+
+**MANDATORY:** Every factual claim in this thesis has an inline citation in the format (Source Name, Date). The sources.md file provides full bibliographic detail; thesis.md provides inline attribution for readability.
 
 ## Evidence Summary
 
-- **Prevalence citations:** 8
-- **Severity citations:** 8
-- **Cost of status quo citations:** 7
-- **Customer voice sources:** 17 distinct voices from 7+ source types
-- **Current solutions documented:** 10
-- **Gaps documented:** 4
-- **Total unique sources:** 41
+- **Prevalence citations:** 10
+- **Severity citations:** 10
+- **Cost of status quo citations:** 5
+- **Customer voice sources:** 6 (with 20 individual quotes in customer-voice.md)
+- **Current solutions documented:** 6
+- **Gaps documented:** 3
+- **Total unique sources:** 28
 
 ## Gate Criteria Checklist
 
 - [x] Problem clearly stated with third-party evidence
-- [x] Affected population sized with sources (~1,800 rural hospitals, 46M Americans served)
-- [x] Cost/impact quantified ($1.5B annual cost, $11M per attack, 17+ days downtime, documented mortality impact)
-- [x] Customer voice captured from public sources (17 distinct voices, 5 themes, 7+ source types)
-- [x] Aligned with capital thesis (all 12 funders strengthened)
+- [x] Affected population sized with sources
+- [x] Cost/impact quantified
+- [x] Customer voice captured from public sources
+- [x] Aligned with capital thesis
 
 ---
 
 *Full evidence: evidence.yaml*
 *Customer voice detail: customer-voice.md*
+*Source bibliography: sources.md*
 *Processing decisions: processing-log.md*
