@@ -742,6 +742,34 @@
     }
     .gate-option strong { color: var(--text-primary); }
     .gate-consequence { color: var(--text-muted); font-size: 0.8rem; }
+    .gate-group-label { font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.25rem; }
+    .gate-group-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .gate-card.strategic {
+      border-color: var(--border);
+      border-left-color: var(--text-muted);
+    }
+    .gate-card.strategic .gate-num {
+      background: var(--bg-secondary);
+      border-color: var(--border);
+      color: var(--text-muted);
+    }
+    .gate-priority {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+    .gate-priority.blocking { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .gate-priority.strategic { background: var(--bg-secondary); color: var(--text-muted); border: 1px solid var(--border); }
+    .gate-revisit {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
 
     /* EVIDENCE BRIEFING */
     .evidence-briefing {
@@ -1927,13 +1955,16 @@
       </div>
     </div>
 
-    <!-- Decision Cards -->
+    <!-- Blocking Decisions -->
+    <h3 class="gate-group-label">Blocking Decision</h3>
+    <p class="gate-group-desc">Must be resolved before the next phase can start.</p>
     <div class="gate-cards">
 
-      <div class="gate-card">
+      <div class="gate-card blocking">
         <div class="gate-card-header">
           <div class="gate-num">1</div>
           <div class="gate-question">Proceed to Phase 02?</div>
+          <span class="gate-priority blocking">Blocking</span>
         </div>
         <p class="gate-context">The capital thesis identifies 12 viable funding paths across 4 categories with two strong anchors (CMS RHT, ARPA-H). The healthcare cybersecurity market is growing at 18.5% CAGR with a regulatory mandate (HIPAA NPRM) creating urgency. All funders require a validated problem and most require a working product &mdash; both are addressed in later phases.</p>
         <div class="gate-options">
@@ -1952,12 +1983,21 @@
         </div>
       </div>
 
-      <div class="gate-card">
+    </div>
+
+    <!-- Strategic Decisions -->
+    <h3 class="gate-group-label">Strategic Decisions</h3>
+    <p class="gate-group-desc">Inform strategy but do not block the next phase. Can be deferred &mdash; later phases will produce data that makes these choices clearer.</p>
+    <div class="gate-cards">
+
+      <div class="gate-card strategic">
         <div class="gate-card-header">
           <div class="gate-num">2</div>
           <div class="gate-question">Which funding track to prioritize?</div>
+          <span class="gate-priority strategic">Strategic</span>
         </div>
         <p class="gate-context">The dual-track strategy covers grants (Track A) and equity (Track B). Both primary grant paths have external dependencies: CMS RHT criteria are unpublished, SCRA requires a working product. VC timelines are unknown for 7 of 12 viable funders. Accelerators offer a middle path with validation + network before committing to either track.</p>
+        <p class="gate-revisit">Revisit after Phase 05 (Solution Thesis) &mdash; solution design will determine which funders align best and which track to weight.</p>
         <div class="gate-options">
           <div class="gate-option">
             <strong>Grants first</strong>
@@ -1978,12 +2018,14 @@
         </div>
       </div>
 
-      <div class="gate-card">
+      <div class="gate-card strategic">
         <div class="gate-card-header">
           <div class="gate-num">3</div>
           <div class="gate-question">Accelerator timing?</div>
+          <span class="gate-priority strategic">Strategic</span>
         </div>
         <p class="gate-context">MassChallenge HealthTech starts April 2026 (zero-equity, MITRE partner). MACH37 is rolling admission (94 graduates, 83% survival rate). Health Wildcatters runs Fall 2026 ($30K/8% equity). All accept pre-MVP companies and provide validation + network.</p>
+        <p class="gate-revisit">Revisit after Phase 04 (Competitive Thesis) &mdash; competitive analysis will clarify whether accelerator network or direct funder engagement is more valuable.</p>
         <div class="gate-options">
           <div class="gate-option">
             <strong>Apply now</strong>
@@ -2000,12 +2042,14 @@
         </div>
       </div>
 
-      <div class="gate-card">
+      <div class="gate-card strategic">
         <div class="gate-card-header">
           <div class="gate-num">4</div>
           <div class="gate-question">SCRA engagement timing?</div>
+          <span class="gate-priority strategic">Strategic</span>
         </div>
         <p class="gate-context">SCRA SC Launch requires a working product beyond proof-of-concept and SC headquarters or employees. Acceptance rate is below 40%. The process is relationship-driven and invite-oriented. SCRA has invested $15M with $2.9B+ follow-on capital since 2006.</p>
+        <p class="gate-revisit">Revisit after Phase 09 (MVP Architecture) &mdash; tech spec will determine timeline to working product, which is SCRA's primary requirement.</p>
         <div class="gate-options">
           <div class="gate-option">
             <strong>Engage now</strong>
