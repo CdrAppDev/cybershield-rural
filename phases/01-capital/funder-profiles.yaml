@@ -1,0 +1,2169 @@
+project: "CyberShield Rural"
+date: "2026-01-28"
+total_funders_analyzed: 35
+viable_funders: 12
+
+funders:
+  # =============================================================================
+  # FEDERAL PROGRAMS
+  # =============================================================================
+
+  - name: "CMS Rural Health Transformation (RHT) Program"
+    type: "Grant"
+    viable: true
+    viability_rationale: "Explicit cybersecurity language in Category F, $200M SC allocation, Tech Catalyst Fund targets startups — strongest federal alignment."
+    confidence: "high"
+
+    overview:
+      description: "$50B five-year CMS program distributing $10B/year to states for rural health transformation, with explicit cybersecurity funding eligibility."
+      focus_areas: ["rural health", "cybersecurity capability development", "health IT", "telehealth", "workforce"]
+      geography: "All 50 states; SC received $200,030,252"
+      stage: "Technology vendor/subrecipient — company partners with state"
+
+    funding:
+      amount_range: "Up to $20M/year via Tech Catalyst Fund; total SC allocation $200M/year"
+      type: "Grant (cooperative agreement, no repayment, no state match)"
+      source: "CMS RHT Program Overview"
+      date: "December 29, 2025"
+      url: "https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview"
+
+    criteria:
+      stated:
+        - criterion: "Technical assistance, software, and hardware for significant IT advances designed to improve efficiency, enhance cybersecurity capability development, and improve patient health outcomes"
+          source: "CMS RHT Program Overview — Category F (IT Advances)"
+          date: "December 2025"
+          url: "https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview"
+        - criterion: "Development and adoption of technology-enabled solutions that improve care delivery in rural hospitals"
+          source: "CMS RHT Program Overview — Category D (Training/Technical Assistance)"
+          date: "December 2025"
+          url: "https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview"
+        - criterion: "One-time, high-impact investments with sustainability plan demonstrating viability beyond 5-year funding period"
+          source: "Director Eunice Medina public statement"
+          date: "2025"
+          url: "https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview"
+        - criterion: "Tech Catalyst Fund: seed funding for innovative, startup health companies — capped at $20M/year (10% of allocation or $20M, whichever is less)"
+          source: "CMS RHT Program Overview"
+          date: "December 2025"
+          url: "https://www.cms.gov/priorities/rural-health-transformation-rht-program/overview"
+      inferred:
+        - criterion: "Rural hospital partnership or implementation site required"
+          evidence: "States distribute funds to providers and eligible organizations through subaward process; states cannot award directly to startups without implementation partners"
+          confidence: "medium"
+          note: "Inferred from program structure, not confirmed criteria"
+
+    process:
+      application_type: "State-administered subaward — criteria NOT YET PUBLISHED"
+      timeline: "State awards announced Dec 2025; subaward process TBD"
+      deadlines: ["SCDHHS subaward application dates not yet announced"]
+      stages:
+        - "Subscribe to SCDHHS Medicaid Bulletins for announcements"
+        - "Contact grants@scdhhs.gov to express interest in Tech Catalyst Fund"
+        - "Apply through state subaward process when published"
+      decision_makers:
+        - name: "Eunice Medina"
+          role: "Director, SCDHHS (confirmed February 2025)"
+          source: "Research file 02-rhtp-scra.md"
+      timeline_source: "CMS announced state awards December 29, 2025; state subaward process not yet published"
+      timeline_confidence: "low"
+
+    portfolio: []
+    # No projects funded yet — program is entirely new
+
+    alignment:
+      strengths:
+        - "Category F explicitly names cybersecurity capability development"
+        - "Tech Catalyst Fund specifically targets startup health companies"
+        - "SC received $200M — among largest allocations"
+        - "No state matching funds required"
+        - "Grant-based (no equity dilution)"
+      gaps:
+        - gap: "State subaward criteria not yet published — cannot prepare targeted application"
+          severity: "blocking"
+          resolution: "Monitor SCDHHS Medicaid Bulletins; contact grants@scdhhs.gov"
+        - gap: "Requires rural hospital implementation partner"
+          severity: "significant"
+          resolution: "Phase 12 (Customer Traction) — secure LOI from Critical Access Hospital"
+        - gap: "Sustainability plan required — must demonstrate post-grant viability"
+          severity: "significant"
+          resolution: "Phase 06 (Business Thesis) — develop subscription revenue model"
+      overall_fit: "strong"
+
+  - name: "ARPA-H UPGRADE / DIGIHEALS"
+    type: "Grant"
+    viable: true
+    viability_rationale: "Directly funds healthcare cybersecurity R&D; private companies can apply; $100M+ deployed — but August 2025 funding cuts create uncertainty."
+    confidence: "medium"
+
+    overview:
+      description: "ARPA-H programs funding autonomous cyber defense for hospitals — UPGRADE ($50M for automated patching) and DIGIHEALS ($50M for digital health security)."
+      focus_areas: ["healthcare cybersecurity R&D", "autonomous patching", "digital twins", "medical device security"]
+      geography: "National"
+      stage: "R&D — requires strong technical capabilities"
+
+    funding:
+      amount_range: "$9.5M-$19M per award (based on announced awards)"
+      type: "Grant/Contract"
+      source: "ARPA-H"
+      date: "May 2024 (UPGRADE); October 2023 (DIGIHEALS)"
+      url: "https://arpa-h.gov/explore-funding/programs/digiheals/awardees"
+
+    criteria:
+      stated:
+        - criterion: "Autonomous cyber-threat solutions for hospitals, vulnerability mitigation platforms, digital twins of hospital equipment, automated defense development"
+          source: "ARPA-H UPGRADE Program"
+          date: "May 2024"
+          url: "https://arpa-h.gov/news-and-events/arpa-h-announces-program-automate-cybersecurity-health-care-facilities"
+      inferred:
+        - criterion: "Academic medical center partnership strengthens proposals"
+          evidence: "Northeastern University ($19M) and UC San Diego ($9.5M) are primary awardees"
+          confidence: "medium"
+          note: "Inferred from award pattern, not confirmed criteria"
+
+    process:
+      application_type: "Federal solicitation — direct application by private companies"
+      timeline: "Unknown — August 2025 reports of funding cuts"
+      deadlines: ["Requires direct verification with ARPA-H"]
+      stages:
+        - "Verify current solicitation status"
+        - "Submit proposal if open"
+      decision_makers: []
+      timeline_source: "Politico reported August 2025 cuts to ARPA-H cybersecurity programs exceeding $150M"
+      timeline_confidence: "low"
+
+    portfolio:
+      - company: "Northeastern University (Archimedes Center)"
+        relevance: "Digital twins for medical device cybersecurity — PATCH Project"
+        amount: "$19M"
+        date: "2024"
+        source: "ARPA-H"
+      - company: "Systems & Technology Research LLC"
+        relevance: "Automated medical device patching"
+        amount: "Up to $16M"
+        date: "2023"
+        source: "ARPA-H DIGIHEALS"
+      - company: "UC San Diego"
+        relevance: "Ransomware prevention"
+        amount: "$9.5M"
+        date: "2023"
+        source: "ARPA-H DIGIHEALS"
+
+    alignment:
+      strengths:
+        - "Direct healthcare cybersecurity focus"
+        - "Private companies can apply"
+        - "Large award sizes ($9.5M-$19M)"
+      gaps:
+        - gap: "Requires advanced R&D capabilities (autonomous patching, digital twins)"
+          severity: "blocking"
+          resolution: "Phase 05 (Solution Thesis) — determine if R&D component fits product roadmap"
+        - gap: "Funding status uncertain after August 2025 reported cuts"
+          severity: "blocking"
+          resolution: "Direct verification with ARPA-H required before investing application effort"
+        - gap: "Awards skew heavily toward universities/research institutions"
+          severity: "significant"
+          resolution: "Partner with academic medical center (e.g., MUSC)"
+      overall_fit: "moderate"
+
+  - name: "CISA State and Local Cybersecurity Grant Program (SLCGP)"
+    type: "Grant"
+    viable: false
+    viability_rationale: "Private companies cannot apply directly; must contract with government entities receiving funds — indirect path only."
+    confidence: "high"
+
+    overview:
+      description: "CISA/FEMA program awarding $1B over 4 years to state/local/tribal governments for cybersecurity improvements. 25% rural mandate."
+      focus_areas: ["government cybersecurity", "rural infrastructure", "MFA", "encryption", "workforce"]
+      geography: "National — states distribute to local entities"
+      stage: "Government entities only"
+
+    funding:
+      amount_range: "$91.75M total FY2025 (down 67% from $279M in FY2024)"
+      type: "Grant to government entities"
+      source: "CISA"
+      date: "August 2025"
+      url: "https://www.cisa.gov/cybergrants/slcgp"
+
+    criteria:
+      stated:
+        - criterion: "Awards to state, local, or tribal governments for addressing cybersecurity risks"
+          source: "CISA SLCGP"
+          date: "January 2026"
+          url: "https://www.cisa.gov/cybergrants/slcgp"
+        - criterion: "At least 25% of funds must go to rural areas"
+          source: "CISA SLCGP"
+          date: "January 2026"
+          url: "https://www.cisa.gov/cybergrants/slcgp"
+      inferred: []
+
+    process:
+      application_type: "Government entities apply through State Administrative Agency via FEMA GO"
+      timeline: "48-month performance period; annual NOFO cycle"
+      deadlines: []
+      stages:
+        - "State Administrative Agency (SLED in SC) receives funds"
+        - "Local entities apply through SAA"
+        - "Vendor procurement (no public criteria available)"
+      decision_makers: []
+      timeline_source: "CISA SLCGP Fact Sheet"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "25% rural mandate creates addressable pool"
+        - "Critical access hospitals qualify as local government subrecipients"
+      gaps:
+        - gap: "Private companies cannot apply directly"
+          severity: "blocking"
+          resolution: "Must position as vendor to government recipients — indirect path"
+        - gap: "Funding dropped 67% from FY2024 to FY2025"
+          severity: "significant"
+          resolution: "Monitor future appropriations"
+        - gap: "No vendor procurement criteria publicly available"
+          severity: "significant"
+          resolution: "Engage SLED and SC Critical Infrastructure Cybersecurity for procurement info"
+      overall_fit: "weak"
+
+  - name: "HHS SBIR/STTR"
+    type: "Grant"
+    viable: false
+    viability_rationale: "Programs expired October 1, 2025 and have not been reauthorized — no applications accepted."
+    confidence: "high"
+
+    overview:
+      description: "Federal non-dilutive R&D funding for small businesses. Programs expired and await Congressional reauthorization."
+      focus_areas: ["health technology R&D", "cybersecurity innovation"]
+      geography: "National"
+      stage: "Pre-revenue through prototype"
+
+    funding:
+      amount_range: "Phase I: up to $314,363; Phase II: up to $2,095,748 (historical)"
+      type: "Grant"
+      source: "NIH SEED / SBIR.gov"
+      date: "Expired October 1, 2025"
+      url: "https://seed.nih.gov/small-business-funding/find-funding/sbir-sttr-funding-opportunities"
+
+    criteria:
+      stated:
+        - criterion: "PI primarily employed by small business; <500 employees; 51%+ U.S. citizen/permanent resident ownership"
+          source: "SBIR.gov Policy Directive"
+          date: "Accessed January 2026"
+          url: "https://www.sbir.gov/tutorials/program-basics/tutorial-2"
+      inferred: []
+
+    process:
+      application_type: "Federal solicitation — EXPIRED"
+      timeline: "No timeline for reauthorization; bills pending (S.1573, H.R.3169, INNOVATE Act)"
+      deadlines: ["Program expired — no deadlines"]
+      stages: []
+      decision_makers: []
+      timeline_source: "NIH Notice NOT-OD-26-006"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "When active, strongest non-dilutive pathway for cybersecurity R&D"
+        - "SCRA Federal Matching Grant doubles SBIR awards with $50K match"
+      gaps:
+        - gap: "Program expired and not accepting applications"
+          severity: "blocking"
+          resolution: "Monitor reauthorization; prepare applications in advance using 3Phase SC support"
+      overall_fit: "weak"
+
+  - name: "ONC LEAP Grants"
+    type: "Grant"
+    viable: true
+    viability_rationale: "For-profits eligible, up to $2M awards, health IT focus — but cybersecurity has not been a stated focus area (2024-2025 focused on AI and behavioral health IT). Viable because: program explicitly targets 'fast emerging challenges' in health IT, and cybersecurity is the fastest-emerging challenge post-Change Healthcare breach. FY2026 focus areas may include security."
+    confidence: "medium"
+
+    overview:
+      description: "ONC grants addressing challenges that slow advancement of health technology. Up to $2M per award, 4-year periods."
+      focus_areas: ["health IT innovation", "AI in healthcare", "behavioral health IT"]
+      geography: "National"
+      stage: "Research institutions, non-profits, for-profits, small businesses"
+
+    funding:
+      amount_range: "Up to $2,000,000 per award"
+      type: "Grant"
+      source: "HealthIT.gov"
+      date: "January 2026"
+      url: "https://www.healthit.gov/topic/onc-funding-opportunities/leading-edge-acceleration-projects-leap-health-information"
+
+    criteria:
+      stated:
+        - criterion: "Addresses well-documented and fast emerging challenges that slow the advancement of health technology"
+          source: "HealthIT.gov"
+          date: "January 2026"
+          url: "https://www.healthit.gov/topic/onc-funding-opportunities/leading-edge-acceleration-projects-leap-health-information"
+      inferred: []
+
+    process:
+      application_type: "Annual solicitation"
+      timeline: "FY2025 applications closed April 2025"
+      deadlines: ["FY2026 solicitation not yet announced"]
+      stages: []
+      decision_makers: []
+      timeline_source: "HealthIT.gov"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "For-profit companies eligible"
+        - "Large award sizes (up to $2M)"
+      gaps:
+        - gap: "Cybersecurity not a stated 2024-2025 focus area"
+          severity: "significant"
+          resolution: "Monitor FY2026 solicitation for cybersecurity focus area addition"
+        - gap: "FY2026 solicitation not yet announced"
+          severity: "minor"
+          resolution: "Contact ONC-LEAP@hhs.gov for upcoming focus areas"
+      overall_fit: "moderate"
+
+  - name: "USDA Distance Learning and Telemedicine Grants"
+    type: "Grant"
+    viable: false
+    viability_rationale: "Focuses on telehealth equipment and broadband — cybersecurity is not a stated eligible use."
+    confidence: "medium"
+
+    overview:
+      description: "USDA grants helping rural communities use telecommunications to overcome remoteness. $50K-$1M per award."
+      focus_areas: ["telehealth", "distance learning", "broadband", "rural connectivity"]
+      geography: "Rural areas (populations under 20,000)"
+      stage: "Healthcare providers serving rural areas"
+
+    funding:
+      amount_range: "$50,000-$1,000,000 per award; ~$40M available FY2025"
+      type: "Grant (15% cost share required)"
+      source: "USDA Rural Development"
+      date: "January 2026"
+      url: "https://www.rd.usda.gov/programs-services/telecommunications-programs/distance-learning-telemedicine-grants"
+
+    criteria:
+      stated:
+        - criterion: "Telehealth equipment, computer hardware, network components, software for healthcare delivery"
+          source: "USDA Rural Development"
+          date: "January 2026"
+          url: "https://www.rd.usda.gov/programs-services/telecommunications-programs/distance-learning-telemedicine-grants"
+      inferred: []
+
+    process:
+      application_type: "Annual competitive cycle (typically spring)"
+      timeline: "Annual NOFO"
+      deadlines: ["Typically spring — FY2026 not yet announced"]
+      stages: []
+      decision_makers: []
+      timeline_source: "USDA Rural Development"
+      timeline_confidence: "medium"
+
+    portfolio:
+      - company: "VNA Home Health (Maine)"
+        relevance: "Rural healthcare technology"
+        amount: "$615,000"
+        date: "Recent"
+        source: "USDA Rural Development"
+      - company: "Eastland Memorial Hospital District (Texas)"
+        relevance: "Rural hospital technology"
+        amount: "$896,714"
+        date: "Recent"
+        source: "USDA Rural Development"
+
+    alignment:
+      strengths:
+        - "Strong rural mandate"
+        - "Healthcare provider eligibility"
+      gaps:
+        - gap: "Cybersecurity not listed as eligible use"
+          severity: "blocking"
+          resolution: "Could frame secure telehealth infrastructure — but weak alignment"
+        - gap: "15% cost share requirement"
+          severity: "minor"
+          resolution: "Budget planning in Phase 06"
+      overall_fit: "weak"
+
+  - name: "HRSA Rural Health Programs"
+    type: "Grant"
+    viable: false
+    viability_rationale: "Focus is on health service delivery and network development — cybersecurity is not a stated priority."
+    confidence: "low"
+
+    overview:
+      description: "HRSA distributes ~$365M annually in rural health grants for service delivery, network development, and hospital stabilization."
+      focus_areas: ["rural health service delivery", "health IT adoption", "workforce", "hospital stabilization"]
+      geography: "HRSA-designated rural areas (RUCA codes)"
+      stage: "Healthcare providers and networks"
+
+    funding:
+      amount_range: "Up to $300,000 (Network Development Planning Program)"
+      type: "Grant"
+      source: "HRSA"
+      date: "January 2026"
+      url: "https://www.hrsa.gov/rural-health/grants"
+
+    criteria:
+      stated:
+        - criterion: "Increase the use of health information technology (Network Development Planning)"
+          source: "HRSA"
+          date: "January 2026"
+          url: "https://www.hrsa.gov/rural-health/grants"
+      inferred: []
+
+    process:
+      application_type: "Grant solicitation"
+      timeline: "Annual cycles"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "HRSA"
+      timeline_confidence: "low"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Rural focus aligns with CyberShield Rural target market"
+      gaps:
+        - gap: "Cybersecurity not a stated priority"
+          severity: "blocking"
+          resolution: "Monitor for cybersecurity-specific solicitations"
+      overall_fit: "weak"
+
+  # =============================================================================
+  # SOUTH CAROLINA STATE PROGRAMS
+  # =============================================================================
+
+  - name: "SCRA / SC Launch Inc."
+    type: "Equity"
+    viable: true
+    viability_rationale: "Invested $250K in cybersecurity startup (ThreatCaptain); launched Center for Cybersecurity Dec 2025; board has healthcare expertise — strongest immediate path."
+    confidence: "high"
+
+    overview:
+      description: "South Carolina Research Authority operates tiered grant programs ($25K-$50K) and SC Launch Inc. equity investments ($200K-$550K) for early-stage tech startups."
+      focus_areas: ["IT", "Life Sciences", "Advanced Manufacturing", "Clean Tech", "Cybersecurity"]
+      geography: "South Carolina (HQ or 51%+ employees)"
+      stage: "Post-proof-of-concept through Series B"
+
+    funding:
+      amount_range: "Grants: $25K-$50K; Equity: $200K-$550K"
+      type: "Grants (non-dilutive) + Convertible loans/equity investments"
+      source: "SCRA"
+      date: "January 2026"
+      url: "https://scra.org/sc-launch/"
+
+    criteria:
+      stated:
+        - criterion: "Large, rapidly expanding market"
+          source: "SCRA Criteria and Eligibility"
+          date: "Accessed January 2026"
+          url: "https://scra.org/sc-launch/criteria-and-eligibility/"
+        - criterion: "Durable intellectual property protection"
+          source: "SCRA Criteria and Eligibility"
+          date: "Accessed January 2026"
+          url: "https://scra.org/sc-launch/criteria-and-eligibility/"
+        - criterion: "Experienced team with established board of advisors"
+          source: "SCRA Criteria and Eligibility"
+          date: "Accessed January 2026"
+          url: "https://scra.org/sc-launch/criteria-and-eligibility/"
+        - criterion: "High potential to attract follow-on funding"
+          source: "SCRA Criteria and Eligibility"
+          date: "Accessed January 2026"
+          url: "https://scra.org/sc-launch/criteria-and-eligibility/"
+        - criterion: "Working product beyond proof-of-concept stage"
+          source: "SCRA Membership FAQ"
+          date: "Accessed January 2026"
+          url: "https://scra.org/get-support/scra-membership/"
+        - criterion: "HQ in SC or 51%+ full-time employees in SC"
+          source: "SCRA Membership FAQ"
+          date: "Accessed January 2026"
+          url: "https://scra.org/get-support/scra-membership/"
+      inferred:
+        - criterion: "Healthcare + cybersecurity intersection is a gap in current portfolio"
+          evidence: "SCRA has health IT companies (PulManage, Qatalyst, VirtueScript) and one cybersecurity company (ThreatCaptain in financial services), but no healthcare cybersecurity company"
+          confidence: "medium"
+          note: "Inferred from portfolio gap, not confirmed priority"
+
+    process:
+      application_type: "Invite-only (must first become SCRA Member Company)"
+      timeline: "Multi-stage; membership to investment timeline not publicly documented"
+      deadlines: ["Rolling — no fixed deadlines"]
+      stages:
+        - "Submit interest form through SCRA portal"
+        - "Initial screening"
+        - "Formal membership application"
+        - "Pitch presentation"
+        - "Membership approval (<40% acceptance rate)"
+        - "Terms of Membership signing"
+        - "Grant eligibility by invitation from assigned manager"
+        - "Investment due diligence if deemed eligible"
+      decision_makers:
+        - name: "Kevin Eichelberger"
+          role: "Regional Investment Manager — Charleston"
+          source: "Research file 02-rhtp-scra.md"
+        - name: "Mitch Smith"
+          role: "Regional Investment Manager — Columbia"
+          source: "Research file 02-rhtp-scra.md"
+        - name: "Rob Moser"
+          role: "Senior Regional Investment Manager — Greenville"
+          source: "Research file 02-rhtp-scra.md"
+        - name: "Lee MacIlwinen"
+          role: "SC Launch Program Director"
+          source: "Research file 01-landscape.md"
+        - name: "Andrea Marshall"
+          role: "SC Launch Inc. Board Chair; VP/General Counsel at MedTrust Holdings"
+          source: "Research file 02-rhtp-scra.md"
+        - name: "Jon-Michial Carter"
+          role: "SC Launch Inc. Board Member; founder of ChartSpan Medical Technologies"
+          source: "Research file 02-rhtp-scra.md"
+        - name: "Brian Shea"
+          role: "Director, Center for Cybersecurity at SCRA"
+          source: "Research file 02-rhtp-scra.md"
+      timeline_source: "SCRA Membership Page"
+      timeline_confidence: "low"
+
+    portfolio:
+      - company: "ThreatCaptain"
+        relevance: "Cybersecurity startup — demonstrates SCRA appetite for cyber sector"
+        amount: "$250K equity + $50K grant"
+        date: "February 2025"
+        source: "SCRA"
+      - company: "PulManage"
+        relevance: "Health IT — remote monitoring for lung disease"
+        amount: "$250K"
+        date: "Recent"
+        source: "SCRA"
+      - company: "Qatalyst Health"
+        relevance: "Health IT — skilled nursing facility software"
+        amount: "$50K acceleration grant"
+        date: "Recent"
+        source: "SCRA"
+      - company: "VirtueScript"
+        relevance: "Health IT — post-acute medication delivery"
+        amount: "$250K"
+        date: "Recent"
+        source: "SCRA"
+      - company: "NeuroQuest"
+        relevance: "Medical diagnostics"
+        amount: "$550K"
+        date: "2024-2025"
+        source: "SCRA"
+      - company: "GreenCape Health (RheumApp)"
+        relevance: "Health IT — rheumatology outcomes"
+        amount: "$75K grants"
+        date: "Recent"
+        source: "SCRA"
+
+    alignment:
+      strengths:
+        - "ThreatCaptain precedent proves cybersecurity investment appetite"
+        - "Center for Cybersecurity at SCRA launched December 2025"
+        - "Board chair (Andrea Marshall) has healthcare background (MedTrust, Roper St. Francis)"
+        - "Board member (Jon-Michial Carter) founded ChartSpan Medical Technologies"
+        - "Portfolio has health IT companies but NO healthcare cybersecurity — gap for CyberShield to fill"
+        - "SC Launch portfolio companies generated $2.9B+ in follow-on funding since 2006"
+      gaps:
+        - gap: "Requires working product beyond proof-of-concept"
+          severity: "blocking"
+          resolution: "Phase 11 (MVP Build) must produce functional product"
+        - gap: "Membership acceptance rate below 40%"
+          severity: "significant"
+          resolution: "Strong positioning at healthcare + cybersecurity intersection; reference Center for Cybersecurity"
+        - gap: "Detailed scoring methodology not publicly available"
+          severity: "minor"
+          resolution: "Relationship-building with Regional Investment Manager is essential"
+      overall_fit: "strong"
+
+  - name: "3Phase SBIR/STTR Program (SC Commerce)"
+    type: "Grant Support"
+    viable: false
+    viability_rationale: "Provides SBIR application support and matching funds, but SBIR/STTR programs are currently expired."
+    confidence: "high"
+
+    overview:
+      description: "SC Commerce program assisting companies with SBIR/STTR applications. 30% success rate. Up to $100K matching for Phase II awards."
+      focus_areas: ["SBIR/STTR application support"]
+      geography: "South Carolina"
+      stage: "Research-based companies pursuing federal grants"
+
+    funding:
+      amount_range: "Up to $100,000 matching for SBIR/STTR Phase II (through JEDA)"
+      type: "Grant support + matching funds"
+      source: "SC Commerce"
+      date: "January 2026"
+      url: "https://www.sccommerce.com/news/phase-iib-matching-fund-launched-sc-small-businesses"
+
+    criteria:
+      stated:
+        - criterion: "South Carolina research-based company pursuing SBIR/STTR federal grants"
+          source: "SC Commerce / 3Phase"
+          date: "January 2026"
+          url: "https://www.3phasesc.com"
+      inferred: []
+
+    process:
+      application_type: "Open enrollment for support services"
+      timeline: "Ongoing"
+      deadlines: []
+      stages:
+        - "Enroll in 3Phase program"
+        - "Receive training and grant writing support"
+        - "Apply for SBIR/STTR when reauthorized"
+      decision_makers:
+        - name: "Tyler Tatum"
+          role: "Program Contact"
+          source: "3Phase website"
+      timeline_source: "3Phase website"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "30% SBIR Phase I success rate (vs. ~17% national average)"
+        - "Free training and grant writing support"
+      gaps:
+        - gap: "SBIR/STTR programs expired — no applications to support"
+          severity: "blocking"
+          resolution: "Enroll now for readiness; activate when programs reauthorized"
+      overall_fit: "weak"
+
+  - name: "MUSC Zucker Institute for Innovation Commercialization"
+    type: "Accelerator/Support"
+    viable: true
+    viability_rationale: "MUSC President sits on SCRA Board; Institute has commercialization track record and SBIR support — valuable as partnership, not primary funder."
+    confidence: "medium"
+
+    overview:
+      description: "MUSC's innovation commercialization arm. $300M in research funds, 34 products to market, startups raised $50M+."
+      focus_areas: ["medical innovation commercialization", "health tech"]
+      geography: "Charleston, South Carolina"
+      stage: "Various"
+
+    funding:
+      amount_range: "Varies — $2M EDA grant for Regional Life Sciences Incubation Program"
+      type: "Support services + grant access"
+      source: "MUSC Zucker Institute"
+      date: "January 2026"
+      url: "https://www.zuckerinnovation.org"
+
+    criteria:
+      stated:
+        - criterion: "Transform medical innovations into real-world products addressing critical medical needs"
+          source: "MUSC Zucker Institute"
+          date: "January 2026"
+          url: "https://www.zuckerinnovation.org"
+      inferred: []
+
+    process:
+      application_type: "Direct engagement"
+      timeline: "Ongoing"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "MUSC Zucker Institute website"
+      timeline_confidence: "low"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "MUSC President on SCRA Board — strategic partnership value"
+        - "Startup LaunchPad program"
+        - "SBIR/STTR support capabilities"
+      gaps:
+        - gap: "Not a primary funder — support and partnership role"
+          severity: "minor"
+          resolution: "Pursue as strategic partner alongside SCRA membership"
+      overall_fit: "moderate"
+
+  # =============================================================================
+  # VENTURE CAPITAL — HEALTHCARE FOCUSED
+  # =============================================================================
+
+  - name: "Flare Capital Partners"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Leading healthcare VC with ClearDATA (HIPAA cloud security) in portfolio — direct precedent for healthcare cybersecurity investment."
+    confidence: "medium"
+
+    overview:
+      description: "Leading early-stage healthcare VC advancing innovation-driven companies. Nearly $1B AUM."
+      focus_areas: ["healthcare innovation", "care access", "cost reduction"]
+      geography: "National (Boston-based)"
+      stage: "Seed to Series B"
+
+    funding:
+      amount_range: "$1M-$8M check size"
+      type: "Equity"
+      source: "Flare Capital"
+      date: "January 2026"
+      url: "https://www.flarecapital.com"
+
+    criteria:
+      stated:
+        - criterion: "Innovation-driven companies to improve positive health outcomes, broaden care access, and lower healthcare costs"
+          source: "Flare Capital"
+          date: "January 2026"
+          url: "https://www.flarecapital.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard VC timeline"
+      deadlines: []
+      stages: []
+      decision_makers:
+        - name: "Michael Greeley"
+          role: "Partner"
+          source: "Flare Capital website"
+        - name: "Dan Gebremedhin"
+          role: "Partner"
+          source: "Flare Capital website"
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "ClearDATA"
+        relevance: "HIPAA-compliant cloud security — healthcare cybersecurity precedent"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Flare Capital"
+
+    alignment:
+      strengths:
+        - "ClearDATA portfolio proves healthcare security appetite"
+        - "Large check sizes for early-stage ($1M-$8M)"
+      gaps:
+        - gap: "Requires demonstrated traction and team for Seed+ investment"
+          severity: "significant"
+          resolution: "Phase 12 (Customer Traction) — need pilot or LOI"
+        - gap: "Boston-based — remote deal"
+          severity: "minor"
+          resolution: "Standard for VC; may require warm intro"
+      overall_fit: "moderate"
+
+  - name: "Town Hall Ventures"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Highest explicit alignment with underserved populations and rural healthcare — led by former CMS Administrator."
+    confidence: "medium"
+
+    overview:
+      description: "Healthcare VC targeting tech-enabled innovation for underserved populations. $1M-$25M checks."
+      focus_areas: ["underserved populations", "healthcare innovation", "Medicaid populations"]
+      geography: "National (Minneapolis)"
+      stage: "Various"
+
+    funding:
+      amount_range: "$1M-$25M"
+      type: "Equity"
+      source: "Massively Better Healthcare / Town Hall Ventures"
+      date: "January 2026"
+      url: ""
+
+    criteria:
+      stated:
+        - criterion: "Healthcare companies focused on tech-enabled innovation for underserved populations"
+          source: "Massively Better Healthcare"
+          date: "January 2026"
+          url: ""
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard VC timeline"
+      deadlines: []
+      stages: []
+      decision_makers:
+        - name: "Andy Slavitt"
+          role: "Key Partner; former CMS Administrator"
+          source: "Research file 01-landscape.md"
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Highest explicit alignment with underserved/rural market positioning"
+        - "Former CMS Administrator understands rural health funding landscape"
+        - "Co-investor with CommonSpirit Ventures"
+      gaps:
+        - gap: "Requires meaningful traction for investment"
+          severity: "significant"
+          resolution: "Phase 12 (Customer Traction)"
+        - gap: "No healthcare cybersecurity investments identified in portfolio"
+          severity: "minor"
+          resolution: "Position as healthcare access enabler — cybersecurity protects care continuity"
+      overall_fit: "strong"
+
+  - name: "7wireVentures"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Underserved populations focus and Medicaid care expertise align with rural hospital market positioning. Published research on 'Empowering Underserved Americans' through digital health, and rural hospitals serve disproportionately Medicaid-dependent populations. Thin data on specific criteria but thesis alignment is strong."
+    confidence: "medium"
+
+    overview:
+      description: "Early-stage digital health VC creating Informed Connected Health Consumers. Led by former Allscripts CEO."
+      focus_areas: ["digital health", "underserved populations", "Medicaid", "consumer health"]
+      geography: "National (Chicago)"
+      stage: "Seed, Series A"
+
+    funding:
+      amount_range: "Not disclosed"
+      type: "Equity"
+      source: "7wireVentures"
+      date: "January 2026"
+      url: "https://www.7wireventures.com"
+
+    criteria:
+      stated:
+        - criterion: "Early-stage digital health companies dedicated to creating Informed Connected Health Consumers"
+          source: "7wireVentures"
+          date: "January 2026"
+          url: "https://www.7wireventures.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard VC timeline"
+      deadlines: []
+      stages: []
+      decision_makers:
+        - name: "Glen Tullman"
+          role: "Key Partner; former Allscripts CEO"
+          source: "Research file 01-landscape.md"
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Underserved populations focus (published Medicaid digital health paper)"
+        - "Former Allscripts CEO brings health IT credibility"
+      gaps:
+        - gap: "Consumer health focus may not align with B2B hospital cybersecurity"
+          severity: "significant"
+          resolution: "Frame as enabling consumer trust through hospital security"
+      overall_fit: "moderate"
+
+  - name: "Rock Health Capital"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Software and data-driven digital health focus — cybersecurity is not a stated priority area."
+    confidence: "low"
+
+    overview:
+      description: "Pre-Seed through Series A digital health venture fund. Software and data-driven business models."
+      focus_areas: ["digital health", "software", "data-driven healthcare"]
+      geography: "National (San Francisco)"
+      stage: "Pre-Seed through Series A"
+
+    funding:
+      amount_range: "$1M-$5M typical checks"
+      type: "Equity"
+      source: "Rock Health Capital"
+      date: "January 2026"
+      url: "https://rockhealthcapital.com"
+
+    criteria:
+      stated:
+        - criterion: "Software and data-driven business models in healthcare"
+          source: "Rock Health Capital"
+          date: "January 2026"
+          url: "https://rockhealthcapital.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Early-stage focus (Pre-Seed through Series A)"
+        - "Equitable Investments Initiative for underrepresented founders"
+      gaps:
+        - gap: "No cybersecurity investments identified"
+          severity: "significant"
+          resolution: "Low priority — pursue after traction established"
+      overall_fit: "weak"
+
+  - name: "Oak HC/FT"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Growth equity focus ($60-100M average) is far beyond CyberShield Rural's current stage."
+    confidence: "medium"
+
+    overview:
+      description: "Growth equity firm investing in structural change in healthcare and financial services. $5.3B AUM."
+      focus_areas: ["healthcare", "financial services", "structural change"]
+      geography: "National (Stamford, CT)"
+      stage: "Early-stage to growth equity"
+
+    funding:
+      amount_range: "$60M-$100M average (Fund IV)"
+      type: "Equity"
+      source: "Oak HC/FT"
+      date: "January 2026"
+      url: "https://www.oakhcft.com"
+
+    criteria:
+      stated:
+        - criterion: "Growth equity in companies driving structural change in healthcare and financial services"
+          source: "Oak HC/FT"
+          date: "January 2026"
+          url: "https://www.oakhcft.com"
+      inferred: []
+
+    process:
+      application_type: "VC process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Main Street Health"
+        relevance: "Rural value-based care"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Oak HC/FT"
+
+    alignment:
+      strengths:
+        - "Main Street Health portfolio shows rural health interest"
+      gaps:
+        - gap: "Check sizes ($60-100M) far exceed early-stage needs"
+          severity: "blocking"
+          resolution: "Potential later-stage investor; not relevant now"
+      overall_fit: "weak"
+
+  # =============================================================================
+  # VENTURE CAPITAL — CYBERSECURITY FOCUSED
+  # =============================================================================
+
+  - name: "Ballistic Ventures"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Dedicated cybersecurity-only VC with $600M fund, Seed/Series A focus, and founding partner Kevin Mandia (Mandiant) — strong fit if healthcare angle positions well."
+    confidence: "medium"
+
+    overview:
+      description: "VC firm dedicated exclusively to early-stage cybersecurity. $600M total ($360M Fund II, 2024)."
+      focus_areas: ["cybersecurity exclusively"]
+      geography: "National (San Mateo)"
+      stage: "Seed, Series A exclusively"
+
+    funding:
+      amount_range: "Not disclosed; Seed/Series A range"
+      type: "Equity"
+      source: "Ballistic Ventures"
+      date: "January 2026"
+      url: "https://ballisticventures.com"
+
+    criteria:
+      stated:
+        - criterion: "Early-stage funding and incubation for entrepreneurs and innovations in cybersecurity"
+          source: "Ballistic Ventures"
+          date: "January 2026"
+          url: "https://ballisticventures.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers:
+        - name: "Ted Schlein"
+          role: "Partner"
+          source: "Research file 01-landscape.md"
+        - name: "Kevin Mandia"
+          role: "Partner; Mandiant founder"
+          source: "Research file 01-landscape.md"
+        - name: "Barmak Meftah"
+          role: "Partner"
+          source: "Research file 01-landscape.md"
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Aembit"
+        relevance: "Identity security"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Ballistic Ventures"
+      - company: "Nudge Security"
+        relevance: "SaaS security"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Ballistic Ventures"
+      - company: "Talon"
+        relevance: "Acquired by Palo Alto Networks"
+        amount: "Not disclosed"
+        date: "Exit"
+        source: "Ballistic Ventures"
+
+    alignment:
+      strengths:
+        - "Cybersecurity-only fund — strongest sector alignment"
+        - "Seed/Series A focus matches CyberShield stage"
+        - "$600M fund with capacity for multiple investments"
+        - "Kevin Mandia's incident response background relevant to healthcare breach context"
+      gaps:
+        - gap: "No healthcare-specific investments identified"
+          severity: "significant"
+          resolution: "Position healthcare as largest underserved cybersecurity vertical"
+        - gap: "Requires demonstrated cybersecurity innovation"
+          severity: "significant"
+          resolution: "Phase 05 (Solution Thesis) and Phase 11 (MVP) must demonstrate technical differentiation"
+      overall_fit: "moderate"
+
+  - name: "Ten Eleven Ventures"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Cybersecurity-focused VC with Anatomy IT (healthcare cybersecurity) already in portfolio — direct precedent."
+    confidence: "medium"
+
+    overview:
+      description: "Original cybersecurity-focused, global, stage agnostic investment firm. $1B+ AUM, 61 companies, 7 unicorns."
+      focus_areas: ["cybersecurity exclusively"]
+      geography: "Global (Burlingame, Boston, UK)"
+      stage: "Stage agnostic"
+
+    funding:
+      amount_range: "Stage agnostic — varies"
+      type: "Equity"
+      source: "Ten Eleven Ventures"
+      date: "January 2026"
+      url: "https://www.1011vc.com"
+
+    criteria:
+      stated:
+        - criterion: "Cybersecurity-focused, global, stage agnostic investment"
+          source: "Ten Eleven Ventures"
+          date: "January 2026"
+          url: "https://www.1011vc.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers:
+        - name: "Alex Doll"
+          role: "Partner; scaled ArcSight"
+          source: "Research file 01-landscape.md"
+        - name: "Mark Hatfield"
+          role: "Partner"
+          source: "Research file 01-landscape.md"
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Anatomy IT"
+        relevance: "Healthcare cybersecurity — empowers healthcare providers with cybersecurity solutions"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Ten Eleven Ventures"
+
+    alignment:
+      strengths:
+        - "Anatomy IT portfolio proves healthcare cybersecurity investment appetite"
+        - "Stage agnostic — can invest at any stage"
+        - "$1B+ AUM with 7 unicorns"
+      gaps:
+        - gap: "Anatomy IT may be viewed as competitive overlap"
+          severity: "significant"
+          resolution: "Differentiate on rural/CAH focus vs. Anatomy IT's general healthcare market"
+      overall_fit: "moderate"
+
+  - name: "ForgePoint Capital"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Cybersecurity/AI/infrastructure focus is aligned, but portfolio skews toward later-stage — limited data on early-stage appetite."
+    confidence: "low"
+
+    overview:
+      description: "Cybersecurity, AI, and infrastructure software VC. $1B+ AUM across 9 funds."
+      focus_areas: ["cybersecurity", "AI", "infrastructure software"]
+      geography: "National (San Mateo)"
+      stage: "Seed through late stage"
+
+    funding:
+      amount_range: "Varies"
+      type: "Equity"
+      source: "ForgePoint Capital"
+      date: "January 2026"
+      url: "https://forgepointcap.com"
+
+    criteria:
+      stated:
+        - criterion: "Transformative cybersecurity, AI, and infrastructure software companies protecting the digital future"
+          source: "ForgePoint Capital"
+          date: "January 2026"
+          url: "https://forgepointcap.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Cybersecurity thesis alignment"
+      gaps:
+        - gap: "No healthcare-specific investments identified"
+          severity: "minor"
+          resolution: "Lower priority — monitor"
+      overall_fit: "weak"
+
+  # =============================================================================
+  # VENTURE CAPITAL — REGIONAL (SOUTHEAST)
+  # =============================================================================
+
+  - name: "Noro-Moseley Partners"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Early growth equity focus and cybersecurity portfolio (Red Canary, Liminal) show alignment, but check sizes likely exceed early-stage range."
+    confidence: "low"
+
+    overview:
+      description: "Early growth equity for B2B software and healthcare companies. $1B+ AUM, 200+ portfolio companies."
+      focus_areas: ["B2B software", "healthcare", "cybersecurity"]
+      geography: "Southeast (Atlanta)"
+      stage: "Early growth equity"
+
+    funding:
+      amount_range: "Growth equity range"
+      type: "Equity"
+      source: "Noro-Moseley Partners"
+      date: "January 2026"
+      url: "https://noromoseley.com"
+
+    criteria:
+      stated:
+        - criterion: "Rapidly-scaling B2B software and healthcare companies"
+          source: "Noro-Moseley"
+          date: "January 2026"
+          url: "https://noromoseley.com"
+      inferred: []
+
+    process:
+      application_type: "VC process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Red Canary"
+        relevance: "Cybersecurity — managed detection and response"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Noro-Moseley"
+      - company: "Liminal"
+        relevance: "Cybersecurity"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Noro-Moseley"
+
+    alignment:
+      strengths:
+        - "Southeast geography"
+        - "Cybersecurity portfolio (Red Canary, Liminal)"
+      gaps:
+        - gap: "Growth equity stage — likely too late for current CyberShield stage"
+          severity: "significant"
+          resolution: "Potential Series B+ investor"
+      overall_fit: "weak"
+
+  - name: "Fulcrum Equity Partners"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Growth equity ($5-35M) targeting scaling companies — too late-stage for current needs."
+    confidence: "medium"
+
+    overview:
+      description: "Growth equity in SaaS, tech-enabled services, healthcare services and IT. $372M Fund V (2024)."
+      focus_areas: ["SaaS", "healthcare IT", "cybersecurity"]
+      geography: "Southeast (Atlanta)"
+      stage: "Growth equity"
+
+    funding:
+      amount_range: "$5M-$35M"
+      type: "Equity"
+      source: "Fulcrum Equity Partners"
+      date: "January 2026"
+      url: "https://www.fulcrumep.com"
+
+    criteria:
+      stated:
+        - criterion: "High-growth SaaS, tech-enabled services, healthcare services and healthcare IT"
+          source: "Fulcrum"
+          date: "January 2026"
+          url: "https://www.fulcrumep.com"
+      inferred: []
+
+    process:
+      application_type: "VC process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Digital Hands"
+        relevance: "Cybersecurity MSSP"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Fulcrum"
+      - company: "Prevalent"
+        relevance: "IT Vendor Risk Management"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Fulcrum"
+
+    alignment:
+      strengths:
+        - "Southeast geography"
+        - "Cybersecurity portfolio (Digital Hands, Prevalent)"
+        - "Healthcare IT focus"
+      gaps:
+        - gap: "Growth equity stage ($5-35M) too late for current needs"
+          severity: "blocking"
+          resolution: "Potential Series B+ investor"
+      overall_fit: "weak"
+
+  - name: "Cultivation Capital"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Explicit cybersecurity focus area, Seed/Series A stage, and $100K-$3.5M range fits CyberShield's needs. One of the few VCs that explicitly lists both 'cyber security technology' AND 'healthcare' as focus areas — rare dual-sector alignment. Limited portfolio data available but thesis match is strong."
+    confidence: "medium"
+
+    overview:
+      description: "VC with explicit cybersecurity, fintech, healthcare, and agtech focus. Seed/Series A."
+      focus_areas: ["cybersecurity", "fintech", "healthcare", "agtech"]
+      geography: "Midwest/National (St. Louis)"
+      stage: "Seed, Series A"
+
+    funding:
+      amount_range: "$100K-$3.5M initial; $250K-$1M Life Sciences"
+      type: "Equity"
+      source: "Cultivation Capital"
+      date: "January 2026"
+      url: "https://cultivationcapital.com"
+
+    criteria:
+      stated:
+        - criterion: "Cyber security technology alongside fintech, healthcare, and agtech"
+          source: "Cultivation Capital"
+          date: "January 2026"
+          url: "https://cultivationcapital.com"
+      inferred: []
+
+    process:
+      application_type: "VC pitch process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Explicit cybersecurity AND healthcare focus areas"
+        - "Seed/Series A stage matches"
+        - "$100K-$3.5M range appropriate for early-stage"
+      gaps:
+        - gap: "No healthcare cybersecurity crossover investments identified"
+          severity: "minor"
+          resolution: "Position at intersection of two stated focus areas"
+      overall_fit: "moderate"
+
+  # =============================================================================
+  # STRATEGIC INVESTORS
+  # =============================================================================
+
+  - name: "CommonSpirit Ventures"
+    type: "Equity"
+    viable: true
+    viability_rationale: "Operates critical access facilities, focuses on health disparities, $250M fund — highest strategic alignment with rural hospital cybersecurity."
+    confidence: "medium"
+
+    overview:
+      description: "Hospital system venture arm focusing on care outcomes, consumer experience, equity, and health disparities. $250M fund (4th fund), 36 direct investments."
+      focus_areas: ["care outcomes", "consumer experience", "health equity", "community health disparities"]
+      geography: "National (CommonSpirit operates in 21 states)"
+      stage: "Various"
+
+    funding:
+      amount_range: "Not disclosed per investment"
+      type: "Equity"
+      source: "CommonSpirit Ventures"
+      date: "January 2026"
+      url: "https://www.commonspirit.org/ventures"
+
+    criteria:
+      stated:
+        - criterion: "Solutions improving care outcomes, elevating consumer experience, enhancing equity, and addressing health disparities"
+          source: "CommonSpirit Ventures"
+          date: "January 2026"
+          url: "https://www.commonspirit.org/ventures"
+      inferred:
+        - criterion: "Rural and community hospital alignment valued"
+          evidence: "CommonSpirit operates critical access facilities and focuses on community health disparities"
+          confidence: "medium"
+          note: "Inferred from operator profile, not confirmed criteria"
+
+    process:
+      application_type: "Strategic VC pitch"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Operates critical access facilities — understands rural hospital needs firsthand"
+        - "Health disparities and equity focus aligns with rural mission"
+        - "$250M fund with capacity"
+        - "Co-invests with a16z, NEA, Oak HC/FT, Town Hall Ventures"
+      gaps:
+        - gap: "No cybersecurity investments identified in portfolio"
+          severity: "significant"
+          resolution: "Frame cybersecurity as care continuity enabler"
+        - gap: "Strategic investors typically want product maturity"
+          severity: "significant"
+          resolution: "Phase 11-12 (MVP + Traction) before approaching"
+      overall_fit: "strong"
+
+  - name: "Ascension Ventures"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Check sizes ($10-20M aggregate) and stage focus suggest later-stage — not appropriate for pre-seed/seed."
+    confidence: "medium"
+
+    overview:
+      description: "Strategic healthcare IT/services investor. $1B+ under management, 149 investments. LPs include AdventHealth, Intermountain, OhioHealth."
+      focus_areas: ["healthcare IT", "healthcare services", "medtech"]
+      geography: "National"
+      stage: "Later-stage"
+
+    funding:
+      amount_range: "$10M-$20M aggregate per company"
+      type: "Equity"
+      source: "Ascension Ventures"
+      date: "January 2026"
+      url: "https://ascensionventures.org"
+
+    criteria:
+      stated:
+        - criterion: "Strategic investments in healthcare IT, services, and medtech helping health systems transform care delivery"
+          source: "Ascension Ventures"
+          date: "January 2026"
+          url: "https://ascensionventures.org"
+      inferred: []
+
+    process:
+      application_type: "Strategic VC process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "LP base includes hospital systems (potential customers)"
+      gaps:
+        - gap: "Check sizes too large for early-stage"
+          severity: "blocking"
+          resolution: "Potential later-stage investor"
+      overall_fit: "weak"
+
+  - name: "Kaiser Permanente Ventures"
+    type: "Equity"
+    viable: false
+    viability_rationale: "$500M+ AUM but no rural focus; Protenus (compliance analytics) shows healthcare security interest but Kaiser serves urban/suburban markets."
+    confidence: "low"
+
+    overview:
+      description: "Kaiser healthcare venture arm. $500M+ AUM, 168 investments."
+      focus_areas: ["healthcare technology", "compliance"]
+      geography: "National"
+      stage: "Various"
+
+    funding:
+      amount_range: "Not disclosed"
+      type: "Equity"
+      source: "Kaiser Permanente Ventures"
+      date: "January 2026"
+      url: "https://www.kpventures.com"
+
+    criteria:
+      stated:
+        - criterion: "Healthcare technology investments"
+          source: "Kaiser Permanente Ventures website"
+          date: "January 2026"
+          url: "https://www.kpventures.com"
+      inferred:
+        - criterion: "Healthcare compliance and security"
+          evidence: "Protenus (healthcare compliance analytics with AI) in portfolio"
+          confidence: "low"
+          note: "Inferred from single portfolio company"
+
+    process:
+      application_type: "Strategic VC process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Protenus"
+        relevance: "Healthcare compliance analytics with AI"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "Kaiser Permanente Ventures"
+
+    alignment:
+      strengths:
+        - "Protenus shows healthcare security interest"
+      gaps:
+        - gap: "Kaiser serves urban/suburban markets — no rural focus"
+          severity: "significant"
+          resolution: "Low priority"
+      overall_fit: "weak"
+
+  - name: "Optum Ventures"
+    type: "Equity"
+    viable: false
+    viability_rationale: "$2B+ AUM and UnitedHealth parent creates potential conflict — Change Healthcare is UnitedHealth subsidiary."
+    confidence: "low"
+
+    overview:
+      description: "Digital health investor under UnitedHealth Group. $2B+ AUM across 6 funds. Stage agnostic."
+      focus_areas: ["digital health", "data analytics", "value-based care"]
+      geography: "National"
+      stage: "Seed to growth equity (stage-agnostic)"
+
+    funding:
+      amount_range: "Varies"
+      type: "Equity"
+      source: "Optum Ventures"
+      date: "January 2026"
+      url: "https://www.optumventures.com"
+
+    criteria:
+      stated:
+        - criterion: "Digital health companies using data and insights to improve healthcare access; value-based care, enabling infrastructure"
+          source: "Optum Ventures"
+          date: "January 2026"
+          url: "https://www.optumventures.com"
+      inferred: []
+
+    process:
+      application_type: "Strategic VC process"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Stage agnostic with large fund"
+      gaps:
+        - gap: "UnitedHealth parent (Change Healthcare breach) creates potential conflict of interest"
+          severity: "significant"
+          resolution: "Avoid until competitive dynamics clarified"
+      overall_fit: "weak"
+
+  - name: "Microsoft M12 / Rural Hospitals Program"
+    type: "Strategic/Corporate"
+    viable: false
+    viability_rationale: "Microsoft's Rural Hospitals Program is philanthropic (free/discounted services) and M12 invests $275M/year — but Microsoft's own program may be viewed as competitive to CyberShield."
+    confidence: "medium"
+
+    overview:
+      description: "Microsoft's venture arm ($275M/year) plus dedicated philanthropic Cybersecurity Program for Rural Hospitals (550+ enrolled)."
+      focus_areas: ["AI", "cloud", "cybersecurity", "rural hospital cybersecurity"]
+      geography: "National/Global"
+      stage: "Various"
+
+    funding:
+      amount_range: "~$275M annual allocation (M12)"
+      type: "Equity (M12) / Philanthropic (Rural Program)"
+      source: "AHA / Microsoft"
+      date: "June 2024"
+      url: "https://blogs.microsoft.com/on-the-issues/2024/06/10/microsoft-cybersecurity-program-rural-hospitals/"
+
+    criteria:
+      stated:
+        - criterion: "Investments aligned with AI, cloud infrastructure, and cybersecurity"
+          source: "AHA / Microsoft"
+          date: "June 2024"
+          url: "https://blogs.microsoft.com/on-the-issues/2024/06/10/microsoft-cybersecurity-program-rural-hospitals/"
+      inferred: []
+
+    process:
+      application_type: "Strategic VC / direct engagement"
+      timeline: "N/A"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Validates rural hospital cybersecurity as a market"
+        - "550+ enrolled hospitals = proven demand"
+      gaps:
+        - gap: "Microsoft's own Rural Hospitals Program may compete with CyberShield services"
+          severity: "blocking"
+          resolution: "Position as complementary (managed services vs. Microsoft's product discounts) or avoid"
+      overall_fit: "weak"
+
+  - name: "CrowdStrike Falcon Fund"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Non-lead Seed/Series A investor requiring Falcon platform integration — too narrow for managed service model."
+    confidence: "medium"
+
+    overview:
+      description: "Corporate VC (with Accel) funding companies integrating with Falcon platform. Does not lead rounds."
+      focus_areas: ["cybersecurity platform integration"]
+      geography: "Global"
+      stage: "Seed, Series A"
+
+    funding:
+      amount_range: "Non-lead investment"
+      type: "Equity"
+      source: "CrowdStrike"
+      date: "January 2026"
+      url: "https://www.crowdstrike.com/en-us/falcon-fund/"
+
+    criteria:
+      stated:
+        - criterion: "Companies providing differentiated cybersecurity capabilities integrating with Falcon platform"
+          source: "CrowdStrike"
+          date: "January 2026"
+          url: "https://www.crowdstrike.com/en-us/falcon-fund/"
+      inferred: []
+
+    process:
+      application_type: "Strategic"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Marketplace access and GTM support"
+      gaps:
+        - gap: "Requires Falcon platform integration"
+          severity: "blocking"
+          resolution: "Only if CyberShield builds on CrowdStrike stack"
+      overall_fit: "weak"
+
+  - name: "Cisco Investments"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Primarily Series B/C stage — too late for current CyberShield needs."
+    confidence: "medium"
+
+    overview:
+      description: "339 companies, 19 unicorns. Primary focus on security, healthcare security, IoT/medical device security."
+      focus_areas: ["security", "healthcare security", "IoT", "medical device security"]
+      geography: "Global"
+      stage: "Primarily Series B and C"
+
+    funding:
+      amount_range: "Growth stage"
+      type: "Equity"
+      source: "Cisco Investments"
+      date: "January 2026"
+      url: "https://www.ciscoinvestments.com"
+
+    criteria:
+      stated:
+        - criterion: "Security, healthcare security solutions, IoT/medical device security"
+          source: "Cisco Investments"
+          date: "January 2026"
+          url: "https://www.ciscoinvestments.com"
+      inferred: []
+
+    process:
+      application_type: "Strategic"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Healthcare security and IoT/medical device focus"
+      gaps:
+        - gap: "Series B/C stage too late"
+          severity: "blocking"
+          resolution: "Potential later-stage investor"
+      overall_fit: "weak"
+
+  - name: "GV (Google Ventures)"
+    type: "Equity"
+    viable: false
+    viability_rationale: "Requires warm introductions and focuses 50% on healthcare/biotech — but no rural or cybersecurity-specific investments identified."
+    confidence: "low"
+
+    overview:
+      description: "Google's venture arm. Life sciences, healthcare, AI, cybersecurity. Patient capital."
+      focus_areas: ["life sciences", "healthcare", "AI", "cybersecurity"]
+      geography: "Global"
+      stage: "Various"
+
+    funding:
+      amount_range: "Not disclosed"
+      type: "Equity"
+      source: "GV"
+      date: "January 2026"
+      url: "https://www.gv.com"
+
+    criteria:
+      stated:
+        - criterion: "Life sciences, healthcare, AI, cybersecurity — purely financial returns with patient capital approach"
+          source: "GV"
+          date: "January 2026"
+          url: "https://www.gv.com"
+      inferred: []
+
+    process:
+      application_type: "Requires warm introductions"
+      timeline: "Standard"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "unknown"
+
+    portfolio:
+      - company: "Obsidian Security"
+        relevance: "Cybersecurity"
+        amount: "Not disclosed"
+        date: "Portfolio company"
+        source: "GV"
+
+    alignment:
+      strengths:
+        - "Healthcare and cybersecurity both in scope"
+      gaps:
+        - gap: "Requires warm introductions"
+          severity: "significant"
+          resolution: "Build network before approaching"
+        - gap: "No rural or healthcare cybersecurity crossover"
+          severity: "minor"
+          resolution: "Low priority"
+      overall_fit: "weak"
+
+  # =============================================================================
+  # ACCELERATORS
+  # =============================================================================
+
+  - name: "MassChallenge HealthTech + Security & Resiliency"
+    type: "Accelerator"
+    viable: true
+    viability_rationale: "Zero-equity dual track (healthcare April, security September) — can position at intersection. Under $3M revenue / $5M funding eligibility threshold."
+    confidence: "medium"
+
+    overview:
+      description: "Zero-equity accelerator with separate HealthTech and Security & Resiliency programs. Cash and in-kind prizes."
+      focus_areas: ["healthcare", "security", "dual track opportunity"]
+      geography: "Boston (hybrid)"
+      stage: "Under $3M revenue, less than $5M equity funding"
+
+    funding:
+      amount_range: "Cash and in-kind prizes (amount varies)"
+      type: "Accelerator (zero equity)"
+      source: "MassChallenge"
+      date: "January 2026"
+      url: "https://masschallenge.org/programs-healthtech/"
+
+    criteria:
+      stated:
+        - criterion: "Under $3M trailing 12-month revenue, less than $5M equity funding received"
+          source: "MassChallenge"
+          date: "January 2026"
+          url: "https://masschallenge.org/programs-healthtech/"
+      inferred: []
+
+    process:
+      application_type: "Application-based"
+      timeline: "10-12 weeks; hybrid format"
+      deadlines: ["HealthTech: April start; Security: September start"]
+      stages: []
+      decision_makers: []
+      timeline_source: "MassChallenge website"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Zero equity taken"
+        - "Dual track positions at healthcare + security intersection"
+        - "MITRE partnership provides credibility"
+      gaps:
+        - gap: "Boston-based program requires travel/hybrid commitment"
+          severity: "minor"
+          resolution: "Hybrid format available"
+      overall_fit: "strong"
+
+  - name: "Health Wildcatters"
+    type: "Accelerator"
+    viable: true
+    viability_rationale: "$30K cash + up to $380K follow-on for 8% equity — top-ranked healthcare accelerator with 131 portfolio companies."
+    confidence: "medium"
+
+    overview:
+      description: "Top-ranked healthcare accelerator (MIT/Rice Seed Accelerator Rankings). $30K for 8% equity, follow-on up to $380K."
+      focus_areas: ["healthcare IT", "SaaS", "digital health"]
+      geography: "Dallas (12 weeks)"
+      stage: "Early-stage"
+
+    funding:
+      amount_range: "$30,000 cash (8% equity); follow-on up to $380,000; program value $200,000+"
+      type: "Accelerator"
+      source: "Health Wildcatters"
+      date: "January 2026"
+      url: "https://www.healthwildcatters.com/accelerator"
+
+    criteria:
+      stated:
+        - criterion: "Healthcare IT, SaaS, digital health companies"
+          source: "Health Wildcatters"
+          date: "January 2026"
+          url: "https://www.healthwildcatters.com/accelerator"
+      inferred: []
+
+    process:
+      application_type: "Application via F6S and Gust"
+      timeline: "12 weeks (Fall program)"
+      deadlines: ["Applications open — Fall program"]
+      stages: []
+      decision_makers: []
+      timeline_source: "Health Wildcatters website"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Top-ranked by MIT/Rice"
+        - "131 companies, $350M+ raised"
+        - "Healthcare IT and SaaS focus matches"
+      gaps:
+        - gap: "8% equity is meaningful dilution"
+          severity: "minor"
+          resolution: "Weigh against $380K+ potential funding and network value"
+      overall_fit: "moderate"
+
+  - name: "MACH37"
+    type: "Accelerator"
+    viable: true
+    viability_rationale: "Cybersecurity-only accelerator with 83% survival rate and Censinet (healthcare third-party risk) as alumnus — direct precedent."
+    confidence: "medium"
+
+    overview:
+      description: "Cybersecurity accelerator. 94 graduates, 83% survival rate, 64% received investment. Censinet is alumnus."
+      focus_areas: ["cybersecurity", "AI/ML", "IoT", "cyber-physical systems"]
+      geography: "Washington, D.C. (12 weeks)"
+      stage: "Early-stage"
+
+    funding:
+      amount_range: "5% equity to VentureScope"
+      type: "Accelerator"
+      source: "MACH37"
+      date: "January 2026"
+      url: "https://www.mach37.com/cyber-accelerator"
+
+    criteria:
+      stated:
+        - criterion: "Cybersecurity, AI/ML, IoT, cyber-physical systems"
+          source: "MACH37"
+          date: "January 2026"
+          url: "https://www.mach37.com/cyber-accelerator"
+      inferred: []
+
+    process:
+      application_type: "Application-based"
+      timeline: "12 weeks"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "MACH37 website"
+      timeline_confidence: "medium"
+
+    portfolio:
+      - company: "Censinet"
+        relevance: "Healthcare third-party risk management — AHA Preferred Provider"
+        amount: "Alumnus"
+        date: "Graduate"
+        source: "MACH37"
+
+    alignment:
+      strengths:
+        - "Censinet healthcare cybersecurity alumnus — direct precedent"
+        - "83% survival rate, 64% received investment"
+        - "D.C. location provides federal/policy network"
+      gaps:
+        - gap: "5% equity to VentureScope"
+          severity: "minor"
+          resolution: "Weigh against investment success rate (64%)"
+      overall_fit: "strong"
+
+  - name: "AWS & CrowdStrike Cybersecurity Accelerator"
+    type: "Accelerator"
+    viable: false
+    viability_rationale: "January 2026 cohort already started — missed deadline. Future cohorts may be viable."
+    confidence: "medium"
+
+    overview:
+      description: "8-week cybersecurity accelerator with NVIDIA partnership. 59 graduates, $730M+ raised collectively."
+      focus_areas: ["cybersecurity"]
+      geography: "Hybrid"
+      stage: "Pre-Series A, MVP required"
+
+    funding:
+      amount_range: "Potential CrowdStrike Falcon Fund investment"
+      type: "Accelerator"
+      source: "CrowdStrike / AWS"
+      date: "November 2025"
+      url: "https://aws.amazon.com/startups/programs/aws-and-crowdstrike-cybersecurity-accelerator"
+
+    criteria:
+      stated:
+        - criterion: "Pre-Series A, MVP developed, early traction required"
+          source: "CrowdStrike / AWS"
+          date: "November 2025"
+          url: "https://aws.amazon.com/startups/programs/aws-and-crowdstrike-cybersecurity-accelerator"
+      inferred: []
+
+    process:
+      application_type: "Application-based"
+      timeline: "8 weeks; Demo Day at RSA Conference"
+      deadlines: ["2026 program: January 5 - March 3, 2026 (already started)"]
+      stages: []
+      decision_makers: []
+      timeline_source: "CrowdStrike announcement"
+      timeline_confidence: "high"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "$730M+ raised by 59 graduates"
+        - "RSA Conference Demo Day exposure"
+      gaps:
+        - gap: "Current cohort already started (January 5, 2026)"
+          severity: "blocking"
+          resolution: "Apply for next cohort when announced"
+      overall_fit: "weak"
+
+  - name: "Cedars-Sinai Accelerator"
+    type: "Accelerator"
+    viable: false
+    viability_rationale: "$100K investment but urban/academic medical center focus — weak rural alignment."
+    confidence: "low"
+
+    overview:
+      description: "3-month health tech accelerator. $100K investment, 300+ clinician mentors, Demo Day at HLTH."
+      focus_areas: ["health technology"]
+      geography: "Los Angeles"
+      stage: "Early-stage"
+
+    funding:
+      amount_range: "$100,000"
+      type: "Accelerator"
+      source: "Cedars-Sinai"
+      date: "January 2026"
+      url: "https://csaccelerator.com/"
+
+    criteria:
+      stated:
+        - criterion: "Health technology companies for 3-month accelerator program"
+          source: "Cedars-Sinai Accelerator"
+          date: "January 2026"
+          url: "https://csaccelerator.com/"
+      inferred: []
+
+    process:
+      application_type: "Application-based"
+      timeline: "3 months"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "Cedars-Sinai website"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "300+ clinician mentors"
+        - "HLTH Conference Demo Day"
+      gaps:
+        - gap: "Urban academic medical center — weak rural alignment"
+          severity: "significant"
+          resolution: "Lower priority"
+      overall_fit: "weak"
+
+  - name: "Mayo Clinic Platform_Accelerate"
+    type: "Accelerator"
+    viable: false
+    viability_rationale: "30-week program with clinical data access — valuable but long commitment and no cybersecurity focus."
+    confidence: "low"
+
+    overview:
+      description: "30-week accelerator with access to de-identified clinical data. Equity position taken."
+      focus_areas: ["clinical health technology"]
+      geography: "Rochester, MN"
+      stage: "Early-stage"
+
+    funding:
+      amount_range: "Equity position (amount not disclosed)"
+      type: "Accelerator"
+      source: "Mayo Clinic"
+      date: "January 2026"
+      url: "https://www.mayoclinicplatform.org/accelerate/"
+
+    criteria:
+      stated:
+        - criterion: "Clinical health technology companies for 30-week accelerator with access to de-identified clinical data"
+          source: "Mayo Clinic Platform"
+          date: "January 2026"
+          url: "https://www.mayoclinicplatform.org/accelerate/"
+      inferred: []
+
+    process:
+      application_type: "Application-based"
+      timeline: "30 weeks"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "Mayo Clinic website"
+      timeline_confidence: "medium"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Access to millions of de-identified patient records"
+      gaps:
+        - gap: "30-week commitment is long; no cybersecurity focus"
+          severity: "significant"
+          resolution: "Lower priority"
+      overall_fit: "weak"
+
+  - name: "Techstars AI Health Baltimore"
+    type: "Accelerator"
+    viable: false
+    viability_rationale: "Johns Hopkins partnership is valuable, but first cohort just launched (March 2025) and no cybersecurity focus confirmed."
+    confidence: "low"
+
+    overview:
+      description: "Johns Hopkins + CareFirst partnership. Up to $120K for 6-9% equity. 13 weeks."
+      focus_areas: ["AI in healthcare"]
+      geography: "Baltimore"
+      stage: "Early-stage"
+
+    funding:
+      amount_range: "Up to $120,000 for 6-9% equity"
+      type: "Accelerator"
+      source: "Technical.ly"
+      date: "March 2025"
+      url: ""
+
+    criteria:
+      stated:
+        - criterion: "AI in healthcare companies for 13-week Techstars program"
+          source: "Technical.ly"
+          date: "March 2025"
+          url: ""
+      inferred: []
+
+    process:
+      application_type: "Techstars application"
+      timeline: "13 weeks"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "Technical.ly"
+      timeline_confidence: "low"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Johns Hopkins and CareFirst partnerships"
+      gaps:
+        - gap: "AI focus — cybersecurity not confirmed as priority"
+          severity: "significant"
+          resolution: "Monitor for cybersecurity-relevant cohort themes"
+      overall_fit: "weak"
+
+  - name: "AscendRural Senior Care Innovation Accelerator"
+    type: "Accelerator"
+    viable: false
+    viability_rationale: "Strongest rural alignment but senior care focus and January 9, 2026 deadline already passed."
+    confidence: "medium"
+
+    overview:
+      description: "4-week accelerator helping startups become 'rural ready'. Pilot contracts up to $150K."
+      focus_areas: ["rural healthcare", "senior care"]
+      geography: "Staples, MN"
+      stage: "Early-stage"
+
+    funding:
+      amount_range: "Pilot contracts up to $150,000"
+      type: "Accelerator"
+      source: "Business Wire"
+      date: "December 2025"
+      url: "https://platform.younoodle.com/competition/ascendrural_seniorcare"
+
+    criteria:
+      stated:
+        - criterion: "Startups becoming 'rural ready' to pilot, validate, and scale solutions in rural settings"
+          source: "Business Wire"
+          date: "December 2025"
+          url: "https://platform.younoodle.com/competition/ascendrural_seniorcare"
+      inferred: []
+
+    process:
+      application_type: "Application-based"
+      timeline: "4 weeks"
+      deadlines: ["January 9, 2026 (PASSED)"]
+      stages: []
+      decision_makers: []
+      timeline_source: "Business Wire"
+      timeline_confidence: "high"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "Strongest explicit rural focus"
+        - "$150K pilot contracts"
+      gaps:
+        - gap: "Application deadline passed (January 9, 2026)"
+          severity: "blocking"
+          resolution: "Monitor for future cohorts"
+        - gap: "Senior care focus, not hospital cybersecurity"
+          severity: "significant"
+          resolution: "Could reframe if future cohorts open"
+      overall_fit: "weak"
+
+  # =============================================================================
+  # HHS OCR (NOT A FUNDER)
+  # =============================================================================
+
+  - name: "HHS Office for Civil Rights (OCR)"
+    type: "Regulatory (Not a funder)"
+    viable: false
+    viability_rationale: "OCR is an enforcement agency — no grant programs exist for cybersecurity vendors. However, HIPAA enforcement creates market demand."
+    confidence: "high"
+
+    overview:
+      description: "HIPAA enforcement agency. 22 enforcement actions in 2024 ($9.9M collected). Proposed HIPAA Security Rule update with estimated $9B first-year compliance cost."
+      focus_areas: ["HIPAA enforcement", "compliance"]
+      geography: "National"
+      stage: "N/A — regulatory body"
+
+    funding:
+      amount_range: "N/A — not a funder"
+      type: "N/A"
+      source: "HHS OCR"
+      date: "January 2026"
+      url: "https://www.hhs.gov/hipaa/for-professionals/security/hipaa-security-rule-nprm/index.html"
+
+    criteria:
+      stated:
+        - criterion: "N/A — regulatory enforcement body, not a funder. HIPAA Security Rule enforcement drives market demand for cybersecurity services."
+          source: "HHS Office for Civil Rights NPRM"
+          date: "December 27, 2024"
+          url: "https://www.hhs.gov/hipaa/for-professionals/security/hipaa-security-rule-nprm/index.html"
+      inferred: []
+
+    process:
+      application_type: "N/A — not a funder"
+      timeline: "N/A"
+      deadlines: []
+      stages: []
+      decision_makers: []
+      timeline_source: "N/A"
+      timeline_confidence: "high"
+
+    portfolio: []
+
+    alignment:
+      strengths:
+        - "HIPAA enforcement drives demand for CyberShield services"
+        - "Proposed Security Rule ($9B compliance cost) creates massive market opportunity"
+        - "Risk Analysis Initiative directly validates CyberShield's value proposition"
+      gaps:
+        - gap: "Not a funding source"
+          severity: "blocking"
+          resolution: "Use as market validation evidence in funder applications"
+      overall_fit: "weak"
